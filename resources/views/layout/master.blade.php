@@ -60,7 +60,7 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        
+
 
         <div class="container">
             <div class="copyright">
@@ -88,5 +88,11 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    {{-- Template Pop Up --}}
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
 </body>
 </html>

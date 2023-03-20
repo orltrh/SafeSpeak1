@@ -15,8 +15,8 @@
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
             </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
-            <img src="assets/img/hero-img.png" class="img-fluid" alt="">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" >
+            <img src="assets/picture/ei.jpg" class="img-fluid" style="border-radius: 50px" alt="">
         </div>
         </div>
     </div>
@@ -29,22 +29,23 @@
 
     <div class="row">
         <div class="col-lg-6" data-aos="zoom-in">
-        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+        <img src="assets/picture/sslogo.png" style="height: 350px;" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
         <div class="content pt-4 pt-lg-0">
-            <h3>Ketahui Lebih Lanjut Tentang SafeSpeak</h3>
+            <h3>About Us</h3>
             <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+            SafeSpeak merupakan media edukasi dan bantuan bagi korban pelecehan seksual dan bullying dengan menerapkan emotional intelligence dan tracking position
             </p>
             <ul>
-            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperd</li>
+            <li><i class="bi bi-check-circle"></i> Tracking Position</li>
+            <li><i class="bi bi-check-circle"></i> Edukasi</li>
+            <li><i class="bi bi-check-circle"></i> Panduan</li>
+            <li><i class="bi bi-check-circle"></i> Forum</li>
+
             </ul>
             <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate tera noden carma palorp mades tera.
+            Kami hadir untuk menjadi media edukasi bagi para pelaku maupun korban pelecehan seksual serta membantu menjaga dan meningkatkan keamanan yang lebih baik bagi setiap orang
             </p>
         </div>
         </div>

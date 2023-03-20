@@ -987,7 +987,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-  background: url("../img/team-bg.jpg") center center no-repeat;
+  background-image: url("../picture/bgteam.jpg");
   background-size: cover;
   padding: 60px 0;
   position: relative;
@@ -1646,3 +1646,4 @@ section {
   font-size: 13px;
   color: #364146;
 }
+

@@ -4,11 +4,11 @@
 
 @section('content')
 @parent
-<section>
+<section style="height:76.5vh; padding-top: 100px">
     <div class="container">
         <div class="card text-center">
             <div class="card-header">
-              Featured
+              Forum chat 1
             </div>
             <div class="card-body">
               <h5 class="card-title">Special title treatment</h5>
@@ -23,7 +23,7 @@
     <div class="container mt-5">
         <div class="card text-center">
             <div class="card-header">
-              Featured
+              Forum chat 2
             </div>
             <div class="card-body">
               <h5 class="card-title">Special title treatment</h5>

@@ -27,7 +27,22 @@ class UserController extends Controller
     public function register(){
         return view('register');
     }
-    // public function updateEdukasi(){
-    //     return view('updateEdukasi');
-    // }
+    public function selfawareness(){
+        return view('users.education.selfawareness');
+    }
+    public function selfregulation(){
+        return view('users.education.selfregulation');
+    }
+    public function selfmotivation(){
+        return view('users.education.selfmotivation');
+    }
+    public function socialskills(){
+        return view('users.education.socialskills');
+    }
+    public function empathy(){
+        return view('users.education.empathy');
+    }
+    public function selfadjustment(){
+        return view('users.education.selfadjustment');
+    }
 }

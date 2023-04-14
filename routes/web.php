@@ -27,3 +27,10 @@ Route::get('/admin-trackingposition', 'App\Http\Controllers\AdminController@trac
 Route::get('/admin-edukasi', 'App\Http\Controllers\AdminController@edukasi');
 Route::get('/admin-panduan', 'App\Http\Controllers\AdminController@panduan');
 Route::get('/admin-update', 'App\Http\Controllers\AdminController@updateEdukasi');
+
+Route::get('/selfawareness', 'App\Http\Controllers\UserController@selfawareness');
+Route::get('/selfregulation', 'App\Http\Controllers\UserController@selfregulation');
+Route::get('/selfmotivation', 'App\Http\Controllers\UserController@selfmotivation');
+Route::get('/socialskills', 'App\Http\Controllers\UserController@socialskills');
+Route::get('/empathy', 'App\Http\Controllers\UserController@empathy');
+Route::get('/selfadjustment', 'App\Http\Controllers\UserController@selfadjustment');

@@ -19,6 +19,10 @@
                             <input type="email" name="email" id="email" placeholder="Email"/>
                         </div>
                         <div class="form-group">
+                            <label for="telp"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="number" name="telp" id="username" placeholder="Number"/>
+                        </div>
+                        <div class="form-group">
                             <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="pass" id="pass" placeholder="Password"/>
                         </div>

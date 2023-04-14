@@ -21,7 +21,7 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style2.css" rel="stylesheet">
 </head>
 <body>
   <!-- ======= Header ======= -->
@@ -36,11 +36,12 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto @yield('menuIndex')" href="/">Home</a></li>
-          <li><a class="nav-link scrollto @yield('menuTrack')" href="trackingposition">Tracking Position</a></li>
-          <li><a class="nav-link scrollto @yield('menuEdukasi')" href="edukasi">Edukasi</a></li>
-          <li><a class="nav-link scrollto @yield('menuPanduan')" href="panduan">Panduan</a></li>
-          <li><a class="nav-link scrollto @yield('menuadForum')" href="admin/forum">Forum</a></li>
+          <li><a class="nav-link scrollto @yield('menuadIndex')" href="admin">Home</a></li>
+          <li><a class="nav-link scrollto @yield('menuadTrack')" href="admin-trackingposition">Tracking Position</a></li>
+          <li><a class="nav-link scrollto @yield('menuadindex')" href="admin-edukasi">Edukasi</a></li>
+          <li><a class="nav-link scrollto @yield('menuadPanduan')" href="admin-panduan">Panduan</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-forum">Forum</a></li>
+          <li><a class="nav-link scrollto @yield('menuadUpdate')" href="admin-update">Edit</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

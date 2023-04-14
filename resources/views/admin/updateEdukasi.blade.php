@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('title', 'Edukasi')
-@section('menuEdukasi', 'active')
+@section('menuadUpdate', 'active')
 
 @section('content')
 @parent

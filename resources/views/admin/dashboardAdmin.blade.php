@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Home')
-@section('menuIndex', 'active')
+@section('menuadIndex', 'active')
 
 @section('content')
 <!-- ======= Hero Section ======= -->

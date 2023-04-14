@@ -20,6 +20,7 @@ class AdminController extends Controller
         return view('admin.adForum');
     }
     public function edukasi(){
+        
         return view('admin.adEdukasi');
     }
     public function updateEdukasi(){

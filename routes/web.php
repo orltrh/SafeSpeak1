@@ -20,6 +20,10 @@ Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
 Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
 Route::get('/login', 'App\Http\Controllers\UserController@login');
 Route::get('/register', 'App\Http\Controllers\UserController@register');
-Route::get('/updateEdukasi', 'App\Http\Controllers\UserController@updateEdukasi');
 
-
+Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+Route::get('/admin/forum', 'App\Http\Controllers\AdminController@forum');
+Route::get('/admin/trackingposition', 'App\Http\Controllers\AdminController@tracking');
+Route::get('/admin/edukasi', 'App\Http\Controllers\AdminController@edukasi');
+Route::get('/admin/panduan', 'App\Http\Controllers\AdminController@panduan');
+Route::get('/updateEdukasi', 'App\Http\Controllers\AdminController@updateEdukasi');

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
+            $table->text('selfadjustment');
+            $table->text('selfawareness');
+            $table->text('selfregulation');
+            $table->text('selfmotivation');
+            $table->text('empathy');
+            $table->text('socialskills');
             $table->timestamps();
         });
     }
@@ -20,7 +26,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('admins');
     }

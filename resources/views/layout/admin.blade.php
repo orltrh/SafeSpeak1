@@ -21,7 +21,7 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style2.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
   <!-- ======= Header ======= -->
@@ -41,7 +41,9 @@
           <li><a class="nav-link scrollto @yield('menuadindex')" href="admin-edukasi">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuadPanduan')" href="admin-panduan">Panduan</a></li>
           <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-forum">Forum</a></li>
-          <li><a class="nav-link scrollto @yield('menuadUpdate')" href="admin-update">Edit</a></li>
+          <li><a class="nav-link scrollto @yield('menuadCreate')" href="admin-create">Create</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-update">Update</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-delete">Delete</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

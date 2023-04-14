@@ -1,5 +1,5 @@
-@extends('layout.master')
-@section('title', 'Self Awareness')
+@extends('layout.admin')
+@section('title', 'Self Adjustment')
 
 @section('content')
 @parent
@@ -7,15 +7,14 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                Self Awarensess
+                Self Adjustment
             </div>
             <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>{{ $selfawareness ?? 'Tidak ada data yang tersedia untuk ditampilkan.' }}</p>
-                  </blockquote>
+              <blockquote class="blockquote mb-0">
+                <p>{{ $selfadjustment ?? 'Tidak ada data yang tersedia untuk ditampilkan.' }}</p>
+              </blockquote>
             </div>
           </div>
-      
     </div>
 </section>
 @endsection

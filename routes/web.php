@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +28,66 @@ Route::get('/admin-forum', 'App\Http\Controllers\AdminController@forum');
 Route::get('/admin-trackingposition', 'App\Http\Controllers\AdminController@tracking');
 Route::get('/admin-edukasi', 'App\Http\Controllers\AdminController@edukasi');
 Route::get('/admin-panduan', 'App\Http\Controllers\AdminController@panduan');
-Route::get('/admin-update', 'App\Http\Controllers\AdminController@updateEdukasi');
 
-Route::get('/selfawareness', 'App\Http\Controllers\UserController@selfawareness');
-Route::get('/selfregulation', 'App\Http\Controllers\UserController@selfregulation');
-Route::get('/selfmotivation', 'App\Http\Controllers\UserController@selfmotivation');
-Route::get('/socialskills', 'App\Http\Controllers\UserController@socialskills');
-Route::get('/empathy', 'App\Http\Controllers\UserController@empathy');
-Route::get('/selfadjustment', 'App\Http\Controllers\UserController@selfadjustment');
+
+Route::get('/admin-adselfawareness', [AdminController::class, 'adselfawareness'])
+    ->name('admins.adselfawareness');
+Route::get('/selfawareness', [UserController::class, 'selfawareness'])
+    ->name('admins.selfawareness');
+
+Route::get('/admin-adselfregulation', [AdminController::class, 'adselfregulation'])
+    ->name('admins.adselfregulation');
+Route::get('/selfregulation', [UserController::class, 'selfregulation'])
+    ->name('admins.selfregulation');
+
+Route::get('/admin-adselfadjustment', [AdminController::class, 'adselfadjustment'])
+    ->name('admins.adselfadjustment');
+Route::get('/selfadjustment', [UserController::class, 'selfadjustment'])
+    ->name('admins.selfadjustment');
+
+Route::get('/admin-adselfmotivation', [AdminController::class, 'adselfmotivation'])
+    ->name('admins.adselfmotivation');
+Route::get('/selfmotivation', [UserController::class, 'selfmotivation'])
+    ->name('admins.selfmotivation');
+
+Route::get('/admin-adempathy', [AdminController::class, 'adempathy'])
+    ->name('admins.adempathy');
+Route::get('/empathy', [UserController::class, 'empathy'])
+    ->name('admins.empathy');
+
+Route::get('/admin-adsocialskills', [AdminController::class, 'adsocialskills'])
+    ->name('admins.adsocialskills');
+Route::get('/socialskills', [UserController::class, 'socialskills'])
+    ->name('admins.socialskills');
+
+
+Route::get('/admin-create', [AdminController::class, 'create'])
+    ->name('admins.create');
+
+Route::post('/admin', [AdminController::class, 'store'])
+    ->name('admins.store');
+
+Route::get('/admin-update', [AdminController::class, 'edit'])
+    ->name('admins.edit');
+
+Route::patch('/update', [AdminController::class, 'update'])
+    ->name('admins.update');
+
+Route::get('/admin-delete', [AdminController::class, 'delete'])
+    ->name('admins.del');
+
+
+
+Route::get('/delete', [AdminController::class, 'destroy'])
+    ->name('admins.destroy');
+
+
+
+
+
+
+
+
+
+
+

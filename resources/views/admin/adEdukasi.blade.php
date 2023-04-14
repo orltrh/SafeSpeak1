@@ -8,7 +8,7 @@
         <div class="row" style="padding-top: 100px">
             <div class="col-sm-4 mb-3 mb-sm-0 d-flex justify-content-center">
                 <div class="book">
-                    <a href="#" class="btn btn-primary">Let's Learn</a>
+                    <div><a href="admin-adselfawareness" class="btn btn-primary">Let's Learn</a></div>
                     <div class="cover">
                         <p>Self-Awareness</p>
                     </div>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-sm-4 d-flex justify-content-center">
                 <div class="book">
-                    <a href="#" class="btn btn-primary">Let's Learn</a>
+                    <a href="admin-adselfregulation" class="btn btn-primary">Let's Learn</a>
                     <div class="cover">
                         <p>Self-Regulation</p>
                     </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="col-sm-4 d-flex justify-content-center">
                 <div class="book">
-                    <a href="#" class="btn btn-primary">Let's Learn</a>
+                    <a href="admin-adselfmotivation" class="btn btn-primary">Let's Learn</a>
                     <div class="cover">
                         <p>Self-Motivation</p>
                     </div>
@@ -35,7 +35,7 @@
         <div class="row" style="padding-top: 100px">
             <div class="col-sm-4 d-flex justify-content-center">
                 <div class="book">
-                    <a href="#" class="btn btn-primary">Let's Learn</a>
+                    <a href="admin-adempathy" class="btn btn-primary">Let's Learn</a>
                     <div class="cover">
                         <p>Empathy</p>
                     </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="col-sm-4 d-flex justify-content-center">
                 <div class="book">
-                    <a href="#" class="btn btn-primary">Let's Learn</a>
+                    <a href="admin-adsocialskills" class="btn btn-primary">Let's Learn</a>
                     <div class="cover">
                         <p>Social Skills</p>
                     </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="col-sm-4 d-flex justify-content-center">
                 <div class="book">
-                    <a href="#" class="btn btn-primary">Let's Learn</a>
+                    <a href="admin-adselfadjustment" class="btn btn-primary">Let's Learn</a>
                     <div class="cover">
                         <p>Self-Adjustment</p>
                     </div>

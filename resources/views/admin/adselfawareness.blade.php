@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.admin')
 @section('title', 'Self Awareness')
 
 @section('content')
@@ -10,9 +10,9 @@
                 Self Awarensess
             </div>
             <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>{{ $selfawareness ?? 'Tidak ada data yang tersedia untuk ditampilkan.' }}</p>
-                  </blockquote>
+              <blockquote class="blockquote mb-0">
+                <p>{{ $selfawareness ?? 'Tidak ada data yang tersedia untuk ditampilkan.' }}</p>
+              </blockquote>
             </div>
           </div>
       

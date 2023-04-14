@@ -1,9 +1,24 @@
 @extends('layout.master')
-@section('title', 'Self Awareness')
+@section('title', 'socialskills')
+
 
 @section('content')
 @parent
-
-<p>halaman social skills</p>
+<section style="height:100vh; padding-top: 100px">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Social Skills
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{ $socialskills ?? 'Tidak ada data yang tersedia untuk ditampilkan.' }}</p>
+                  </blockquote>
+            </div>
+          </div>
+      
+    </div>
+</section>
+@endsection
 
 

@@ -40,7 +40,7 @@
           <li><a class="nav-link scrollto @yield('menuTrack')" href="trackingposition">Tracking Position</a></li>
           <li><a class="nav-link scrollto @yield('menuEdukasi')" href="edukasi">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuPanduan')" href="panduan">Panduan</a></li>
-          <li><a class="nav-link scrollto @yield('menuForum')" href="forum">Forum</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="admin/forum">Forum</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

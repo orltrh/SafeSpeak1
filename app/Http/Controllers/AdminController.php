@@ -16,7 +16,7 @@ class AdminController extends Controller
         return view('admin.panduan');
     }
     public function forum(){
-        return view('admin.forum');
+        return view('admin.adForum');
     }
     public function edukasi(){
         return view('admin.edukasi');

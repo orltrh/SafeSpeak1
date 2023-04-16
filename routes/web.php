@@ -87,6 +87,11 @@ Route::get('/delete', [AdminController::class, 'destroy'])
     ->name('admins.destroy');
 
 
+Route::get('/home', (function () {
+    return view('updateUsers.upDashboardUser');
+}));
+
+
 
 
 

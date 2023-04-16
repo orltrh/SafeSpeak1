@@ -45,8 +45,7 @@
           <li><a class="nav-link scrollto @yield('menuEdukasi')" href="edukasi">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuPanduan')" href="panduan">Panduan</a></li>
           <li><a class="nav-link scrollto @yield('menuForum')" href="forum">Forum</a></li>
-          {{-- <li><a class="nav-link scrollto @yield('menuProfile')" href="profile"></a></li> --}}
-          <li><i class="bi bi-person-circle"></i></li>
+          <li><a class="nav-link scrollto @yield('menuProfile')" href="profile"><i class="bi bi-person-circle"></i></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

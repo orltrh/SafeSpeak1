@@ -22,6 +22,10 @@ Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
 Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
 Route::get('/login', 'App\Http\Controllers\UserController@login');
 Route::get('/register', 'App\Http\Controllers\UserController@register');
+Route::post('/login', [UserController::class,'authentic'])
+        ->name('users.loginAuth');
+Route::post('/', [UserController::class,'registerStore'])
+        ->name('registers.store');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
 Route::get('/admin-forum', 'App\Http\Controllers\AdminController@forum');

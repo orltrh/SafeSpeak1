@@ -29,40 +29,44 @@ class AdminController extends Controller
     
 
     public function adselfawareness() {
-        $result = Admin::select('selfawareness')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first(); // mengambil data dengan id terakhir
         $selfawareness = $result ? $result->selfawareness : null;
         return view('admin.adselfawareness', ['selfawareness' => $selfawareness]);
     }
 
     public function adselfregulation() {
-        $result = Admin::select('selfregulation')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first(); // mengambil data dengan id terakhir
         $selfregulation = $result ? $result->selfregulation : null;
         return view('admin.adselfregulation', ['selfregulation' => $selfregulation]);
     }
 
     public function adselfadjustment() {
-        $result = Admin::select('selfadjustment')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first(); // mengambil data dengan id terakhir
         $selfadjustment = $result ? $result->selfadjustment : null;
         return view('admin.adselfadjustment', ['selfadjustment' => $selfadjustment]);
     }
 
     public function adselfmotivation() {
-        $result = Admin::select('selfmotivation')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first(); // mengambil data dengan id terakhir
         $selfmotivation = $result ? $result->selfmotivation : null;
         return view('admin.adselfmotivation', ['selfmotivation' => $selfmotivation]);
     }
 
     public function adempathy() {
-        $result = Admin::select('empathy')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first(); // mengambil data dengan id terakhir
         $empathy = $result ? $result->empathy : null;
         return view('admin.adempathy', ['empathy' => $empathy]);
     }
 
     public function adsocialskills() {
-        $result = Admin::select('socialskills')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first(); // mengambil data dengan id terakhir
         $socialskills = $result ? $result->socialskills : null;
         return view('admin.adsocialskills', ['socialskills' => $socialskills]);
     }
+
+    
+
+    
 
     
 
@@ -90,45 +94,51 @@ class AdminController extends Controller
         $admin -> selfadjustment = $validateData['selfadjustment'];
         $admin -> save();
 
+        return redirect('/admin');
+
     }
 
     public function edit()
-    {
-        $admin = Admin::find(6);
-        return view('admin.editEdukasi', ['admin' => $admin]);
-    }
+{
+    $admin = Admin::orderBy('id', 'desc')->first();
+    return view('admin.editEdukasi', ['admin' => $admin]);
+}
+
 
     public function update(Request $request)
     {
         $validateData = $request->validate([
-        'selfawareness' => 'required',
-        'selfregulation' => 'required',
-        'selfmotivation' => 'required',
-        'empathy' => 'required',
-        'socialskills' => 'required',
-        'selfadjustment' => 'required'
-    ]);
+            'selfawareness' => 'required',
+            'selfregulation' => 'required',
+            'selfmotivation' => 'required',
+            'empathy' => 'required',
+            'socialskills' => 'required',
+            'selfadjustment' => 'required'
+        ]);
 
-        $admin = Admin::find(6); // mengambil admin dengan id 6
+        $admin = Admin::orderBy('id', 'desc')->first(); // mengambil admin dengan id terakhir
         $admin->update($validateData);
 
         return redirect('/admin');
     }
 
+
     public function delete(){
-        $admin = Admin::find(6);
+        $admin = Admin::orderBy('id', 'desc')->first();
         return view('admin.del',['admin' => $admin]);
     }
     
     
+    
 
     public function destroy()
-    {
-        $admin = Admin::find(6);
-        $admin->delete();
+{
+    $admin = Admin::orderBy('id', 'desc')->first(); // mengambil admin dengan id terakhir
+    $admin->delete();
 
-        return redirect('/admin');
-    }
+    return redirect('/admin');
+}
+
 
     
 }

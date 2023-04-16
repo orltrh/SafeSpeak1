@@ -31,37 +31,37 @@ class UserController extends Controller
    
 
     public function selfawareness() {
-        $result = Admin::select('selfawareness')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first();
         $selfawareness = $result ? $result->selfawareness : null;
         return view('users.education.selfawareness', ['selfawareness' => $selfawareness]);
     }
 
     public function selfregulation() {
-        $result = Admin::select('selfregulation')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first();
         $selfregulation = $result ? $result->selfregulation : null;
         return view('users.education.selfregulation', ['selfregulation' => $selfregulation]);
     }
 
     public function selfadjustment() {
-        $result = Admin::select('selfadjustment')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first();
         $selfadjustment = $result ? $result->selfadjustment : null;
         return view('users.education.selfadjustment', ['selfadjustment' => $selfadjustment]);
     }
 
     public function selfmotivation() {
-        $result = Admin::select('selfmotivation')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first();
         $selfmotivation = $result ? $result->selfmotivation : null;
         return view('users.education.selfmotivation', ['selfmotivation' => $selfmotivation]);
     }
 
     public function empathy() {
-        $result = Admin::select('empathy')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first();
         $empathy = $result ? $result->empathy : null;
         return view('users.education.empathy', ['empathy' => $empathy]);
     }
 
     public function socialskills() {
-        $result = Admin::select('socialskills')->find(6);
+        $result = Admin::orderBy('id', 'desc')->first();
         $socialskills = $result ? $result->socialskills : null;
         return view('users.education.socialskills', ['socialskills' => $socialskills]);
     }

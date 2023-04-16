@@ -12,16 +12,34 @@
                     <a href="register" class="signup-image-link">Create an account</a>
                 </div>
 
+                @if(session()->has('pesan'))
+                     <div class="alert alert-success">
+                        {{ session()->get('pesan') }}
+                    </div>
+                @endif
+                @if(session()->has('loginError'))
+                     <div class="alert alert-danger">
+                        {{ session()->get('loginError') }}
+                    </div>
+                @endif
+
                 <div class="signin-form">
                     <h2 class="form-title">Sign In</h2>
-                    <form method="POST" class="register-form" id="login-form">
-                        <div class="form-group">
+                    <form action="{{ route('users.loginAuth') }}" method="POST" class="register-form" id="login-form">
+                        @csrf
+                        <div class="form-group">   
                             <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="username" id="username" placeholder="Username"/>
+                            <input type="text" class="class-control @error('username') is-invalid @enderror"
+                            name="username" id="username" placeholder="Username" required/>
+                            @error('username')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                            <input type="password" name="your_pass" id="your_pass" placeholder="Password" required/>
                         </div>
                         <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />

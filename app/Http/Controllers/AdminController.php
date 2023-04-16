@@ -132,12 +132,18 @@ class AdminController extends Controller
     
 
     public function destroy()
-{
-    $admin = Admin::orderBy('id', 'desc')->first(); // mengambil admin dengan id terakhir
-    $admin->delete();
+    {
+        $count = Admin::count(); // menghitung jumlah data di dalam database
+        if ($count == 1) {
+            return redirect('/admin')->withErrors(['error' => 'Cannot delete the last record']);
+        }
 
-    return redirect('/admin');
-}
+        $admin = Admin::orderBy('id', 'desc')->first(); // mengambil admin dengan id terakhir
+        $admin->delete();
+
+        return redirect('/admin');
+    }
+
 
 
     

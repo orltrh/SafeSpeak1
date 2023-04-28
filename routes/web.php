@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +14,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\UserController@index');
+Route::get('/dashboard', 'App\Http\Controllers\UserController@index');
 Route::get('/forum', 'App\Http\Controllers\UserController@forum');
 Route::get('/trackingposition', 'App\Http\Controllers\UserController@tracking');
 Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
@@ -23,9 +22,8 @@ Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
 Route::get('/login', 'App\Http\Controllers\UserController@login')
         ->name('users.login');
 Route::get('/register', 'App\Http\Controllers\UserController@register');
-Route::post('/login', [UserController::class,'authentic'])
-        ->name('users.loginAuth');
-Route::post('/', [UserController::class,'registerStore'])
+Route::post('/login', [UserController::class,'authentic']);
+Route::post('/register', [UserController::class,'registerStore'])
         ->name('registers.store');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');

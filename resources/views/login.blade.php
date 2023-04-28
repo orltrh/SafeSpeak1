@@ -25,7 +25,7 @@
 
                 <div class="signin-form">
                     <h2 class="form-title">Sign In</h2>
-                    <form action="{{ route('users.loginAuth') }}" method="POST" class="register-form" id="login-form">
+                    <form action="{{ route('users.loginAuth') }}" method="POST" class="login-form" id="login-form">
                         @csrf
                         <div class="form-group">   
                             <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>

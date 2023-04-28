@@ -94,6 +94,7 @@ class UserController extends Controller
             'email'      => 'required|email:dns|unique:registers',
             'number'     => 'required|min:11|max:13',     
             'password'   => 'required|min:8|max:200',  
+            're-password'   => 'required|min:8|max:200',  
 
             
             
@@ -118,7 +119,7 @@ class UserController extends Controller
         //     'password' => ['required'],
         // ]);
         
-        $user = Register::table('register')->where('username', $request->username)->first();
+        $user = Register::where('username', 'password', $request->username)->first();
         
         if ($user && Hash::check($request->password, $user->password)) {
             Auth::attempt($user);

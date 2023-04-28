@@ -20,7 +20,8 @@ Route::get('/forum', 'App\Http\Controllers\UserController@forum');
 Route::get('/trackingposition', 'App\Http\Controllers\UserController@tracking');
 Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
 Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
-Route::get('/login', 'App\Http\Controllers\UserController@login');
+Route::get('/login', 'App\Http\Controllers\UserController@login')
+        ->name('users.login');
 Route::get('/register', 'App\Http\Controllers\UserController@register');
 Route::post('/login', [UserController::class,'authentic'])
         ->name('users.loginAuth');

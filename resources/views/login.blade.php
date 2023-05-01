@@ -2,6 +2,22 @@
 @section('title', 'Sign In')
 
 @section('content')
+
+
+@if(session()->has('pesan'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ session()->get('pesan') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+
+@if(session()->has('loginError'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{ session()->get('loginError') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+
 <div class="main">
     <!-- Sing in  Form -->
     <section class="sign-in">
@@ -12,24 +28,15 @@
                     <a href="register" class="signup-image-link">Create an account</a>
                 </div>
 
-                @if(session()->has('pesan'))
-                     <div class="alert alert-success">
-                        {{ session()->get('pesan') }}
-                    </div>
-                @endif
-                @if(session()->has('loginError'))
-                     <div class="alert alert-danger">
-                        {{ session()->get('loginError') }}
-                    </div>
-                @endif
+                
 
                 <div class="signin-form">
                     <h2 class="form-title">Sign In</h2>
-                    <form action="{{ route('users.loginAuth') }}" method="POST" class="register-form" id="login-form">
+                    <form action="/login" method="POST">
                         @csrf
                         <div class="form-group">   
-                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" class="class-control @error('username') is-invalid @enderror"
+                            <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" class="form-control @error('username') is-invalid @enderror"
                             name="username" id="username" placeholder="Username" required/>
                             @error('username')
                                 <span class="invalid-feedback" role="alert">
@@ -38,8 +45,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="your_pass" id="your_pass" placeholder="Password" required/>
+                            <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="password" placeholder="Password" required/>
                         </div>
                         <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />

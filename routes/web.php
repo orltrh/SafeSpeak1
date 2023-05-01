@@ -19,17 +19,12 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', 'App\Http\Controllers\UserController@index');
+Route::get('/forum', 'App\Http\Controllers\UserController@forum');
 Route::get('/trackingposition', 'App\Http\Controllers\UserController@tracking');
 Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
 Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
-Route::get('/forum', 'App\Http\Controllers\UserController@forum');
-
-
-Route::get('/login', 'App\Http\Controllers\UserController@login')
-    ->name('users.login');
-
+Route::get('/login', 'App\Http\Controllers\UserController@login');
 Route::get('/register', 'App\Http\Controllers\UserController@register');
-
 Route::post('/login', [UserController::class,'authentic'])
         ->name('users.loginAuth');
 Route::post('/', [UserController::class,'registerStore'])
@@ -92,17 +87,6 @@ Route::get('/admin-delete', [AdminController::class, 'delete'])
 
 Route::get('/delete', [AdminController::class, 'destroy'])
     ->name('admins.destroy');
-
-
-// Route::get('/forum', 'App\Http\Controllers\UserController@forum');
-
-
-Route::get('/send-event', function(Request $request) {
-    $text = $request->input('message');
-    broadcast(new HelloEvent($text))->toOthers();
-    return response()->json(['message' => 'Success'], 200);
-});
-
 
 
 

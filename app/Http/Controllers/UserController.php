@@ -74,17 +74,6 @@ class UserController extends Controller
         return view('users.education.socialskills', ['socialskills' => $socialskills]);
     }
 
-    // public function loginStore(Request $request)
-    // {
-    //     $validateDataLogin = $request->validate([
-    //         'username' => 'required|min:3|max:200',
-    //         'password' => 'required|min:8|max:200',
-    //     ]);
-
-    //     UserStore::create($validateDataLogin);
-
-    //     return "berhasil login";
-    // }
 
     public function registerStore(Request $request){
 
@@ -94,10 +83,8 @@ class UserController extends Controller
             'email'      => 'required|email:dns|unique:registers',
             'number'     => 'required|min:11|max:13',     
             'password'   => 'required|min:8|max:200',  
-
-            
-            
-            
+            're-password'   => 'required|same:password',  
+        
     ]);
         $validateData['password'] = Hash::make($validateData['password']);
         Register::create($validateData);
@@ -108,27 +95,17 @@ class UserController extends Controller
 
     public function authentic(Request $request)
     {
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required',
+        $credentials = $request->validate([
+            'username' => ['required'],
+            'password' => ['required'],
         ]);
-
-        // $credentials = $request->validate([
-        //     'username' => ['required'],
-        //     'password' => ['required'],
-        // ]);
-        
-        $user = Register::table('register')->where('username', $request->username)->first();
-        
-        if ($user && Hash::check($request->password, $user->password)) {
-            Auth::attempt($user);
+ 
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return 'sukses';
-        } else {
-            return 'gagal';
+ 
+            return redirect()->intended('/dashboard');
         }
-        
-        return back()->with('loginError', 'Login Gagal');
-        
+
+        return back()->with('loginError','Login Gagal');
     }    
 }

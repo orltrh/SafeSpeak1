@@ -9,10 +9,10 @@
             <div class="signup-content">
                 <div class="signup-form">
                     <h2 class="form-title">Sign up</h2>
-                    <form action="{{ route('registers.store') }}" method="POST">
+                    <form action="/register" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="name"></label>
+                            <label for="username"></label>
                             <input type="text" 
                             name="username" id="username" value="{{ old('username') }}" placeholder="Username" required/>
                            @error('username')
@@ -47,6 +47,16 @@
                             <input type="password" class="class-control"
                             name="password" id="password"  placeholder="Password" required/>
                            @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="re-password"></label>
+                            <input type="password" class="class-control"
+                            name="re-password" id="re-password"  placeholder="Confirm Password" required/>
+                           @error('re-password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -13,7 +13,7 @@ use App\Models\Admin;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function home(){
         return view('users.dashboardUser');
     }
     public function tracking(){

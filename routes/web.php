@@ -18,11 +18,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\UserController@index');
+Route::get('/dashboard', 'App\Http\Controllers\UserController@home');
+Route::get('/forum', 'App\Http\Controllers\UserController@forum');
 Route::get('/trackingposition', 'App\Http\Controllers\UserController@tracking');
 Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
 Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
-Route::get('/forum', 'App\Http\Controllers\UserController@forum');
+
 
 
 Route::get('/login', 'App\Http\Controllers\UserController@login')
@@ -32,7 +33,7 @@ Route::get('/register', 'App\Http\Controllers\UserController@register');
 
 Route::post('/login', [UserController::class,'authentic'])
         ->name('users.loginAuth');
-Route::post('/', [UserController::class,'registerStore'])
+Route::post('/register', [UserController::class,'registerStore'])
         ->name('registers.store');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');

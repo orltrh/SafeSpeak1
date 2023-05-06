@@ -35,10 +35,10 @@
             console.log("Latitude:", latlng.lat, "Longitude:", latlng.lng); // menampilkan data lokasi di console log
         }
 
-        // // Fungsi untuk menambahkan titik pada polyline
-        // function addLatLng(latlng) {
-        //     polyline.addLatLng(latlng);
-        // }
+        // Fungsi untuk menambahkan titik pada polyline
+        function addLatLng(latlng) {
+            polyline.addLatLng(latlng);
+        }
 
         // Fungsi untuk mendapatkan posisi pengguna dan memperbarui marker dan polyline
         function updatePosition() {

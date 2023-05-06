@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
 
 use App\Models\Admin;
 
@@ -47,12 +47,11 @@ class UserController extends Controller
     public function login(){
         return view('login');
         
-
     }
     public function register(){
         return view('register');
     }
-   
+
 
     public function selfawareness() {
         $result = Admin::orderBy('id', 'desc')->first();
@@ -93,14 +92,14 @@ class UserController extends Controller
 
     public function registerStore(Request $request){
 
-    
+
         $validateData = $request->validate([
-            'username'   => 'required|min:3|max:200|unique:registers', 
+            'username'   => 'required|min:3|max:200|unique:registers',
             'email'      => 'required|email:dns|unique:registers',
-            'number'     => 'required|min:11|max:13',     
-            'password'   => 'required|min:8|max:200',  
-            're-password'   => 'required|same:password',  
-        
+            'number'     => 'required|min:11|max:13',
+            'password'   => 'required|min:8|max:200',
+            're-password'   => 'required|same:password',
+
     ]);
         $validateData['password'] = Hash::make($validateData['password']);
         $validateData['re-password'] = Hash::make($validateData['re-password']);
@@ -116,25 +115,25 @@ class UserController extends Controller
             'username' => ['required'],
             'password' => ['required'],
         ]);
- 
+
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/home');
         } else {
             return back()->with('loginError','Login Gagal');
         }
-    }    
+    }
 
-  
+
 
     // public function logout(Request $request)
     // {
     //     Auth::logout();
- 
+
     //     $request->session()->invalidate();
-     
+
     //     $request->session()->regenerateToken();
-     
+
     //     return redirect('/dashboard');
     // }
 }

@@ -26,27 +26,34 @@
         var marker = L.marker([0,0]).addTo(map);
         marker.bindPopup("<b>Posisi Anda</b><br>Anda berada di sini.").openPopup();
 
-        // Fungsi untuk update marker user
-        function onLocationFound(e){
-            var latlng = e.latlng;
-            marker.setLatLng(latlng);
-        }
-
-        // Update posisi user otomatis
-        map.on('locationfound', onLocationFound);
-
-        // menambahkan polyline untuk menunjukkan rute perjalanan pengguna sebelumnya
+        // Membuat polyline untuk menunjukkan rute perjalanan pengguna
         var polyline = L.polyline([], {color: 'red'}).addTo(map);
 
-        // Membuat fungsi untuk menambahkan titik pada polyline
-        function addLatLng(e) {
-        var latlng = e.latlng;
-        polyline.addLatLng(latlng);
+        // Fungsi untuk update marker user
+        function updateMarker(latlng){
+            marker.setLatLng(latlng);
+            console.log("Latitude:", latlng.lat, "Longitude:", latlng.lng); // menampilkan data lokasi di console log
         }
 
-        // Menambahkan event listener untuk menambahkan titik pada polyline ketika posisi berubah
-        map.on('locationfound', addLatLng);
+        // // Fungsi untuk menambahkan titik pada polyline
+        // function addLatLng(latlng) {
+        //     polyline.addLatLng(latlng);
+        // }
 
+        // Fungsi untuk mendapatkan posisi pengguna dan memperbarui marker dan polyline
+        function updatePosition() {
+            map.locate({setView: false, maxZoom:18}); // menonaktifkan setView agar tidak mengganggu tampilan
+        }
+
+        // Memperbarui posisi pengguna setiap 3 detik
+        setInterval(updatePosition, 3000);
+
+        // Menambahkan event listener untuk memperbarui posisi pengguna, marker, dan polyline ketika posisi berubah
+        map.on('locationfound', function(e){
+            var latlng = e.latlng;
+            updateMarker(latlng);
+            addLatLng(latlng);
+        });
     </script>
 
 </section>

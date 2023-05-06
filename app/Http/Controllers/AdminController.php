@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Admin;
+use App\Models\Admin_login;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Support\ValidatedData;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -24,6 +28,28 @@ class AdminController extends Controller
     public function edukasi(){
 
         return view('admin.adEdukasi');
+    }
+
+    public function admin()
+    {
+        return view('admin.adLogin'); 
+    }
+
+    public function adLogin(Request $request)
+    {
+        $credentials = $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ],[
+            'username.required' => 'Username wajib diisi',
+            'password.required' => 'Password wajib diisi',
+        ]);
+        if (Auth::guard('admin')->attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/admin');        
+        } else {
+            return back()->with('loginError','Login Gagal');
+        }
     }
 
     

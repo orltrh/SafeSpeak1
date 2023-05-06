@@ -8,25 +8,41 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 
 use App\Models\Admin;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function home(){
         return view('users.dashboardUser');
+    }
+    public function upHome(){
+        return view('updateUsers.upDashboardUser');
     }
     public function tracking(){
         return view('users.tracking');
     }
+    public function upTracking(){
+        return view('updateUsers.upTracking');
+    }
     public function panduan(){
         return view('users.panduan');
+    }
+    public function upPanduan(){
+        return view('updateUsers.upPanduan');
     }
     public function forum(){
         return view('users.forum');
     }
+    public function upForum(){
+        return view('updateUsers.upForum');
+    }
     public function edukasi(){
         return view('users.edukasi');
+    }
+    public function upEdukasi(){
+        return view('updateUsers.upEdukasi');
     }
     public function login(){
         return view('login');
@@ -79,7 +95,7 @@ class UserController extends Controller
 
     
         $validateData = $request->validate([
-            'username'   => 'required|min:3|max:200', 
+            'username'   => 'required|min:3|max:200|unique:registers', 
             'email'      => 'required|email:dns|unique:registers',
             'number'     => 'required|min:11|max:13',     
             'password'   => 'required|min:8|max:200',  
@@ -87,6 +103,7 @@ class UserController extends Controller
         
     ]);
         $validateData['password'] = Hash::make($validateData['password']);
+        $validateData['re-password'] = Hash::make($validateData['re-password']);
         Register::create($validateData);
         return redirect()->route('users.login')
            ->with('pesan','Register berhasil');
@@ -100,12 +117,24 @@ class UserController extends Controller
             'password' => ['required'],
         ]);
  
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
- 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/home');
+        } else {
+            return back()->with('loginError','Login Gagal');
         }
-
-        return back()->with('loginError','Login Gagal');
     }    
+
+  
+
+    // public function logout(Request $request)
+    // {
+    //     Auth::logout();
+ 
+    //     $request->session()->invalidate();
+     
+    //     $request->session()->regenerateToken();
+     
+    //     return redirect('/dashboard');
+    // }
 }

@@ -6,11 +6,10 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Register extends Model implements Authenticatable
+class Admin_login extends Model implements Authenticatable
 {
     use HasFactory;
     protected $guarded = [];
-
 
     public function getAuthIdentifierName()
     {

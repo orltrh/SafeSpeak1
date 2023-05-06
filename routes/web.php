@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +16,16 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/dashboard', 'App\Http\Controllers\UserController@index');
+Route::get('/', 'App\Http\Controllers\UserController@home');
+Route::get('/home', 'App\Http\Controllers\UserController@upHome');
 Route::get('/forum', 'App\Http\Controllers\UserController@forum');
+Route::get('/upforum', 'App\Http\Controllers\UserController@upForum');
 Route::get('/trackingposition', 'App\Http\Controllers\UserController@tracking');
+Route::get('/uptrackingposition', 'App\Http\Controllers\UserController@upTracking');
 Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
+Route::get('/upedukasi', 'App\Http\Controllers\UserController@upEdukasi');
 Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
+Route::get('/uppanduan', 'App\Http\Controllers\UserController@upPanduan');
 Route::get('/login', 'App\Http\Controllers\UserController@login')
         ->name('users.login');
 Route::get('/register', 'App\Http\Controllers\UserController@register');
@@ -27,6 +34,8 @@ Route::post('/register', [UserController::class,'registerStore'])
         ->name('registers.store');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+Route::get('/admin-login', 'App\Http\Controllers\AdminController@admin');
+Route::post('/admin-login', 'App\Http\Controllers\AdminController@adLogin');
 Route::get('/admin-forum', 'App\Http\Controllers\AdminController@forum');
 Route::get('/admin-trackingposition', 'App\Http\Controllers\AdminController@tracking');
 Route::get('/admin-edukasi', 'App\Http\Controllers\AdminController@edukasi');
@@ -85,9 +94,9 @@ Route::get('/delete', [AdminController::class, 'destroy'])
     ->name('admins.destroy');
 
 
-Route::get('/home', (function () {
-    return view('updateUsers.upDashboardUser');
-}));
+// Route::get('/home', (function () {
+//     return view('updateUsers.upDashboardUser');
+// }));
 
 
 

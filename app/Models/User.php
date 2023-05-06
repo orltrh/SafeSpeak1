@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $table = 'registers';
+    protected $tabel = 'admin_logins';
 
 
     /**

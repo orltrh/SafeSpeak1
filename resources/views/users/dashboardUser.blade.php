@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('title', 'Home')
-@section('menuIndex', 'active')
+@section('menuHome', 'active')
 
 @section('content')
 <!-- ======= Hero Section ======= -->

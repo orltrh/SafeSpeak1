@@ -19,24 +19,34 @@
             subdomains:['mt0','mt1','mt2','mt3']
         }).addTo(map);
 
+        // Mengaktifkan fitur geolocation
+        map.locate({setView: true, maxZoom:18});
 
-        // Mengambil titik
-        getLocation();
-        setInterval(() => {
-            getLocation();
-        }, 2000);
-        function getLocation(){
-            if(navigator.geolocation){
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else{
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
+        // Menampilkan marker untuk menunjukkan lokasi user saat ini
+        var marker = L.marker([0,0]).addTo(map);
+        marker.bindPopup("<b>Posisi Anda</b><br>Anda berada di sini.").openPopup();
+
+        // Fungsi untuk update marker user
+        function onLocationFound(e){
+            var latlng = e.latlng;
+            marker.setLatLng(latlng);
         }
 
-        // Menampilkan posisi
-        function showPosition(position){
-            console.log('Route Sekarang',position.coords.latitude,position.coords.longitude)
+        // Update posisi user otomatis
+        map.on('locationfound', onLocationFound);
+
+        // menambahkan polyline untuk menunjukkan rute perjalanan pengguna sebelumnya
+        var polyline = L.polyline([], {color: 'red'}).addTo(map);
+
+        // Membuat fungsi untuk menambahkan titik pada polyline
+        function addLatLng(e) {
+        var latlng = e.latlng;
+        polyline.addLatLng(latlng);
         }
+
+        // Menambahkan event listener untuk menambahkan titik pada polyline ketika posisi berubah
+        map.on('locationfound', addLatLng);
+
     </script>
 
 </section>

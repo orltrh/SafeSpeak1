@@ -1,9 +1,13 @@
 <?php
 
+use App\Events\MessageCreated;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
+
+use App\Events\HelloEvent;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +31,12 @@ Route::get('/upedukasi', 'App\Http\Controllers\UserController@upEdukasi');
 Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
 Route::get('/uppanduan', 'App\Http\Controllers\UserController@upPanduan');
 Route::get('/login', 'App\Http\Controllers\UserController@login')
-        ->name('users.login');
+    ->name('users.login');
+
 Route::get('/register', 'App\Http\Controllers\UserController@register');
-Route::post('/login', [UserController::class,'authentic']);
+
+Route::post('/login', [UserController::class,'authentic'])
+        ->name('users.loginAuth');
 Route::post('/register', [UserController::class,'registerStore'])
         ->name('registers.store');
 
@@ -94,10 +101,14 @@ Route::get('/delete', [AdminController::class, 'destroy'])
     ->name('admins.destroy');
 
 
-// Route::get('/home', (function () {
-//     return view('updateUsers.upDashboardUser');
-// }));
+// Route::get('/forum', 'App\Http\Controllers\UserController@forum');
 
+
+Route::get('/send-event', function(Request $request) {
+    $text = $request->input('message');
+    broadcast(new HelloEvent($text))->toOthers();
+    return response()->json(['message' => 'Success'], 200);
+});
 
 
 

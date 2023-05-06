@@ -5,7 +5,22 @@
 @section('content')
 <section style="height:87.5vh; padding-top: 200px">
     <div class="container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+        <div id="map"></div>
     </div>
+
+
+    <script>
+        // Menampilkan maps
+        var map = L.map('map').setView([-7.9933793, 112.6079458], 15);
+        googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
+            maxZoom: 20,
+            subdomains:['mt0','mt1','mt2','mt3']
+        }).addTo(map);
+
+        // Menampilkan marker
+        var marker = L.marker([-7.9933793, 112.6079458]).addTo(map);
+        marker.bindPopup("<b>Posisi Anda</b><br>Anda berada di sini.").openPopup();
+    </script>
+
 </section>
 @endsection

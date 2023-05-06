@@ -24,8 +24,8 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
     {{-- Template Icon --}}
-    <link rel="stylesheet" href="npm i bootstrap-icons">
-    <script src="npm i bootstrap-icons"></script>
+    {{-- <link rel="stylesheet" href="npm i bootstrap-icons"> --}}
+    {{-- <script src="npm i bootstrap-icons" ></script> --}}
 
     {{-- Template Leaflet Maps --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -36,6 +36,10 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
+
+    {{-- Jquery --}}
+        {{-- Template Jquery --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     {{-- Template CSS Leaflet Maps --}}
     <style>

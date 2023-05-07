@@ -48,8 +48,8 @@
 
 
 </head>
-{{-- onload = jangan dihapus untuk menampilkan latitude dan longitude secara otomatis --}}
-<body onload = "getLocation();">
+@section('body')
+<body>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">

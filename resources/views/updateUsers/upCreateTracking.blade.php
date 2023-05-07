@@ -2,6 +2,10 @@
 @section('title', 'Tracking Location')
 @section('menuTrack', 'active')
 
+{{-- onload = jangan dihapus untuk menampilkan latitude dan longitude secara otomatis --}}
+@section('body')
+<body onload="getLocation()">
+@endsection
 @section('content')
 <section style="height:87.5vh; padding-top: 200px">
     <div class="container">
@@ -18,8 +22,8 @@
                 <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Alamat Email">
             </div>
             <div>
-                <input type="hidden" class="form-control" name="latitude" id="latitude" placeholder="Masukkan Latitude">
-                <input type="hidden" class="form-control" name="longitude" id="longitude" placeholder="Masukkan Longitude">
+                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Masukkan Latitude">
+                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Masukkan Longitude">
             </div>
             <button type="submit" class="btn btn-primary">Kirim</button>
         </form>

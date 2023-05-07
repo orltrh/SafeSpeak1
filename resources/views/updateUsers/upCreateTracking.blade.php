@@ -5,7 +5,6 @@
 {{-- onload = jangan dihapus untuk menampilkan latitude dan longitude secara otomatis --}}
 @section('body')
 <body onload="getLocation()">
-@endsection
 @section('content')
 <section style="height:87.5vh; padding-top: 200px">
     <div class="container">

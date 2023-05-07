@@ -18,8 +18,8 @@
                 <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Alamat Email">
             </div>
             <div>
-                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Masukkan Latitude">
-                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Masukkan Longitude">
+                <input type="hidden" class="form-control" name="latitude" id="latitude" placeholder="Masukkan Latitude">
+                <input type="hidden" class="form-control" name="longitude" id="longitude" placeholder="Masukkan Longitude">
             </div>
             <button type="submit" class="btn btn-primary">Kirim</button>
         </form>

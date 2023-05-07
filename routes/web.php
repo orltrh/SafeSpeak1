@@ -4,6 +4,7 @@ use App\Events\MessageCreated;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TrackingPositionController;
 use Illuminate\Support\Facades\Auth;
 
 use App\Events\HelloEvent;
@@ -25,7 +26,8 @@ Route::get('/home', 'App\Http\Controllers\UserController@upHome');
 Route::get('/forum', 'App\Http\Controllers\UserController@forum');
 Route::get('/upforum', 'App\Http\Controllers\UserController@upForum');
 Route::get('/trackingposition', 'App\Http\Controllers\UserController@tracking');
-Route::get('/uptrackingposition', 'App\Http\Controllers\UserController@upTracking');
+Route::get('/uptrackingposition', 'App\Http\Controllers\UserController@upTracking')
+    ->name('uptrackingposition');
 Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
 Route::get('/upedukasi', 'App\Http\Controllers\UserController@upEdukasi');
 Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
@@ -109,6 +111,10 @@ Route::get('/send-event', function(Request $request) {
     broadcast(new HelloEvent($text))->toOthers();
     return response()->json(['message' => 'Success'], 200);
 });
+
+Route::get('create-track', [TrackingPositionController::class, 'index']);
+Route::post('create-track', [TrackingPositionController::class, 'create'])
+    ->name('create.track');
 
 
 

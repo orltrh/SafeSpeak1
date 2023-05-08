@@ -112,8 +112,10 @@ Route::get('/send-event', function(Request $request) {
     return response()->json(['message' => 'Success'], 200);
 });
 
+
+// Route untuk tracking position
 Route::get('create-track', [TrackingPositionController::class, 'index']);
-Route::post('create-track', [TrackingPositionController::class, 'create'])
+Route::post('create-track', [TrackingPositionController::class, 'store'])
     ->name('create.track');
 
 

@@ -5,24 +5,33 @@
 {{-- onload = jangan dihapus untuk menampilkan latitude dan longitude secara otomatis --}}
 @section('body')
 <body onload="getLocation()">
+
 @section('content')
 <section style="height:87.5vh; padding-top: 200px">
     <div class="container">
         <h1>Tracking Location</h1>
         <hr>
-        <form action="{{ route('create.track') }}" method="POST">
+        <form action="{{ url('create-track') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username">
+                <input type="text" class="form-control @error('username') is-invalid @enderror"
+                name="username" id="username" value="{{ old('username') }}" placeholder="Masukkan Username">
+                @error('username')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Alamat Email">
+                <input type="email" class="form-control @error('email') is-invalid @enderror"
+                name="email" id="email" value="{{ old('email') }}" placeholder="Masukkan Alamat Email">
+                @error('email')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div>
-                <input type="hidden" class="form-control" name="latitude" id="latitude" placeholder="Masukkan Latitude">
-                <input type="hidden" class="form-control" name="longitude" id="longitude" placeholder="Masukkan Longitude">
+                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Masukkan Latitude">
+                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Masukkan Longitude">
             </div>
             <button type="submit" class="btn btn-primary">Kirim</button>
         </form>

@@ -11,7 +11,7 @@ class TrackingPositionController extends Controller
     {
         return view('updateUsers.upCreateTracking');
     }
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $validateData = $request->validate([
             'username' => 'required|max:20|unique:tracking_positions,username',
@@ -20,11 +20,11 @@ class TrackingPositionController extends Controller
             'longitude' => 'required|max:255',
         ]);
         $tracking = new TrackingPosition();
-        $tracking->username = $request->username;
-        $tracking->email = $request->email;
-        $tracking->latitude = $request->latitude;
-        $tracking->longitude = $request->longitude;
+        $tracking->username = $validateData['username'];
+        $tracking->email = $validateData['email'];
+        $tracking->latitude = $validateData['latitude'];
+        $tracking->longitude = $validateData['longitude'];
         $tracking->save();
-        return redirect()->route('uptrackingposition')->with('success', 'User created successfully.');
+        return redirect()->route('uptrackingposition')->with('success', 'Data berhasil ditambahkan');
     }
 }

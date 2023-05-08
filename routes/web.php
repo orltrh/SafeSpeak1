@@ -26,7 +26,7 @@ Route::get('/home', 'App\Http\Controllers\UserController@upHome');
 Route::get('/forum', 'App\Http\Controllers\UserController@forum');
 Route::get('/upforum', 'App\Http\Controllers\UserController@upForum');
 Route::get('/trackingposition', 'App\Http\Controllers\UserController@tracking');
-Route::get('/uptrackingposition', 'App\Http\Controllers\UserController@upTracking')
+Route::get('/uptrackingposition', 'App\Http\Controllers\TrackingPositionController@show')
     ->name('uptrackingposition');
 Route::get('/edukasi', 'App\Http\Controllers\UserController@edukasi');
 Route::get('/upedukasi', 'App\Http\Controllers\UserController@upEdukasi');

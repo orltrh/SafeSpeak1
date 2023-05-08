@@ -29,6 +29,7 @@
         // Membuat polyline untuk menunjukkan rute perjalanan pengguna
         var polyline = L.polyline([], {color: 'red'}).addTo(map);
 
+
         // Fungsi untuk update marker user
         function updateMarker(latlng){
             marker.setLatLng(latlng);
@@ -40,9 +41,14 @@
             polyline.addLatLng(latlng);
         }
 
+        // Menampilkan marker dari database
+        @foreach($trackings as $tracking)
+            L.marker([{{ $tracking->latitude }}, {{ $tracking->longitude }}]).addTo(map).bindPopup("<b>{{ $tracking->username }}</b><br>{{ $tracking->email }}");
+        @endforeach
+
         // Fungsi untuk mendapatkan posisi pengguna dan memperbarui marker dan polyline
         function updatePosition() {
-            map.locate({setView: false, maxZoom:18}); // menonaktifkan setView agar tidak mengganggu tampilan
+            map.locate({setView: true, maxZoom:18}); // menonaktifkan setView agar tidak mengganggu tampilan
         }
 
         // Memperbarui posisi pengguna setiap 3 detik
@@ -54,6 +60,7 @@
             updateMarker(latlng);
             addLatLng(latlng);
         });
+
     </script>
 
 </section>

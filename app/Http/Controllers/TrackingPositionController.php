@@ -7,6 +7,10 @@ use App\Models\TrackingPosition;
 
 class TrackingPositionController extends Controller
 {
+    public function __construct()
+    {
+        $this->TrackingPosition = new TrackingPosition();
+    }
     public function index()
     {
         return view('updateUsers.upCreateTracking');
@@ -26,5 +30,11 @@ class TrackingPositionController extends Controller
         $tracking->longitude = $validateData['longitude'];
         $tracking->save();
         return redirect()->route('uptrackingposition')->with('success', 'Data berhasil ditambahkan');
+    }
+    // belum selesai
+    public function show()
+    {
+        $trackings = TrackingPosition::all();
+        return view('updateUsers.upTracking', ['trackings' => $trackings]);
     }
 }

@@ -72,8 +72,14 @@
             updateMarker(latlng);
             addLatLng(latlng);
 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                }
+            });
+
             $.ajax({
-                url: "/create-track",
+                url: "/uptrackingposition",
                 method: "GET",
                 data: {
                     latitude: latlng.lat,
@@ -86,7 +92,6 @@
                     alert("error" + error);
                 }
             });
-
         });
 
     </script>

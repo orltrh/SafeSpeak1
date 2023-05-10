@@ -34,6 +34,7 @@ Route::get('/panduan', 'App\Http\Controllers\UserController@panduan');
 Route::get('/uppanduan', 'App\Http\Controllers\UserController@upPanduan');
 Route::get('/login', 'App\Http\Controllers\UserController@login')
     ->name('users.login');
+Route::get('profile', 'App\Http\Controllers\UserController@profile');
 
 Route::get('/register', 'App\Http\Controllers\UserController@register');
 
@@ -117,7 +118,9 @@ Route::get('/send-event', function(Request $request) {
 Route::get('create-track', [TrackingPositionController::class, 'index']);
 Route::post('create-track', [TrackingPositionController::class, 'store'])
     ->name('create.track');
-
+// // route untuk search
+// Route::get('uptrackingposition', [TrackingPositionController::class, 'search'])
+//     ->name('search.track');
 
 
 

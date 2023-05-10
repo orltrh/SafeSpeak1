@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TrackingPosition;
+use Illuminate\Support\Facades\DB;
 
 class TrackingPositionController extends Controller
 {
@@ -31,10 +32,16 @@ class TrackingPositionController extends Controller
         $tracking->save();
         return redirect()->route('uptrackingposition')->with('success', 'Data berhasil ditambahkan');
     }
-    // belum selesai
     public function show()
     {
         $trackings = TrackingPosition::all();
         return view('updateUsers.upTracking', ['trackings' => $trackings]);
     }
+    // // membuat function menampilkan data dari database berdasarkan pencarian
+    // public function search(Request $request)
+    // {
+    //     $search = $request->get('search');
+    //     $trackings = DB::table('tracking_positions')->where('username', 'like', '%' . $search . '%')->paginate(5);
+    //     return view('updateUsers.upTracking', ['trackings' => $trackings]);
+    // }
 }

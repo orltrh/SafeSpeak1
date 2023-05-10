@@ -4,7 +4,15 @@
 
 @section('content')
 <section style="height:87.5vh; padding-top: 200px">
-    <div class="container">
+    {{-- <div class="container">
+        <div class="col-3">
+            <form class="d-flex" role="search">
+                <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div> --}}
+    <div class="container mt-3">
         <div id="map"></div>
     </div>
 
@@ -25,6 +33,10 @@
         // Menampilkan marker untuk menunjukkan lokasi user saat ini
         var marker = L.marker([0,0]).addTo(map);
         marker.bindPopup("<b>Posisi Anda</b><br>Anda berada di sini.").openPopup();
+
+        // Route Machine Leaflet
+        L.marker([-7.9933793, 112.6079458]).addTo(map);
+
 
         // Membuat polyline untuk menunjukkan rute perjalanan pengguna
         var polyline = L.polyline([], {color: 'red'}).addTo(map);
@@ -51,14 +63,30 @@
             map.locate({setView: true, maxZoom:18}); // menonaktifkan setView agar tidak mengganggu tampilan
         }
 
-        // Memperbarui posisi pengguna setiap 3 detik
-        setInterval(updatePosition, 3000);
+        // Memperbarui posisi pengguna setiap 5 detik
+        setInterval(updatePosition, 5000);
 
         // Menambahkan event listener untuk memperbarui posisi pengguna, marker, dan polyline ketika posisi berubah
         map.on('locationfound', function(e){
             var latlng = e.latlng;
             updateMarker(latlng);
             addLatLng(latlng);
+
+            $.ajax({
+                url: "/create-track",
+                method: "GET",
+                data: {
+                    latitude: latlng.lat,
+                    longitude: latlng.lng,
+                },
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(error) {
+                    alert("error" + error);
+                }
+            });
+
         });
 
     </script>

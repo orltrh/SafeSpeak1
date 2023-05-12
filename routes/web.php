@@ -4,6 +4,7 @@ use App\Events\MessageCreated;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FCMController;
 use App\Http\Controllers\TrackingPositionController;
 use Illuminate\Support\Facades\Auth;
 
@@ -123,6 +124,7 @@ Route::post('create-track', [TrackingPositionController::class, 'store'])
 //     ->name('search.track');
 
 
+Route::post('/save-token', 'App\Http\Controllers\FCMController@index');
 
 
 

@@ -67,9 +67,9 @@
 
         <div class="col-lg-4 col-md-6">
         <div class="member" data-aos="zoom-in">
-            <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="assets/img/team/azarya.jpg" class="img-fluid" alt=""></div>
             <div class="member-info">
-            <h4>Abidzar Ulil Abshar</h4>
+            <h4>Azarya Aditya Krisna Moeljono</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
             <div class="social">
                 <a href=""><i class="bi bi-twitter"></i></a>
@@ -83,7 +83,7 @@
 
         <div class="col-lg-4 col-md-6">
         <div class="member" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="assets/img/team/aurel.jpg" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Dika Aurelya Aleandra Taroreh</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
@@ -99,9 +99,9 @@
 
         <div class="col-lg-4 col-md-6">
         <div class="member" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="assets/img/team/abidzar.jpg" class="img-fluid" alt=""></div>
             <div class="member-info">
-            <h4>Azarya Aditya Krisna Moeljono</h4>
+            <h4>Abidzar Ulil Abshar</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
             <div class="social">
                 <a href=""><i class="bi bi-twitter"></i></a>

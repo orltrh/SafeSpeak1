@@ -125,7 +125,7 @@ Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search
 Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')
     ->name('updateMarkerPosition');
 
-
+// FCM Route
 Route::post('/save-token', 'App\Http\Controllers\FCMController@index');
 
 

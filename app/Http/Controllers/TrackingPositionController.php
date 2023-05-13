@@ -18,6 +18,7 @@ class TrackingPositionController extends Controller
     }
     public function store(Request $request)
     {
+        dd($request);
         $validateData = $request->validate([
             'username' => 'required|max:20|unique:tracking_positions,username',
             'email' => 'required|unique:tracking_positions,email',
@@ -29,7 +30,7 @@ class TrackingPositionController extends Controller
         $tracking->email = $validateData['email'];
         $tracking->latitude = $validateData['latitude'];
         $tracking->longitude = $validateData['longitude'];
-        $tracking->save();
+        // $tracking->save();
         return redirect()->route('uptrackingposition')->with('success', 'Data berhasil ditambahkan');
     }
     public function show()
@@ -37,11 +38,28 @@ class TrackingPositionController extends Controller
         $trackings = TrackingPosition::all();
         return view('updateUsers.upTracking', ['trackings' => $trackings]);
     }
-    // // membuat function menampilkan data dari database berdasarkan pencarian
-    // public function search(Request $request)
-    // {
-    //     $search = $request->get('search');
-    //     $trackings = DB::table('tracking_positions')->where('username', 'like', '%' . $search . '%')->paginate(5);
-    //     return view('updateUsers.upTracking', ['trackings' => $trackings]);
-    // }
+
+    public function update(Request $request){
+        $tracking = TrackingPosition::find($request->username);
+
+        // Check if the tracking position exists.
+        if (!$tracking) {
+            dd('Tracking position not found');
+        }
+
+        $tracking->latitude = $request->latitude;
+        $tracking->longitude = $request->longitude;
+        $tracking->update();
+
+        return redirect()->route('uptrackingposition')->with('success', 'Data berhasil diupdate');
+    }
+    public function search(Request $request)
+    {
+        // dd("masuk");
+        $username = $request->input('username');
+        $users = DB::table('tracking_positions')
+            ->where('username', 'like', "%$username%")
+            ->get();
+        return response()->json($users);
+    }
 }

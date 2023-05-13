@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'SafeSpeak')</title>
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -37,11 +38,16 @@
 
     {{-- Template CSS Leaflet Maps --}}
     <style>
-        #map { height: 500px; }
+        #map { height: 600px; }
     </style>
 
     {{-- Template Boostrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+
+    {{-- Template Leaflet CSS JS --}}
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
 
     {{-- Template Routing Machine Leaflet CSS JS --}}
     <script src="assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
@@ -49,27 +55,8 @@
     {{-- Template Geocoder --}}
     <script src="assets/js/leaflet-routing-machine/examples/Control.Geocoder.js"></script>
 
-
-    {{-- Template Leaflet CSS JS --}}
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
-
     {{-- Template Jquery --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
-    <style>
-        .gradient-custom {
-        /* fallback for old browsers */
-        background: #f6d365;
-
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
-
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
-        }
-    </style>
 
 </head>
 @section('body')

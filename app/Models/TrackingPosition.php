@@ -10,6 +10,7 @@ class TrackingPosition extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    
 
     public function allData()
     {
@@ -17,5 +18,8 @@ class TrackingPosition extends Model
             ->select('username', 'email', 'latitude', 'longitude')
             ->get();
         return $result;
+    }
+    public static function find($username) {
+        return self::where('username', $username)->first();
     }
 }

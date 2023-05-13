@@ -4,6 +4,7 @@ use App\Events\MessageCreated;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FCMController;
 use App\Http\Controllers\TrackingPositionController;
 use Illuminate\Support\Facades\Auth;
 
@@ -125,6 +126,7 @@ Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionContr
     ->name('updateMarkerPosition');
 
 
+Route::post('/save-token', 'App\Http\Controllers\FCMController@index');
 
 
 

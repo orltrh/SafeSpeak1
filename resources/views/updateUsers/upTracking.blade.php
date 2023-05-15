@@ -22,6 +22,13 @@
                     <input type="submit" value="Update Posisi" id="submit">
                 </form>
         </div>
+        {{-- <div class="col-3">
+            <form action="">
+                @csrf
+                <input type="text" name="userNotif" id="userNotif" placeholder="Username">
+                <input type="submit" value="Notif Me!" id="submit">
+            </form>
+        </div> --}}
         </div>
     <div class="container mt-3">
         <div id="map"></div>
@@ -31,6 +38,9 @@
     <script>
         // Menampilkan maps
         var map = L.map('map').setView([-7.9933793, 112.6079458], 15);
+        // Tambahkan var untuk Auth username user
+        // Tambahkan var untuk Auth no wa user yang akan di notif
+
 
         // // Menambahkan tile layer
         googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
@@ -62,18 +72,21 @@
 
         // Fungsi untuk memperbarui inputan latitude dan longitude
         function updateToDb(latlng) {
+            // document.getElementById("username").value = nameUser; // modifikasi ketika login
             document.getElementById("username").value = "orltrh"; // modifikasi
             document.getElementById("latitude").value = latlng.lat;
             document.getElementById("longitude").value = latlng.lng;
         }
 
-        // Menampilkan marker dari database
+        // menampilkan marker dari database ketika sudah login
+
+        // menampilkan marker dari database
         @foreach($trackings as $tracking)
         if ("{{ $tracking->username }}" == "orltrh"){ // modifikasi
                 L.marker([{{ $tracking->latitude }}, {{ $tracking->longitude }}])
                     .addTo(map)
                     .bindPopup(
-                        "<b>{{ $tracking->username }}</b><br>{{ $tracking->email }}<br><button class='btn btn-outline-primary' onclick='return keSini(" + {{ $tracking->latitude }} + ", " + {{ $tracking->longitude }} + ")'>Ke Sini</button>")
+                        "<b>{{ $tracking->username }}</b><br>{{ $tracking->noWA }}<br><br><button class='btn btn-outline-primary' onclick='return keSini(" + {{ $tracking->latitude }} + ", " + {{ $tracking->longitude }} + ")'>Ke Sini</button>")
                     .openPopup();
                 map.panTo(new L.LatLng({{ $tracking->latitude }}, {{ $tracking->longitude }}));
             }
@@ -83,6 +96,11 @@
         function updatePosition() {
             map.locate({setView: false, maxZoom:18}); // menonaktifkan setView agar tidak mengganggu tampilan
         }
+
+        // // Fungsi untuk redirect ke WA
+        // function redirectWA(phoneNumber) {
+        //     window.location.href = "https://api.whatsapp.com/send?phone=" + phoneNumber;
+        // }
 
         // Memperbarui posisi pengguna setiap 5 detik
         setInterval(updatePosition, 5000);
@@ -106,12 +124,13 @@
                         var marker = L.marker([user.latitude, user.longitude])
                             .addTo(map);
                         marker
-                            .bindPopup("<b>" + user.username + "</b>" + "<br>" + user.email + "<br>" + "<button class='btn btn-outline-primary' onclick='return keSini(" + user.latitude + ", " + user.longitude + ")'>Ke Sini</button>")
+                            .bindPopup("<b>" + user.username + "</b>" + "<br>" + user.noWA + "<br>" + "<button class='btn btn-outline-primary' onclick='return keSini(" + user.latitude + ", " + user.longitude + ")'>Ke Sini</button>")
                             .openPopup();
                             map.panTo(new L.LatLng(user.latitude, user.longitude));
 ;
                     }
                     // Zoom and center marker
+                    // map.setView([response[0].latitude, response[0].longitude], 15);
 
 
                 },
@@ -124,8 +143,8 @@
         // Route Machine Leaflet
         var control = L.Routing.control({
             waypoints: [
-                L.latLng(-7.9933793, 112.6079458),
-                L.latLng(-7.9933793, 112.6079458)
+                L.latLng(-7.962317, 112.61751), // Diganti oleh posisi user sekarang
+                L.latLng(-7.962317, 112.61751) // DIganti oleh posisi user sekarang
             ],
             geocoder: L.Control.Geocoder.nominatim(),
             routeWhileDragging: true,
@@ -152,6 +171,7 @@
             updateMarker(latlng);
             addLatLng(latlng);
             updateToDb(latlng);
+            // redirectWA(phoneNumber);
         });
 
     </script>

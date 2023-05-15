@@ -18,19 +18,18 @@ class TrackingPositionController extends Controller
     }
     public function store(Request $request)
     {
-        dd($request);
         $validateData = $request->validate([
             'username' => 'required|max:20|unique:tracking_positions,username',
-            'email' => 'required|unique:tracking_positions,email',
+            'noWA' => 'required|max:13|unique:tracking_positions,noWA',
             'latitude' => 'required|max:255',
             'longitude' => 'required|max:255',
         ]);
         $tracking = new TrackingPosition();
         $tracking->username = $validateData['username'];
-        $tracking->email = $validateData['email'];
+        $tracking->noWA = $validateData['noWA'];
         $tracking->latitude = $validateData['latitude'];
         $tracking->longitude = $validateData['longitude'];
-        // $tracking->save();
+        $tracking->save();
         return redirect()->route('uptrackingposition')->with('success', 'Data berhasil ditambahkan');
     }
     public function show()

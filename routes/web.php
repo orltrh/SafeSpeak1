@@ -119,6 +119,7 @@ Route::get('/send-event', function(Request $request) {
 Route::get('create-track', [TrackingPositionController::class, 'index']);
 Route::post('create-track', [TrackingPositionController::class, 'store'])
     ->name('create.track');
+    
 // // route untuk search
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])
     ->name('search.track');

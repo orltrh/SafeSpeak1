@@ -35,26 +35,22 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
+      <!-- .navbar -->
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-         
-          <!-- <li><a class="nav-link scrollto @yield('menuHome')" href="/home">Home</a></li>
-          <li><a class="nav-link scrollto @yield('menuTrack')" href="/uptrackingposition">Tracking Position</a></li>
-          <li><a class="nav-link scrollto @yield('menuEdukasi')" href="/upedukasi">Edukasi</a></li>
-          <li><a class="nav-link scrollto @yield('menuPanduan')" href="/uppanduan">Panduan</a></li>
-          <li><a class="nav-link scrollto @yield('menuForum')" href="/upforum">Forum</a></li>
-          <li><a class="getstarted scrollto" href="logout">Logout</a></li> -->
-         
-          <li><a class="nav-link scrollto @yield('menuHome')" href="/">Home</a></li>
-          <li><a class="nav-link scrollto @yield('menuTrack')" href="trackingposition">Tracking Position</a></li>
-          <li><a class="nav-link scrollto @yield('menuEdukasi')" href="edukasi">Edukasi</a></li>
-          <li><a class="nav-link scrollto @yield('menuPanduan')" href="panduan">Panduan</a></li>
-          <li><a class="nav-link scrollto @yield('menuForum')" href="forum">Forum</a></li>
+          <li><a class="nav-link scrollto @yield('menuIndex')" href="{{ route('dashboard') }}">Home</a></li>
+          <li><a class="nav-link scrollto @yield('menuTrack')" href="{{ route('trackingPosition') }}">Tracking Position</a></li>
+          <li><a class="nav-link scrollto @yield('menuEdukasi')" href="{{ route('edukasi') }}">Edukasi</a></li>
+          <li><a class="nav-link scrollto @yield('menuPanduan')" href="{{ route('panduan') }}">Panduan</a></li>
+          <li><a class="nav-link scrollto @yield('menuForum')" href="{{ route('forum') }}">Forum</a></li>
+          @auth
+          <li><a class="nav-link scrollto @yield('menuProfile')" href="{{ route('profile') }}"><i class="bi bi-person-circle"></i></a></li>
+          @else
           <li><a class="getstarted scrollto" href="login">Login</a></li>
-          
+          @endauth
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
     </div>
   </header><!-- End Header -->
 

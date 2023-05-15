@@ -1,4 +1,4 @@
-@extends('layout.updateUSers')
+@extends('layout.master')
 @section('title', 'Edukasi')
 @section('menuEdukasi', 'active')
 

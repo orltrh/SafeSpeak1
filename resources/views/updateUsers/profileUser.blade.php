@@ -1,4 +1,4 @@
-@extends('layout.updateUsers')
+@extends('layout.master')
 @section('title', 'Tracking Location')
 @section('menuTrack', 'active')
 
@@ -43,7 +43,10 @@
                             </div>
                             <div class="col-6 mb-3">
                               <h6>Most Viewed</h6>
-                              <p class="text-muted">Dolor sit amet</p>
+                              <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit">Logout</button>
+                              </form>
                             </div>
                           </div>
                           <div class="d-flex justify-content-start">

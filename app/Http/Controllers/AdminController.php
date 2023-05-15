@@ -16,8 +16,11 @@ class AdminController extends Controller
     public function index(){
         return view('admin.dashboardAdmin');
     }
-    public function tracking(){
+    public function trackingPosition(){
         return view('admin.adTracking');
+    }
+    public function edukasi(){
+        return view('admin.adEdukasi');
     }
     public function panduan(){
         return view('admin.adPanduan');
@@ -25,41 +28,13 @@ class AdminController extends Controller
     public function forum(){
         return view('admin.adForum');
     }
-    public function edukasi(){
 
-        return view('admin.adEdukasi');
-    }
 
-    public function admin()
-    {
-        return view('admin.adLogin'); 
-    }
-
-    public function adLogin(Request $request)
-    {
-        $credentials = $request->validate([
-            'username' => 'required',
-            'password' => 'required'
-        ],[
-            'username.required' => 'Username wajib diisi',
-            'password.required' => 'Password wajib diisi',
-        ]);
-        if (Auth::guard('admin')->attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/admin');        
-        } else {
-            return back()->with('loginError','Login Gagal');
-        }
-    }
-
-    
-
-    public function adselfawareness() {
+    public function adSelfAwareness() {
         $result = Admin::orderBy('id', 'desc')->first(); // mengambil data dengan id terakhir
         $selfawareness = $result ? $result->selfawareness : null;
         return view('admin.adselfawareness', ['selfawareness' => $selfawareness]);
     }
-
     public function adselfregulation() {
         $result = Admin::orderBy('id', 'desc')->first(); // mengambil data dengan id terakhir
         $selfregulation = $result ? $result->selfregulation : null;
@@ -99,7 +74,6 @@ class AdminController extends Controller
     public function create(){
         return view('admin.createEdukasi');
     }
-
     public function store(Request $request)
     {
         $validateData = $request->validate([
@@ -125,12 +99,10 @@ class AdminController extends Controller
     }
 
     public function edit()
-{
+    {
     $admin = Admin::orderBy('id', 'desc')->first();
     return view('admin.editEdukasi', ['admin' => $admin]);
-}
-
-
+    }
     public function update(Request $request)
     {
         $validateData = $request->validate([
@@ -147,16 +119,10 @@ class AdminController extends Controller
 
         return redirect('/admin');
     }
-
-
     public function delete(){
         $admin = Admin::orderBy('id', 'desc')->first();
         return view('admin.del',['admin' => $admin]);
     }
-    
-    
-    
-
     public function destroy()
     {
         $count = Admin::count(); // menghitung jumlah data di dalam database

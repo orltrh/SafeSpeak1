@@ -1,4 +1,4 @@
-@extends('layout.updateUsers')
+@extends('layout.master')
 @section('title', 'Tracking Location')
 @section('menuTrack', 'active')
 

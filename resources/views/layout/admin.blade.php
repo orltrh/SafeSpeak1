@@ -44,6 +44,11 @@
           <li><a class="nav-link scrollto @yield('menuadCreate')" href="admin-create">Create</a></li>
           <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-update">Update</a></li>
           <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-delete">Delete</a></li>
+          @auth
+          <li><a class="nav-link scrollto @yield('menuProfile')" href="profile"><i class="bi bi-person-circle"></i></a></li>
+          @else
+          <li><a class="getstarted scrollto" href="login">Login</a></li>
+          @endauth
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -22,10 +22,10 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control @error('email') is-invalid @enderror"
-                name="email" id="email" value="{{ old('email') }}" placeholder="Masukkan Alamat Email">
-                @error('email')
+                <label for="noWA">Nomor WA</label>
+                <input type="number" class="form-control @error('noWA') is-invalid @enderror"
+                name="noWA" id="noWA" value="{{ old('noWA') }}" placeholder="Masukkan Nomor WhatsApp">
+                @error('noWA')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

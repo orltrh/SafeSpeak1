@@ -10,12 +10,12 @@ class TrackingPosition extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    
+
 
     public function allData()
     {
         $result = DB::table('tracking_positions')
-            ->select('username', 'email', 'latitude', 'longitude')
+            ->select('username', 'noWA', 'latitude', 'longitude')
             ->get();
         return $result;
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tracking_positions', function (Blueprint $table) {
             $table->id();
             $table->string('username',20)->unique();
-            $table->string('email',50)->unique();
+            $table->string('noWA',13)->unique();
             $table->string('latitude');
             $table->string('longitude');
             $table->timestamps();

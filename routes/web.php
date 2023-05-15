@@ -79,5 +79,34 @@ Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionContr
 
 // route authentikasi
 
+
+Route::get('/send-event', function(Request $request) {
+    $text = $request->input('message');
+    broadcast(new HelloEvent($text))->toOthers();
+    return response()->json(['message' => 'Success'], 200);
+});
+
+
+// Route untuk tracking position
+Route::get('create-track', [TrackingPositionController::class, 'index']);
+Route::post('create-track', [TrackingPositionController::class, 'store'])
+    ->name('create.track');
+    
+// // route untuk search
+Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])
+    ->name('search.track');
+Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')
+    ->name('updateMarkerPosition');
+
+// FCM Route
+Route::post('/save-token', 'App\Http\Controllers\FCMController@index');
+
+
+
+
+
+
+
+
 Auth::routes();
 

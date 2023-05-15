@@ -37,7 +37,7 @@
 
     <script>
         // Menampilkan maps
-        var map = L.map('map').setView([-7.9933793, 112.6079458], 15);
+        var map = L.map('map').setView([-7.9933885, 112.6079343], 15);
         // Tambahkan var untuk Auth username user
         // Tambahkan var untuk Auth no wa user yang akan di notif
 

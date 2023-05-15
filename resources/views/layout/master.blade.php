@@ -23,6 +23,9 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+    {{-- Template Bootstrap --}}
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 <body>
@@ -37,21 +40,21 @@
       </div>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-         
+
           <!-- <li><a class="nav-link scrollto @yield('menuHome')" href="/home">Home</a></li>
           <li><a class="nav-link scrollto @yield('menuTrack')" href="/uptrackingposition">Tracking Position</a></li>
           <li><a class="nav-link scrollto @yield('menuEdukasi')" href="/upedukasi">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuPanduan')" href="/uppanduan">Panduan</a></li>
           <li><a class="nav-link scrollto @yield('menuForum')" href="/upforum">Forum</a></li>
           <li><a class="getstarted scrollto" href="logout">Logout</a></li> -->
-         
+
           <li><a class="nav-link scrollto @yield('menuHome')" href="/">Home</a></li>
           <li><a class="nav-link scrollto @yield('menuTrack')" href="trackingposition">Tracking Position</a></li>
           <li><a class="nav-link scrollto @yield('menuEdukasi')" href="edukasi">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuPanduan')" href="panduan">Panduan</a></li>
           <li><a class="nav-link scrollto @yield('menuForum')" href="forum">Forum</a></li>
           <li><a class="getstarted scrollto" href="login">Login</a></li>
-          
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -103,5 +106,8 @@
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
         const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
     </script>
+
+    {{-- Template Bootstrap --}}
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

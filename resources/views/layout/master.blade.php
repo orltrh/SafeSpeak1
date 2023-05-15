@@ -39,7 +39,7 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto @yield('menuIndex')" href="{{ route('dashboard') }}">Home</a></li>
-          <li><a class="nav-link scrollto @yield('menuTrack')" href="{{ route('trackingPosition') }}">Tracking Position</a></li>
+          <li><a class="nav-link scrollto @yield('menuTrack')" href="{{ route('uptrackingposition') }}">Tracking Position</a></li>
           <li><a class="nav-link scrollto @yield('menuEdukasi')" href="{{ route('edukasi') }}">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuPanduan')" href="{{ route('panduan') }}">Panduan</a></li>
           <li><a class="nav-link scrollto @yield('menuForum')" href="{{ route('forum') }}">Forum</a></li>

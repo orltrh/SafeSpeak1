@@ -32,6 +32,7 @@ class TrackingPositionController extends Controller
         $tracking->save();
         return redirect()->route('uptrackingposition')->with('success', 'Data berhasil ditambahkan');
     }
+
     public function show()
     {
         $trackings = TrackingPosition::all();
@@ -52,6 +53,7 @@ class TrackingPositionController extends Controller
 
         return redirect()->route('uptrackingposition')->with('success', 'Data berhasil diupdate');
     }
+
     public function search(Request $request)
     {
         // dd("masuk");
@@ -60,5 +62,6 @@ class TrackingPositionController extends Controller
             ->where('username', 'like', "%$username%")
             ->get();
         return response()->json($users);
-    }
+}
+
 }

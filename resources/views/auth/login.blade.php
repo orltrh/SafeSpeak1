@@ -20,15 +20,18 @@
                             <label for="your_email"><i class="zmdi zmdi-account material-icons-email"></i></label>
                             <input type="email" name="email" id="email" placeholder="Email Address @error('email') is-invalid @enderror" value="{{ old('email') }}"/>
                         </div>
-                        @error('email')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-
 
                         <div class="form-group">
                             <label for="password"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="password" id="password" placeholder="Password"/>
                         </div>
+
+                        <div>
+                            @error('email')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                             <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>

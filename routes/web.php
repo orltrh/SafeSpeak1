@@ -32,7 +32,8 @@ Route::post('/logout', [App\Http\Controllers\Auth\loginController::class, 'logou
 
 // route user
 Route::get('/', [App\Http\Controllers\UserController::class, 'index'])->name('dashboard');
-Route::get('/upTracking-position', [App\Http\Controllers\UserController::class, 'trackingPosition'])->name('trackingPosition')->middleware('auth');
+Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('dashboard');
+// Route::get('/upTracking-position', [App\Http\Controllers\UserController::class, 'trackingPosition'])->name('trackingPosition')->middleware('auth');
 Route::get('/edukasi', [App\Http\Controllers\UserController::class, 'edukasi'])->name('edukasi');
 Route::get('/panduan', [App\Http\Controllers\UserController::class, 'panduan'])->name('panduan');
 Route::get('/forum', [App\Http\Controllers\UserController::class, 'forum'])->name('forum')->middleware('auth');
@@ -68,45 +69,17 @@ Route::get('/admin-delete', [AdminController::class, 'delete'])->name('admins.de
 Route::get('/delete', [AdminController::class, 'destroy'])->name('admins.destroy')->middleware('checkMiddleware');
 
 
-// Route tracking position
-Route::get('create-track', [TrackingPositionController::class, 'index'])->middleware('auth');
-Route::post('create-track', [TrackingPositionController::class, 'store'])->name('create.track')->middleware('auth');
-
-// route untuk search
-Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track')->middleware('checkMiddleware');
-Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition')->middleware('checkMiddleware');
-
-
-// route authentikasi
-
-
-Route::get('/send-event', function(Request $request) {
-    $text = $request->input('message');
-    broadcast(new HelloEvent($text))->toOthers();
-    return response()->json(['message' => 'Success'], 200);
-});
-
-
 // Route untuk tracking position
+Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition');
 Route::get('create-track', [TrackingPositionController::class, 'index']);
-Route::post('create-track', [TrackingPositionController::class, 'store'])
-    ->name('create.track');
+Route::post('create-track', [TrackingPositionController::class, 'store'])->name('create.track');
     
 // // route untuk search
-Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])
-    ->name('search.track');
-Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')
-    ->name('updateMarkerPosition');
+Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');
+Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition');
 
-// FCM Route
-Route::post('/save-token', 'App\Http\Controllers\FCMController@index');
+// FC
 
-
-
-
-
-
-
-
+// route authentikasi
 Auth::routes();
 

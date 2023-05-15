@@ -7,31 +7,32 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+
+
 
 class LoginController extends Controller
 {
-    public function authenticate (Request $request){
+    public function authenticate(Request $request)
+    {
         $credentials = $request->validate([
-            'email' => ['required'],
+            'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        
+
         if (Auth::attempt($credentials)) {
-            if(Auth::user()->is_admin == 1){
+            if (Auth::user()->is_admin == 1) {
                 $request->session()->regenerate();
                 $request->session()->put('verified', true);
                 return redirect()->route('admin');
-            }
-            else{
+            } else {
                 return redirect()->route('dashboard');
             }
-            
         }
 
-        return back()->withErrors([
-            'email' => 'Username or password is incorrect',
-        ])->onlyInput('email'); 
-        
+        throw ValidationException::withMessages([
+            'email' => ['Email atau password salah.'],
+        ])->redirectTo(route('login'));
     }
 
     public function logout(Request $request)

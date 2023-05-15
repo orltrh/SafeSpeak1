@@ -21,6 +21,7 @@ class RegisterLoginSeeder extends Seeder
             'is_admin' => 0,
             'email_verified_at' => now(),
             'password' => Hash::make('azarya123'),
+            're_password' => Hash::make('azarya123'),
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
@@ -33,6 +34,7 @@ class RegisterLoginSeeder extends Seeder
         $admin->is_admin = 1;
         $admin->email_verified_at = now();
         $admin->password = Hash::make('admin123');
+        $admin->re_password = Hash::make('admin123');
         $admin->remember_token = Str::random(10);
         $admin->created_at = now();
         $admin->updated_at = now();

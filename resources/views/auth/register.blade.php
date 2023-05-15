@@ -13,27 +13,45 @@
                         @csrf
                         <div class="form-group">
                             <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="username" id="username" placeholder="Username"/>
+                            <input type="text" name="username" id="username" value="{{ old('username') }}" placeholder="Username"/>
+                            <div>
+                                @error('username')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            
                         </div>
 
                         <div class="form-group">
                             <label for="number"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="number" name="number" id="number" placeholder="Number Phone"/>
+                            <input type="number" name="number" id="number" value="{{ old('number') }}" placeholder="Number Phone"/>
+                            @error('number')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" id="email" placeholder="Email Address"/>
+                            <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email Address"/>
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
                             <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="password" id="pass" placeholder="Password"/>
+                            @error('password')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
                             <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                            <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                            <input type="password" name="re_password" id="re_password"  placeholder="Repeat your password"/>
+                            @error('re_password')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror   
                         </div>
 
                         <div class="form-group">

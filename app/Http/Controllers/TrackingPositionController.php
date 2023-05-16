@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\TrackingPosition;
 use Illuminate\Support\Facades\DB;
 
+
 class TrackingPositionController extends Controller
 {
     public function __construct()

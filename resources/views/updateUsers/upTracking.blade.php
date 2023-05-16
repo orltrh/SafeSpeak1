@@ -33,7 +33,7 @@
         // Menampilkan maps
         var map = L.map('map').setView([-7.9933885, 112.6079343], 15);
         // Tambahkan var untuk Auth username user
-        var nameUser = "{{ Auth::user()->name }}";
+        var nameUser = "{{ Auth::user()->username }}";
 
 
         // // Menambahkan tile layer

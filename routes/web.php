@@ -76,7 +76,7 @@ Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])
 Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition')->middleware('auth');
 Route::get('create-track', [TrackingPositionController::class, 'index']);
 Route::post('create-track', [TrackingPositionController::class, 'store'])->name('create.track');
-    
+
 // // route untuk search
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');
 Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition');
@@ -84,5 +84,8 @@ Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionContr
 // FC
 
 // route authentikasi
+Auth::routes();
+
+
 Auth::routes();
 

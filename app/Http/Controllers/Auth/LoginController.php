@@ -18,8 +18,12 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
+        ], [
+            'email.required' => 'Email is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'password.required' => 'Password is required.',
         ]);
-
+    
         if (Auth::attempt($credentials)) {
             if (Auth::user()->is_admin == 1) {
                 $request->session()->regenerate();
@@ -28,10 +32,10 @@ class LoginController extends Controller
             } else {
                 return redirect()->route('dashboard');
             }
-        }
+        }   
 
         throw ValidationException::withMessages([
-            'email' => ['Email atau password salah.'],
+            'eror' => ['Email or password is incorrect.'],
         ])->redirectTo(route('login'));
     }
 

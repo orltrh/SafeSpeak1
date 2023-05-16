@@ -78,11 +78,31 @@
           <li><a class="nav-link scrollto @yield('menuEdukasi')" href="{{ route('edukasi') }}">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuPanduan')" href="{{ route('panduan') }}">Panduan</a></li>
           <li><a class="nav-link scrollto @yield('menuForum')" href="{{ route('forum') }}">Forum</a></li>
-          @auth
-          <li><a class="nav-link scrollto @yield('menuProfile')" href="{{ route('profile') }}"><i class="bi bi-person-circle"></i></a></li>
-          @else
-          <li><a class="getstarted scrollto" href="login">Login</a></li>
-          @endauth
+          <div>
+            @auth
+            <div class="dropdown">
+              <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bi bi-person-circle"></i>
+              </a>
+              <ul class="menu" aria-labelledby="profileDropdown">
+                <li>
+                  <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                </li>
+                <li>
+                  <div>
+                    <form action="{{ route('logout') }}" method="POST">
+                      @csrf
+                      <a><button type="submit" role="button" class="dropdown-item" style="border:none">Log Out</button></a>
+                    </form>
+                  </div>
+                  
+                </li>
+              </ul>
+            </div>
+            @else
+            <li><a class="getstarted scrollto text-decoration-none" href="{{ route('login') }}">Login</a></li>
+            @endauth
+          </div>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

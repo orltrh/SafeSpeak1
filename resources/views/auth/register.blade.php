@@ -16,7 +16,7 @@
                             <input type="text" name="username" id="username" value="{{ old('username') }}" placeholder="Username"/>
                             <div>
                                 @error('username')
-                                <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
                                 @enderror
                             </div>
                             
@@ -26,7 +26,7 @@
                             <label for="number"><i class="zmdi zmdi-account material-icons-name"></i></label>
                             <input type="number" name="number" id="number" value="{{ old('number') }}" placeholder="Number Phone"/>
                             @error('number')
-                                <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
 
@@ -34,7 +34,7 @@
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
                             <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email Address"/>
                             @error('email')
-                                <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
 
@@ -42,7 +42,7 @@
                             <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="password" id="pass" placeholder="Password"/>
                             @error('password')
-                                <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
 
@@ -50,7 +50,7 @@
                             <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                             <input type="password" name="re_password" id="re_password"  placeholder="Repeat your password"/>
                             @error('re_password')
-                                <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror   
                         </div>
 

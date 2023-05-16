@@ -15,29 +15,40 @@ class RegisterLoginSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'username' => 'azarya',
-            'number' => '1234567890',
-            'email' => 'azaryamoeljono@gmail.com',
-            'is_admin' => 0,
+            'username' => 'admin1',
+            'number' => '0823464096185',
+            'email' => 'admin1@gmail.com',
+            'is_admin' => 1,
             'email_verified_at' => now(),
-            'password' => Hash::make('azarya123'),
-            're_password' => Hash::make('azarya123'),
+            'password' => Hash::make('admin123'),
+            're_password' => Hash::make('admin123'),
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
-        $admin = new User();
-        $admin->username = 'admin';
-        $admin->number = '1234567890';
-        $admin->email = 'admin1@gmail.com';
-        $admin->is_admin = 1;
-        $admin->email_verified_at = now();
-        $admin->password = Hash::make('admin123');
-        $admin->re_password = Hash::make('admin123');
-        $admin->remember_token = Str::random(10);
-        $admin->created_at = now();
-        $admin->updated_at = now();
-        $admin->save();
+        User::create([
+            'username' => 'admin2',
+            'number' => '089599773505',
+            'email' => 'admin2@gmail.com',
+            'is_admin' => 1,
+            'email_verified_at' => now(),
+            'password' => Hash::make('admin234'),
+            're_password' => Hash::make('admin234'),
+            'remember_token' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        User::create([
+            'username' => 'admin3',
+            'number' => '081236691954',
+            'email' => 'admin3@gmail.com',
+            'is_admin' => 1,
+            'email_verified_at' => now(),
+            'password' => Hash::make('admin345'),
+            're_password' => Hash::make('admin345'),
+            'remember_token' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

@@ -8,44 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
-
 
 class RegisterController extends Controller
 {
-
-    public function index(){
-        return view('register');
-    }
-
-    public function registeruser(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'username' => 'required|unique:users,username|min:3|max:255',
-            'number' => 'required|unique:users,number|max:13',
-            'email' => 'required|email:dns,rfc|max:255|unique:users,email',
-            'password' => 'required|min:8',
-            're_password' => 'required|same:password',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()
-                ->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        $registerlogin = new User();
-        $registerlogin->username = $request->input('username');
-        $registerlogin->number = $request->input('number');
-        $registerlogin->email = $request->input('email');
-        $registerlogin->email_verified_at = now();
-        $registerlogin->password = Hash::make($request->input('password'));
-        $registerlogin->re_password = Hash::make($request->input('re_pass'));
-        $registerlogin->save();
-
-        return redirect()->route('login');
-    }
     /*
     |--------------------------------------------------------------------------
     | Register Controller

@@ -1,14 +1,15 @@
-@extends('layouts.app')
+@extends('layout.loginregister')
+@section('title', 'Sign Up')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+<div class="main">
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form method="POST" action="{{ route('registerPost') }}">
                         @csrf
                         <div class="form-group">
                             <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -62,8 +63,12 @@
                         </div>
                     </form>
                 </div>
+                <div class="signup-image">
+                    <figure><img src="assets/images/signup-image.jpg" alt="sing up image"></figure>
+                    <a href="login" class="signup-image-link">Already have an account?</a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 @endsection

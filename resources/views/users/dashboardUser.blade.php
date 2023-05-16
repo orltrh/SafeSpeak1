@@ -96,9 +96,9 @@
 
     </div>
 </section><!-- End About Section -->
-{{-- 
+
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
+    {{-- <section id="cta" class="cta">
         <div class="container">
 
           <div class="row" data-aos="zoom-in">

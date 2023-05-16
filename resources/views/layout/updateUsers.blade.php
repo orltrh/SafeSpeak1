@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'SafeSpeak')</title>
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -23,11 +24,42 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    {{-- Template Bootstrap --}}
-    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    {{-- Template Icon --}}
+    {{-- <link rel="stylesheet" href="npm i bootstrap-icons"> --}}
+    {{-- <script src="npm i bootstrap-icons" ></script> --}}
 
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    {{-- Template Routing Machine Leaflet --}}
+    <link rel="stylesheet" href="assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
+    {{-- Template Leaflet Maps --}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+    {{-- Template CSS Leaflet Maps --}}
+    <style>
+        #map { height: 600px; }
+    </style>
+
+    {{-- Template Boostrap --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+
+    {{-- Template Leaflet CSS JS --}}
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    {{-- Template Routing Machine Leaflet CSS JS --}}
+    <script src="assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+    {{-- Template Geocoder --}}
+    <script src="assets/js/leaflet-routing-machine/examples/Control.Geocoder.js"></script>
+
+    {{-- Template Jquery --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
+@section('body')
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -38,7 +70,7 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-      <!-- .navbar -->
+
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto @yield('menuIndex')" href="{{ route('dashboard') }}">Home</a></li>
@@ -53,7 +85,8 @@
           @endauth
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
+      </nav><!-- .navbar -->
+
     </div>
   </header><!-- End Header -->
 
@@ -102,8 +135,5 @@
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
         const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
     </script>
-
-    {{-- Template Bootstrap --}}
-    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

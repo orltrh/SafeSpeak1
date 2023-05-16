@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.updateUsers')
 @section('title', 'Home')
 @section('menuIndex', 'active')
 

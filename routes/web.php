@@ -70,7 +70,7 @@ Route::get('/delete', [AdminController::class, 'destroy'])->name('admins.destroy
 
 
 // Route untuk tracking position
-Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition');
+Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition')->middleware('auth');
 Route::get('create-track', [TrackingPositionController::class, 'index']);
 Route::post('create-track', [TrackingPositionController::class, 'store'])->name('create.track');
     

@@ -2,6 +2,60 @@
 @section('title', 'Profile')
 @section('menuProfie', 'active')
 
+<style>
+  .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 4px;
+  height: 32px;
+  width: 81px;
+  border: none;
+  background: #1b1b1cd0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.lable {
+  line-height: 22px;
+  font-size: 17px;
+  color: #467dff;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background: #1b1b1cea;
+}
+
+.button:hover .svg-icon {
+  animation: rotate 1.3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+</style>
+
 @section('content')
 <section >
     <div class="container pt-5">
@@ -17,9 +71,16 @@
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                           alt="Avatar" class="img-fluid my-5" style="width: 200px;" />
                         <div>
-                          <form action="">
-                            <label for="file" class="form-label"></label>
-                            <input class="form-control" type="file" id="file">
+                          <form action="{{ route('fotoPost') }}" method="POST" enctype="multipart/form-data">
+                            <label for="foto" class="form-label">Edit Foto</label>
+                            <input class="form-control @error('foto') is-invalid @enderror" type="file" id="foto" name="foto" accept="image/*">
+                            @error('foto')
+                            <div class="alert alert-danger"><strong>{{ $message }}</strong></div>
+                            @enderror
+                            <button class="button">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 20 20" height="20" fill="none" class="svg-icon"><g stroke-width="1.5" stroke-linecap="round" stroke="white"><circle r="7.5" cy="10" cx="10"></circle><path d="m9.99998 7.5v5"></path><path d="m7.5 9.99998h5"></path></g></svg>
+                              <span class="lable">Add</span>
+                            </button>
                           </div>
                           </form>
                           <div class="">

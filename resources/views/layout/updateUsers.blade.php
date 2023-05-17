@@ -85,7 +85,7 @@
               </a>
               <ul class="menu" aria-labelledby="profileDropdown">
                 <li>
-                  <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                  <a class="dropdown-item" href="{{ route('profile') }}">Halo {{ Auth::user()->username }}</a>
                 </li>
                 <li>
                   <div>

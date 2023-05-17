@@ -4,6 +4,8 @@ use App\Events\MessageCreated;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
+
 use App\Http\Controllers\TrackingPositionController;
 use Illuminate\Support\Facades\Auth;
 
@@ -69,7 +71,9 @@ Route::get('/delete', [AdminController::class, 'destroy'])->name('admins.destroy
 
 // route profil
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile')->middleware('auth');
-Route::post('/prosesFoto', [App\Http\Controllers\Auth\ProfileController::class, 'save'])->name('fotoPost');
+Route::post('/prosesFoto', [App\Http\Controllers\ProfileController::class, 'store'])->name('fotoPost');
+Route::delete('/deleteFoto', [App\Http\Controllers\ProfileController::class, 'delete'])->name('fotoDelete');
+
 
 
 

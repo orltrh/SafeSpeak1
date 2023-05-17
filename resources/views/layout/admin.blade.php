@@ -22,6 +22,36 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+     {{-- Template Routing Machine Leaflet --}}
+     <link rel="stylesheet" href="{{ url('assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.css') }}" />
+
+     {{-- Template Leaflet Maps --}}
+     <link rel="stylesheet" href="{{ url('https://unpkg.com/leaflet@1.9.3/dist/leaflet.css') }}"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+ 
+     {{-- Template CSS Leaflet Maps --}}
+     <style>
+         #map { height: 600px; }
+     </style>
+ 
+     {{-- Template Boostrap --}}
+     <link rel="stylesheet" href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css') }}">
+ 
+     {{-- Template Leaflet CSS JS --}}
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+ 
+     {{-- Template Routing Machine Leaflet CSS JS --}}
+     <script src="{{ url('assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.js') }}"></script>
+ 
+     {{-- Template Geocoder --}}
+     <script src="{{ url('assets/js/leaflet-routing-machine/examples/Control.Geocoder.js') }}"></script>
+ 
+     {{-- Template Jquery --}}
+     <script src="{{ url('https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js') }}"></script>
 </head>
 <body>
   <!-- ======= Header ======= -->

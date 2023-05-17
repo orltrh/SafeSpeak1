@@ -1,10 +1,10 @@
-@extends('layout.updateUsers')
+@extends('layout.admin')
 @section('title', 'Tracking Location')
 @section('menuTrack', 'active')
 
 @section('content')
 <section >
-    <div class="container">
+    <div class="container mt-5 vh-100">
         <div class="row">
             <div class="col-3">
                 <form class="d-flex" role="search" id="searchForm">

@@ -24,8 +24,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="number"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="number" name="number" id="number" value="{{ old('number') }}" placeholder="Number Phone"/>
+                            <label for="number"><i class="zmdi zmdi-whatsapp"></i></label>
+                            <input type="number" name="number" id="number" value="{{ old('number') }}" placeholder="Example: 6282145567651"/>
                             @error('number')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror

@@ -4,12 +4,12 @@
 
 @section('content')
 <section >
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-3">
                 <form class="d-flex" role="search" id="searchForm">
                     @csrf
-                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" name="username">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search Username" name="username">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

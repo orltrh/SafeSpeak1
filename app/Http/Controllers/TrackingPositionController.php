@@ -24,6 +24,12 @@ class TrackingPositionController extends Controller
         return view('updateUsers.upTracking', ['trackings' => $trackings]);
     }
 
+    public function adminShow()
+    {
+        $trackings = TrackingPosition::all();
+        return view('admin.adTracking', ['trackings' => $trackings]);
+    }
+
     public function update(Request $request){
         $tracking = TrackingPosition::find($request->username);
 
@@ -41,12 +47,11 @@ class TrackingPositionController extends Controller
 
     public function search(Request $request)
     {
-        // dd("masuk");
         $username = $request->input('username');
         $users = DB::table('tracking_positions')
             ->where('username', 'like', "%$username%")
             ->get();
         return response()->json($users);
-}
+    }
 
 }

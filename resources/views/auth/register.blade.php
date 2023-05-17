@@ -1,6 +1,8 @@
 @extends('layout.loginregister')
 @section('title', 'Sign Up')
 
+@section('body')
+<body onload="getLocation()">
 @section('content')
 <div class="main">
     <!-- Sign up form -->
@@ -22,8 +24,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="number"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="number" name="number" id="number" value="{{ old('number') }}" placeholder="Number Phone"/>
+                            <label for="number"><i class="zmdi zmdi-whatsapp"></i></label>
+                            <input type="number" name="number" id="number" value="{{ old('number') }}" placeholder="Example: 6282145567651"/>
                             @error('number')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
@@ -50,7 +52,12 @@
                             <input type="password" name="re_password" id="re_password"  placeholder="Repeat your password"/>
                             @error('re_password')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
-                            @enderror   
+                            @enderror
+                        </div>
+
+                        <div>
+                            <input type="hidden" class="form-control" name="latitude" id="latitude" placeholder="Masukkan Latitude">
+                            <input type="hidden" class="form-control" name="longitude" id="longitude" placeholder="Masukkan Longitude">
                         </div>
 
                         <div class="form-group">
@@ -59,7 +66,7 @@
                         </div>
 
                         <div class="form-group form-button">
-                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register" disabled/>
                         </div>
                     </form>
                 </div>
@@ -71,4 +78,40 @@
         </div>
     </section>
 </div>
+<script type="text/javascript">
+    function getLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        }else{
+            alert("Browser anda tidak mendukung geolocation");
+        }
+    }
+    function showPosition(position){
+        document.getElementById('latitude').value = position.coords.latitude;
+        document.getElementById('longitude').value = position.coords.longitude;
+    }
+    function showError(error){
+        switch(error.code){
+            case error.PERMISSION_DENIED:
+                alert("User tidak mengizinkan akses lokasi");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Lokasi tidak tersedia");
+                break;
+            case error.TIMEOUT:
+                alert("Waktu permintaan habis");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("Terjadi kesalahan");
+                break;
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var checkbox = document.getElementById('agree-term');
+      var submitButton = document.getElementById('signup');
+      checkbox.addEventListener('change', function() {
+        submitButton.disabled = !checkbox.checked;
+      });
+    });
+</script>
 @endsection

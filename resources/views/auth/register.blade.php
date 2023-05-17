@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group form-button">
-                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register" disabled/>
                         </div>
                     </form>
                 </div>
@@ -106,5 +106,12 @@
                 break;
         }
     }
+    document.addEventListener('DOMContentLoaded', function() {
+      var checkbox = document.getElementById('agree-term');
+      var submitButton = document.getElementById('signup');
+      checkbox.addEventListener('change', function() {
+        submitButton.disabled = !checkbox.checked;
+      });
+    });
 </script>
 @endsection

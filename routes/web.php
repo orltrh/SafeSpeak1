@@ -48,7 +48,7 @@ Route::get('/social-skills', [UserController::class, 'socialskills'])->name('adm
 
 // route admin
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('checkMiddleware');
-Route::get('/admin-tracking', [App\Http\Controllers\TrackingPositionController::class, 'show'])->name('aTrackingPosition')->middleware('checkMiddleware');
+Route::get('/admin-tracking', [App\Http\Controllers\TrackingPositionController::class, 'adminShow'])->name('aTrackingPosition')->middleware('checkMiddleware');
 Route::get('/admin-edukasi', [App\Http\Controllers\AdminController::class, 'edukasi'])->name('aEdukasi')->middleware('checkMiddleware');
 Route::get('/admin-panduan', [App\Http\Controllers\AdminController::class, 'panduan'])->name('aPanduan')->middleware('checkMiddleware');
 Route::get('/admin-forum', [App\Http\Controllers\AdminController::class, 'forum'])->name('aForum')->middleware('checkMiddleware');
@@ -69,6 +69,8 @@ Route::get('/delete', [AdminController::class, 'destroy'])->name('admins.destroy
 
 // route profil
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::post('/prosesFoto', [App\Http\Controllers\Auth\ProfileController::class, 'save'])->name('fotoPost');
+
 
 
 

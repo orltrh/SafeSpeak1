@@ -4,28 +4,42 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+
 
 
 class ProfileController extends Controller
 {
     public function index()
+    {
+        $user = Auth::user();
+
+        if ($user) {
+            $username = $user->username;
+            $email = $user->email;
+            $number = $user->number;
+
+            return view('updateUsers.profileUser', compact('username', 'email', 'number'));
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+    public function save(Request $request)
 {
-    // Mendapatkan data pengguna yang sedang login
     $user = Auth::user();
 
-    // Memastikan pengguna telah terautentikasi
-    if ($user) {
-        // Mengambil data username, email, dan number dari pengguna
-        $username = $user->username;
-        $email = $user->email;
-        $number = $user->number;
+    if ($request->hasFile('foto')) {
+        $validateData = $request->validate([
+            'foto' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+        ]);
 
-        // Menampilkan data pengguna ke dalam view
-        return view('updateUsers.profileUser', compact('username', 'email', 'number'));
-    } else {
-        // Redirect ke halaman login jika pengguna tidak terautentikasi
-        return redirect()->route('login');
+        $path = $request->file('foto')->store('uploads');
+        $user->photo = $path;
     }
+
+    // Redirect atau melakukan tindakan lain setelah menyimpan gambar ke database
 }
 
 }

@@ -76,8 +76,6 @@ Route::post('/prosesFoto', [App\Http\Controllers\Auth\ProfileController::class, 
 
 // Route untuk tracking position
 Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition')->middleware('auth');
-Route::get('create-track', [TrackingPositionController::class, 'index']);
-Route::post('create-track', [TrackingPositionController::class, 'store'])->name('create.track');
 
 // // route untuk search
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');

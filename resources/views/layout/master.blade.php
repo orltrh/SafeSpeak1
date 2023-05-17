@@ -50,7 +50,7 @@
           <li><a class="nav-link scrollto @yield('menuProfile')" href="{{ route('profile') }}"><i class="bi bi-person-circle"></i></a></li>
           @else
           <li><a class="getstarted scrollto" href="login">Login</a></li>
-          
+          @endauth
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>

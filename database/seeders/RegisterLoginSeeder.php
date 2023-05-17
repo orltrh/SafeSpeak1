@@ -29,7 +29,7 @@ class RegisterLoginSeeder extends Seeder
 
         $admin = new User();
         $admin->username = 'admin';
-        $admin->number = '1234567890';
+        $admin->number = '01234567890';
         $admin->email = 'admin1@gmail.com';
         $admin->is_admin = 1;
         $admin->email_verified_at = now();

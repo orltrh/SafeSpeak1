@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TrackingPositionController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\EdukasiController;
 
 use App\Events\HelloEvent;
 use Illuminate\Http\Request;
@@ -82,4 +83,10 @@ Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionContr
 
 // route authentikasi
 Auth::routes();
+
+// Route create edukasi
+
+Route::get('/edukasi', [EdukasiController::class, 'index'])->name('dashboard');
+Route::get('/edukasi/create', [EdukasiController::class, 'create'])->name('articles.create');
+Route::post('/edukasi', [EdukasiController::class, 'store'])->name('articles.store');
 

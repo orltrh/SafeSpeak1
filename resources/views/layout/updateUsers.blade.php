@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'SafeSpeak')</title>
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -95,7 +94,7 @@
                       <a><button type="submit" role="button" class="dropdown-item" style="border:none">Log Out</button></a>
                     </form>
                   </div>
-                  
+
                 </li>
               </ul>
             </div>

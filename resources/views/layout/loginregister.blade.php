@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/style_login.css">
 
 </head>
+@section('body')
 <body>
   {{-- Content --}}
   @section('content')

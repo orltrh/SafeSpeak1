@@ -81,7 +81,7 @@
                 L.marker([{{ $tracking->latitude }}, {{ $tracking->longitude }}])
                     .addTo(map)
                     .bindPopup(
-                        "<b>{{ $tracking->username }}</b><br>{{ $tracking->noWA }}<br><br><button class='btn btn-outline-primary' onclick='return keSini(" + {{ $tracking->latitude }} + ", " + {{ $tracking->longitude }} + ")'>Pergi Ke Sini</button><br><br><button data-phone=" + {{ $tracking->noWA }} + " onclick='redirectWA(this)' class='btn btn-outline-success'>Hubungi Saya</button>")
+                        "<b>{{ $tracking->username }}</b><br><button class='btn btn-outline-primary' onclick='return keSini(" + {{ $tracking->latitude }} + ", " + {{ $tracking->longitude }} + ")'>Pergi Ke Sini</button><br><br><button data-phone=" + {{ $tracking->number }} + " onclick='redirectWA(this)' class='btn btn-outline-success'>Hubungi Saya</button>")
                     .openPopup();
                 map.panTo(new L.LatLng({{ $tracking->latitude }}, {{ $tracking->longitude }}));
             }
@@ -121,7 +121,7 @@
                         var marker = L.marker([user.latitude, user.longitude])
                             .addTo(map);
                         marker
-                            .bindPopup("<b>" + user.username + "</b>" + "<br>" + user.noWA + "<br>" + "<button class='btn btn-outline-primary' onclick='return keSini(" + user.latitude + ", " + user.longitude + ")'>Pergi Ke Sini</button><br><br><button data-phone=" +  user.noWA + " onclick='redirectWA(this)' class='btn btn-outline-success'>Hubungi Saya</button>")
+                            .bindPopup("<b>" + user.username + "</b>" + "<br>" + "<button class='btn btn-outline-primary' onclick='return keSini(" + user.latitude + ", " + user.longitude + ")'>Pergi Ke Sini</button><br><br><button data-phone=" +  user.number + " onclick='redirectWA(this)' class='btn btn-outline-success'>Hubungi Saya</button>")
                             .openPopup();
                             map.panTo(new L.LatLng(user.latitude, user.longitude));
 ;

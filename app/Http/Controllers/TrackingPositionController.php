@@ -13,10 +13,6 @@ class TrackingPositionController extends Controller
     {
         $this->TrackingPosition = new TrackingPosition();
     }
-    public function index()
-    {
-        return view('updateUsers.upCreateTracking');
-    }
 
     public function show()
     {

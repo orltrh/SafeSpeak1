@@ -65,7 +65,7 @@
 
     <div class="row">
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in">
             <div class="pic"><img src="assets/img/team/azarya.jpg" class="img-fluid" alt=""></div>
             <div class="member-info">
@@ -81,7 +81,7 @@
         </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in" data-aos-delay="100">
             <div class="pic"><img src="assets/img/team/aurel.jpg" class="img-fluid" alt=""></div>
             <div class="member-info">
@@ -97,7 +97,7 @@
         </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in" data-aos-delay="200">
             <div class="pic"><img src="assets/img/team/abidzar.jpg" class="img-fluid" alt=""></div>
             <div class="member-info">

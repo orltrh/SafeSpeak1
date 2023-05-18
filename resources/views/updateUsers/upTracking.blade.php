@@ -2,18 +2,49 @@
 @section('title', 'Tracking Location')
 @section('menuTrack', 'active')
 
+@section('head')
+    {{-- Template Routing Machine Leaflet --}}
+    <link rel="stylesheet" href="{{ url('assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.css') }}" />
+
+    {{-- Template Leaflet Maps --}}
+    <link rel="stylesheet" href="{{ url('https://unpkg.com/leaflet@1.9.3/dist/leaflet.css') }}"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+    {{-- Template CSS Leaflet Maps --}}
+    <style>
+        #map { height: 600px; }
+    </style>
+
+    {{-- Template Boostrap --}}
+    <link rel="stylesheet" href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css') }}">
+
+    {{-- Template Leaflet CSS JS --}}
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    {{-- Template Routing Machine Leaflet CSS JS --}}
+    <script src="{{ url('assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.js') }}"></script>
+
+    {{-- Template Geocoder --}}
+    <script src="{{ url('assets/js/leaflet-routing-machine/examples/Control.Geocoder.js') }}"></script>
+
+    {{-- Template Jquery --}}
+    <script src="{{ url('https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js') }}"></script>
+
 @section('content')
 <section >
     <div class="container mt-5">
         <div class="row">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-3">
                 <form class="d-flex" role="search" id="searchForm">
                     @csrf
                     <input id="searchInput" class="form-control me-2" type="search" placeholder="Search Username" name="username">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
-            <div class="col-3">
+            <div class="col-lg-3 col-md-3">
                 <form action="updateMarkerPosition" method="POST">
                     @csrf
                     <input type="hidden" name="username" id="username" placeholder="Username">
@@ -21,7 +52,10 @@
                     <input type="hidden" name="longitude" id="longitude" placeholder="Longitude">
                     <input class="btn btn-outline-info" type="submit" value="Update Posisi" id="submit">
                 </form>
+            </div>
         </div>
+    </div>
+
 
 
     <div class="container mt-3">

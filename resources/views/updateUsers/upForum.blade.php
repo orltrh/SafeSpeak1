@@ -222,74 +222,75 @@
   fill: #333333
 }
 </style>
-<section style="height:77vh ">
+<section style="height:80vh ">
   <div class="container">
     <div class="row mt-5 pb-5 justify-content-center justify-content-between">
-  <div class="card col-md-4">
-    <div class="container-image">
-      <div class="pic1"><img src="assets/picture/umum1.png" class="img-fluid" alt=""></div>
-      <div class="teks1">Public Forum</div>
-    </div>
-    <div class="content">
-      <div class="detail pt-3">
-        <span>click the button below</span>
-        <div class="pt-3"><a href="https://t.me/+7_KM4HoVVccxNWY1" class="btn btn-light">Join</a></div>
-      </div>
-      <div class="product-image">
-        <div class="box-image">
-          <div class="pics1"><img src="assets/picture/umum1.png" class="img-fluid" alt=""></div>
+        <div class="card col-md-4 col-md-4">
+                <div class="container-image">
+                <div class="pic1"><img src="assets/picture/umum1.png" class="img-fluid" alt=""></div>
+                <div class="teks1">Public Forum</div>
+                </div>
+                <div class="content">
+                <div class="detail pt-3">
+                    <span>click the button below</span>
+                    <div class="pt-3"><a href="https://t.me/+7_KM4HoVVccxNWY1" class="btn btn-light">Join</a></div>
+                </div>
+                <div class="product-image">
+                    <div class="box-image">
+                    <div class="pics1"><img src="assets/picture/umum1.png" class="img-fluid" alt=""></div>
+                    </div>
+                </div>
+                </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="card col-md-4">
-    <div class="container-image">
-      <div class="pic2"><img src="assets/picture/univ1.png" class="img-fluid" alt=""></div>
-      <div class="teks">University Forum</div>
-    </div>
-    <div class="content">
-      <div class="detail pt-3">
-        <span>click the button below</span>
-        <div class="pt-3"><a href="https://t.me/+PDh0eb7hInVhMzE1" class="btn btn-light">Join</a></div>
-      </div>
-      <div class="product-image">
-        <div class="box-image">
-          <div class="pics2"><img src="assets/picture/univ1.png" class="img-fluid" alt=""></div>
+        <div class="card col-md-4">
+            <div class="container-image">
+                <div class="pic2"><img src="assets/picture/univ1.png" class="img-fluid" alt=""></div>
+                <div class="teks">University Forum</div>
+            </div>
+            <div class="content">
+                <div class="detail pt-3">
+                    <span>click the button below</span>
+                    <div class="pt-3"><a href="https://t.me/+PDh0eb7hInVhMzE1" class="btn btn-light">Join</a></div>
+                </div>
+                <div class="product-image">
+                    <div class="box-image">
+                        <div class="pics2"><img src="assets/picture/univ1.png" class="img-fluid" alt=""></div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="card col-md-4">
-    <div class="container-image">
-      <div class="pic3"><img src="assets/picture/perusahaan1.png" class="img-fluid" alt=""></div>
-      <div class="teks">Corporate Forum</div>
-    </div>
-    <div class="content">
-      <div class="detail pt-3">
-        <span>click the button below</span>
-        <div class="pt-3"><a href="https://t.me/+Jy4OXRoin09kNTE1" class="btn btn-light">Join</a></div>
-      </div>
-      <div class="product-image">
-        <div class="box-image">
-          <div class="pics3"><img src="assets/picture/perusahaan1.png" class="img-fluid" alt=""></div>
+        <div class="card col-md-4">
+            <div class="container-image">
+            <div class="pic3"><img src="assets/picture/perusahaan1.png" class="img-fluid" alt=""></div>
+            <div class="teks">Corporate Forum</div>
+            </div>
+            <div class="content">
+            <div class="detail pt-3">
+                <span>click the button below</span>
+                <div class="pt-3"><a href="https://t.me/+Jy4OXRoin09kNTE1" class="btn btn-light">Join</a></div>
+            </div>
+            <div class="product-image">
+                <div class="box-image">
+                <div class="pics3"><img src="assets/picture/perusahaan1.png" class="img-fluid" alt=""></div>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
   </div>
-  </div>
+</div>
 
 
   <div class="rowjustify-content-center align-content-center align-items-center">
     <div class="col pt-5 justify-content-center align-content-center align-items-center">
       <div><h2>Ingin Berkonsultasi? Klik tombol pesan dibawah ini</h2></div>
       <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="79922e2e-962d-4026-afde-df91e60ac883";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-
     </div>
   </div>
 </div>
 </div>
+</section>
 
 @endsection
 

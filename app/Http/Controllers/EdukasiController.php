@@ -7,48 +7,7 @@ use App\Models\Admin;
 
 class EdukasiController extends Controller
 {
-    // public function index()
-    // {
-    //     $articles = Edukasi::all();
-
-    //     return view('index', compact('articles'));
-    // }
-
-    // public function create()
-    // {
-    //     return view('articles.create');
-    // }
-
-    // public function store(Request $request)
-    // {
-    //     $validatedData = $request->validate([
-    //         'title' => 'required',
-    //         'content' => 'required',
-    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-    //     ]);
-
-    //     $imageName = time() . '.' . $request->image->extension();
-    //     $request->image->move(public_path('images'), $imageName);
-
-    //     $article = new Edukasi();
-    //     $article->title = $validatedData['title'];
-    //     $article->content = $validatedData['content'];
-    //     $article->image = $imageName;
-    //     $article->save();
-
-    //     return redirect()->route('dashboard')->with('success', 'Article created successfully.');
-    // }
-//     public function index()
-// {
-//     $admins = Admin::all();
-//     return view('admin.adEdukasi', compact('admins'));
-
-// }
-
-// public function show(Admin $admins)
-// {
-//     return view('admin.edu', compact('admin'));
-// }
+   
 
 public function create()
 {
@@ -74,34 +33,76 @@ public function store(Request $request)
     $admin->gambar = $imageName;
     $admin->save();
 
-    return redirect()->route('admin.index')->with('success', 'Data berhasil ditambahkan.');
+    return redirect()->route('aEdukasi')->with('success', 'Data berhasil ditambahkan.');
 }
-
-// public function index()
-// {
-//     $admins = Admin::orderBy('created_at', 'desc')->paginate(10);
-//     return view('admin.index', compact('admins'));
-// }
-
-// public function show($id)
-// {
-//     $admin = Admin::findOrFail($id);
-//     return view('admin.show', compact('admin'));
-// }
 
 public function index()
 {
-    $categories = Admin::pluck('kategori')->unique();
-    $carouselItems = Admin::take(6)->get(); // Mengambil 5 item dari tabel admins untuk carousel
-
-    return view('admin.adEdukasi', compact('categories', 'carouselItems'));
+    $admins = Admin::orderBy('created_at', 'desc')->paginate(10);
+    return view('admin.adEdukasi', compact('admins'));
 }
 
-public function showCategory($category)
+public function show($id)
 {
-    $categoryItems = Admin::where('kategori', $category)->get();
-
-    return view('admin.edu', compact('categoryItems'));
+    $admin = Admin::findOrFail($id);
+    return view('admin.show', compact('admin'));
 }
+
+public function update(Request $request, $id)
+{
+    $validatedData = $request->validate([
+        'kategori' => 'required',
+        'judul' => 'required',
+        'konten' => 'required',
+        'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    $admin = Admin::findOrFail($id);
+
+    // Update data
+    $admin->kategori = $validatedData['kategori'];
+    $admin->judul = $validatedData['judul'];
+    $admin->konten = $validatedData['konten'];
+
+    // Update gambar jika ada perubahan
+    if ($request->hasFile('gambar')) {
+        $imageName = time() . '.' . $request->gambar->extension();
+        $request->gambar->move(public_path('images'), $imageName);
+        $admin->gambar = $imageName;
+    }
+
+    $admin->save();
+
+    return redirect()->route('admins.show', $admin->id)->with('success', 'Data berhasil diperbarui.');
+}
+
+public function destroy($id)
+{
+    $admin = Admin::findOrFail($id);
+    
+    // Hapus gambar dari direktori
+    $imagePath = public_path('images') . '/' . $admin->gambar;
+    if (file_exists($imagePath)) {
+        unlink($imagePath);
+    }
+
+    $admin->delete();
+
+    return redirect()->route('aEdukasi')->with('success', 'Data berhasil dihapus.');
+}
+
+public function edit($id)
+{
+    $admin = Admin::findOrFail($id);
+    return view('admin.update', compact('admin'));
+}
+
+public function delete($id)
+{
+    $admin = Admin::findOrFail($id);
+    return view('admin.delete', compact('admin'));
+}
+
+
 
 }

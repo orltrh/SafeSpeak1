@@ -1,5 +1,6 @@
-@extends('layouts.app')
-
+@extends('layout.admin')
+@section('title', 'Edukasi')
+@section('menuIndex', 'active')
 @section('content')
     <div class="container">
         <div class="row">

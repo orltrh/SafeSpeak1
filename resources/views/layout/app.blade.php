@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel App</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/edukasi.css') }}"">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Laravel App</a>
-    </nav>
-
     @yield('content')
+     <!-- Vendor JS Files -->
+     <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Template Main JS File -->
+    <script src="{{ url('assets/js/main.js') }}"></script>
+
+    {{-- Template Bootstrap --}}
+    <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
 

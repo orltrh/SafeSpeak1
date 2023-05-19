@@ -10,7 +10,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $admin->judul }}</h5>
                             <p class="card-text">{{ $admin->konten }}</p>
-                            <a href="{{ route('admin.show', $admin->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
+                            <a href="{{ route('admins.show', $admin->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
                         </div>
                     </div>
                 @endforeach

@@ -1,177 +1,62 @@
-@extends('layout.app')
+@extends('layout.admin')
 @section('title', 'Edukasi')
 @section('menuIndex', 'active')
 
 @section('content')
-<!-- <section id="edukasi" style="height:100vh; padding-top: 50px">
-    <div class="container">
-        <div class="row" style="padding-top: 100px">
-            <div class="col-sm-4 mb-3 mb-sm-0 d-flex justify-content-center">
-                <div class="book">
-                    <div><a href="admin-adselfawareness" class="btn btn-primary">Let's Learn</a></div>
-                    <div class="cover">
-                        <p>Self-Awareness</p>
-                    </div>
+<section>
+  <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        @foreach ($admins->chunk as $index => $chunk)
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}">
+            <span><i class="fas fa-circle"></i></span> <!-- Menambahkan ikon pada span -->
+          </li>
+        @endforeach
+      </ol>
+      <div class="carousel-inner">
+        @foreach ($admins->chunk as $index => $chunk)
+          <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+            <div class="row">
+              @foreach ($chunk as $admin)
+                <div class="col-md-6">
+                  <img src="{{ asset('images/' . $admin->gambar) }}" class="card-img-top" alt="Admin Image">
                 </div>
-            </div>
-            <div class="col-sm-4 d-flex justify-content-center">
-                <div class="book">
-                    <a href="admin-adselfregulation" class="btn btn-primary">Let's Learn</a>
-                    <div class="cover">
-                        <p>Self-Regulation</p>
+                <div class="col-md-6">
+                    <div class="card-body">
+                      <p class="card-title">{{ $admin->judul }}</p>
+                      <!-- <p class="card-text">{{ $admin->konten }}</p> -->
+                      <a href="{{ route('admins.show', $admin->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-4 d-flex justify-content-center">
-                <div class="book">
-                    <a href="admin-adselfmotivation" class="btn btn-primary">Let's Learn</a>
-                    <div class="cover">
-                        <p>Self-Motivation</p>
                     </div>
+                  </div>
                 </div>
+              @endforeach
             </div>
-            
-        </div>
-        <div class="row" style="padding-top: 100px">
-            <div class="col-sm-4 d-flex justify-content-center">
-                <div class="book">
-                    <a href="admin-adempathy" class="btn btn-primary">Let's Learn</a>
-                    <div class="cover">
-                        <p>Empathy</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 d-flex justify-content-center">
-                <div class="book">
-                    <a href="admin-adsocialskills" class="btn btn-primary">Let's Learn</a>
-                    <div class="cover">
-                        <p>Social Skills</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 d-flex justify-content-center">
-                <div class="book">
-                    <a href="admin-adselfadjustment" class="btn btn-primary">Let's Learn</a>
-                    <div class="cover">
-                        <p>Self-Adjustment</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+          </div>
+        @endforeach
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+  <span class="visually-hidden">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+  <span class="visually-hidden">Next</span>
+</a>
+
+      </a>
     </div>
-</section> -->
-<!-- <section>
-    <div class="container vh-150">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img src="assets/img/team/abidzar.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p4>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
+  </div>
+</section>
 
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img src="assets/img/team/abidzar.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p4>
-                    <a href="" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img src="assets/img/team/abidzar.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p4>
-                    <a href="" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-        <div class="row">
-             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img src="assets/img/team/abidzar.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p4>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img src="assets/img/team/abidzar.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p4>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img src="assets/img/team/abidzar.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p4>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        </div>
-  </section> -->
-
-  
-
-
-    <div class="container">
-        <h2>Carousel</h2>
-
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                @foreach ($carouselItems as $key => $item)
-                    <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                        <a href="{{ route('admin.edu', $item->kategori) }}">
-                            <img src="{{ asset('images/' . $item->gambar) }}" class="d-block w-100" alt="{{ $item->judul }}">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{ $item->kategori }}</h5>
-                                <p>{{ $item->judul }}</p>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-
-        <h2>Categories</h2>
-
-        <ul class="list-group">
-            @foreach ($categories as $category)
-                <li class="list-group-item"><a href="{{ route('admin.edu', $category) }}">{{ $category }}</a></li>
-            @endforeach
-        </ul>
-    </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Inisialisasi carousel
+    var carousel = new bootstrap.Carousel(document.querySelector("#carouselExampleIndicators"), {
+      interval: 5000, // Waktu interval slide (dalam milidetik). Ubah sesuai kebutuhan.
+      wrap: true // Mengaktifkan looping carousel
+    });
+  });
+</script>
 @endsection
-
-
-
-
-

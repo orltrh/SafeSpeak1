@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TrackingPositionController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EdukasiController;
+use App\Http\Controllers\TesController;
 
 use App\Events\HelloEvent;
 use Illuminate\Http\Request;
@@ -49,8 +50,8 @@ Route::get('/social-skills', [UserController::class, 'socialskills'])->name('adm
 
 // route admin
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('checkMiddleware');
-Route::get('/admin-tracking', [App\Http\Controllers\TrackingPositionController::class, 'adminShow'])->name('aTrackingPosition')->middleware('checkMiddleware');
-// Route::get('/admin-edukasi', [App\Http\Controllers\AdminController::class, 'edukasi'])->name('aEdukasi')->middleware('checkMiddleware');
+Route::get('/admin-tracking', [App\Http\Controllers\AdminController::class, 'trackingPosition'])->name('aTrackingPosition')->middleware('checkMiddleware');
+Route::get('/admin-edukasi', [EdukasiController::class, 'index'])->name('aEdukasi')->middleware('checkMiddleware');
 Route::get('/admin-panduan', [App\Http\Controllers\AdminController::class, 'panduan'])->name('aPanduan')->middleware('checkMiddleware');
 Route::get('/admin-forum', [App\Http\Controllers\AdminController::class, 'forum'])->name('aForum')->middleware('checkMiddleware');
 
@@ -63,10 +64,7 @@ Route::get('/admin-adsocialskills', [AdminController::class, 'adsocialskills'])-
 
 Route::get('/admin-create', [AdminController::class, 'create'])->name('admins.create')->middleware('checkMiddleware');
 Route::post('/admin', [AdminController::class, 'store'])->name('admins.store')->middleware('checkMiddleware');
-Route::get('/admin-update', [AdminController::class, 'edit'])->name('admins.edit')->middleware('checkMiddleware');
-Route::patch('/update', [AdminController::class, 'update'])->name('admins.update')->middleware('checkMiddleware');
-Route::get('/admin-delete', [AdminController::class, 'delete'])->name('admins.del')->middleware('checkMiddleware');
-Route::get('/delete', [AdminController::class, 'destroy'])->name('admins.destroy')->middleware('checkMiddleware');
+
 
 // route profil
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile')->middleware('auth');
@@ -84,13 +82,18 @@ Route::post('create-track', [TrackingPositionController::class, 'store'])->name(
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');
 Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition');
 
-Route::get('/adedukasi', [EdukasiController::class, 'index'])->name('home');
-Route::get('/category/{category', [EdukasiController::class, 'showCategory'])->name('admin.edu');
-Route::resource('admin', EdukasiController::class);
-Route::get('/admin/create', [EdukasiController::class, 'create'])->name('admin.create');
-Route::post('/admin/store', [EdukasiController::class, 'store'])->name('admin.store');
-Route::get('/admin', [EdukasiController::class, 'index'])->name('admin.index');
-Route::get('/admin/{id}', [EdukasiController::class, 'show'])->name('admin.show');
+Route::get('/admin/create', [EdukasiController::class, 'create'])->name('admins.create');
+Route::post('/admin/store', [EdukasiController::class, 'store'])->name('admins.store');
+// Route::get('/admin/show', [EdukasiController::class, 'index'])->name('admin.index');
+Route::get('/admin/show/{id}', [EdukasiController::class, 'show'])->name('admins.show');
+Route::put('/admin/{id}', [EdukasiController::class, 'update'])->name('admins.update');
+Route::delete('/admin/{id}', [EdukasiController::class, 'destroy'])->name('admins.destroy');
+Route::get('edit', [EdukasiController::class, 'edit'])->name('admins.edit');
+Route::get('hapus', [EdukasiController::class, 'delete'])->name('admins.delete');
+Route::get('/admins/tabel', [EdukasiController::class, ''])->name('admins.tabel');
+
+
+
 
 
 

@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Create Data Admin</h1>
+    <h1>Create Artikel</h1>
 
-    <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admins.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-
         <div class="form-group">
             <label for="kategori">Kategori</label>
             <input type="text" name="kategori" id="kategori" class="form-control" required>

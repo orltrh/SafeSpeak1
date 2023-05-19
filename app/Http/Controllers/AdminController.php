@@ -98,43 +98,7 @@ class AdminController extends Controller
 
     }
 
-    public function edit()
-    {
-    $admin = Admin::orderBy('id', 'desc')->first();
-    return view('admin.editEdukasi', ['admin' => $admin]);
-    }
-    public function update(Request $request)
-    {
-        $validateData = $request->validate([
-            'selfawareness' => 'required',
-            'selfregulation' => 'required',
-            'selfmotivation' => 'required',
-            'empathy' => 'required',
-            'socialskills' => 'required',
-            'selfadjustment' => 'required'
-        ]);
 
-        $admin = Admin::orderBy('id', 'desc')->first(); // mengambil admin dengan id terakhir
-        $admin->update($validateData);
-
-        return redirect('/admin');
-    }
-    public function delete(){
-        $admin = Admin::orderBy('id', 'desc')->first();
-        return view('admin.del',['admin' => $admin]);
-    }
-    public function destroy()
-    {
-        $count = Admin::count(); // menghitung jumlah data di dalam database
-        if ($count == 1) {
-            return redirect('/admin')->withErrors(['error' => 'Cannot delete the last record']);
-        }
-
-        $admin = Admin::orderBy('id', 'desc')->first(); // mengambil admin dengan id terakhir
-        $admin->delete();
-
-        return redirect('/admin');
-    }
 
 
 

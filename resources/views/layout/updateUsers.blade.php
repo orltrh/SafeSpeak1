@@ -52,7 +52,7 @@
             @auth
                 <li class="dropdown">
                     <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bi bi-person-circle"></i>
+                        <i class="bi bi-person-circle" style="font-size: 22px;"></i>
                     </a>
                     <ul class="menu" aria-labelledby="profileDropdown">
                         <li>

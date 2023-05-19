@@ -11,6 +11,8 @@
     <!-- Main css -->
     <link rel="stylesheet" href="{{ url('assets/css/style_login.css') }}">
 
+    @section('head')
+
 </head>
 @section('body')
 <body>

@@ -2,66 +2,9 @@
 @section('title', 'Profile')
 @section('menuProfie', 'active')
 
-<style>
-  .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 12px;
-  gap: 4px;
-  height: 32px;
-  width: 81px;
-  border: none;
-  background: #1b1b1cd0;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.lable {
-  line-height: 22px;
-  font-size: 17px;
-  color: #467dff;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-}
-
-.button:hover {
-  background: #1b1b1cea;
-}
-
-.button:hover .svg-icon {
-  animation: rotate 1.3s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(10deg);
-  }
-
-  50% {
-    transform: rotate(0deg);
-  }
-
-  75% {
-    transform: rotate(-10deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-.rounded-custom {
-  border-radius: 10%;
-}
-</style>
-
 @section('content')
 <section >
-    <div class="container vh-90" style="padding-top: 170px;">
+    <div class="container vh-90" style="padding-top: 30px;">
         <h1>Profile User</h1>
        <div class="card" style="width:">
         <div class="row">
@@ -73,10 +16,10 @@
               </div>
               @else
               <div class="pt-3">
-                  <img class="rounded-circle" src="/assets/img/clients/defaultFoto.jpg" style="width: 200px; height: 200px; object-fit: cover;" alt="...">
+                  <img class="rounded-circle" src="{{ url('/assets/img/clients/defaultFoto.jpg') }}" style="width: 200px; height: 200px; object-fit: cover;" alt="...">
               </div>
                   <div class="pt-2">
-                    <h20>*input a 1:1 sized image for more precision</h20>
+                    <div>Silakan masukkan gambar dengan ukuran 1:1</div>
                   </div>
               @endif
               <form action="{{ route('fotoPost') }}" method="POST" enctype="multipart/form-data" >
@@ -101,55 +44,39 @@
                       <form action="{{ route('fotoDelete') }}" method="POST">
                         @csrf
                         @method('DELETE')
-                       
                         <button type="submit" class="btn btn-outline-danger">Delete</button>
-                
                     </form>
                     </div>
                   </div>
-              
-              
+
+
           </div>
-            
+
           </div>
-       
+
             <div class="col-md-8">
               <div class="card-body" style=" padding-top:75px;">
                 <h6>Username</h6>
                 <p class="text-muted">{{ $username }}</p>
                 <hr class="mt-0 mb-4">
                 <div class="row pt-1">
-                  <div class="col">
                     <h6>Email</h6>
                     <p class="text-muted">{{ $email }}</p>
                   </div>
                 <hr class="mt-0 mb-4">
-                <div>
                   <div class="col-6 mb-3">
                     <h6>Phone</h6>
                     <p class="text-muted">{{ $number }}</p>
                   </div>
+                  <hr class="mt-0 mb-4">
                 </div>
-                </div>
-                <hr class="mt-0 mb-4">
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
-
-                    
                   </div>
-                  <div class="col-6 mb-3">
-                   
-                    
-                  </div>
-                </div>
-                <div class="d-flex justify-content-start">
-                  <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
-                  <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
-                  <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
                 </div>
               </div>
             </div>
-        
+
         </div>
        </div>
     </div>

@@ -12,11 +12,11 @@
             <div>
             <h1>SafeSpeak</h1>
             <h2> Media Edukasi dan Bantuan bagi Korban Pelecehan Seksual dan Bullying</h2>
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="#about" class="btn-get-started scrollto">Mulai</a>
             </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" >
-            <img src="assets/picture/ei.jpg" class="img-fluid" style="border-radius: 50px" alt="">
+            <img src="{{ url('assets/picture/ei.jpg') }}" class="img-fluid" style="border-radius: 50px" alt="">
         </div>
         </div>
     </div>
@@ -29,14 +29,18 @@
 
     <div class="row">
         <div class="col-lg-6" data-aos="zoom-in">
-        <img src="assets/picture/sslogo.png" style="height: 350px;" class="img-fluid" alt="">
+        <img src="{{ url('assets/picture/sslogo.png') }}" style="height: 450px;" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
         <div class="content pt-4 pt-lg-0">
-            <h3>About Us</h3>
-            <p class="fst-italic">
+            <h3>Tentang Kami</h3>
+            <div style="font-size: 20px" class="fst-italic">
             SafeSpeak merupakan media edukasi dan bantuan bagi korban pelecehan seksual dan bullying dengan menerapkan emotional intelligence dan tracking position
-            </p>
+            </div>
+            <br>
+            <div style="font-size: 20px">
+                SafeSpeak dilengkapi oleh beberapa fitur seperti:
+            </div>
             <ul>
             <li><i class="bi bi-check-circle"></i> Tracking Position</li>
             <li><i class="bi bi-check-circle"></i> Edukasi</li>
@@ -44,9 +48,9 @@
             <li><i class="bi bi-check-circle"></i> Forum</li>
 
             </ul>
-            <p>
-            Kami hadir untuk menjadi media edukasi bagi para pelaku maupun korban pelecehan seksual serta membantu menjaga dan meningkatkan keamanan yang lebih baik bagi setiap orang
-            </p>
+            <div style="font-size: 20px">
+                Temukan panduan lengkap mengenai website SafeSpeak dengan sekali sentuhan pada <a href="{{ route('panduan') }}">link ini</a>
+            </div>
         </div>
         </div>
     </div>
@@ -54,8 +58,28 @@
     </div>
 </section><!-- End About Section -->
 
+
+<!-- ======= Cta Section ======= -->
+<section id="cta" class="cta mt-5">
+    <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+        <div class="col-lg-9 text-center text-lg-start">
+            <h3>SafeSpeak</h3>
+            <p>
+                Safespeak, tempat tersembunyi bagi jiwa yang terluka. Kami hadir sebagai pelindung bagi mereka yang menjadi korban bullying dan pelecehan seksual. Seperti pelangi setelah hujan, kami ingin mempersembahkan cahaya dan kehangatan bagi mereka yang merasa terjebak dalam kegelapan. Bersama Safespeak, mari kita bangkit, saling mendukung, dan membentuk dunia di mana suara mereka dihormati dan diperdengarkan. Kita tidak pernah sendiri, karena di sini, kita adalah satu komunitas yang kuat.
+            </p>
+        </div>
+        <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="{{ route('register') }}">Registrasi Sekarang</a>
+        </div>
+        </div>
+
+    </div>
+</section><!-- End Cta Section -->
+
 <!-- ======= Team Section ======= -->
-<section id="team" class="team">
+<section id="team" class="team mt-5">
     <div class="container">
 
     <div class="section-title" data-aos="fade-up">
@@ -67,47 +91,41 @@
 
         <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in">
-            <div class="pic"><img src="assets/img/team/azarya.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ url('assets/img/team/azarya.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Azarya Aditya Krisna Moeljono</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
             <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-github"></i></a>
+                <a href="{{ url('https://www.instagram.com/azarya.aditya/?hl=id') }}"><i class="bi bi-instagram"></i></a>
+                <a href="{{ url('https://github.com/azryadtykrsnmljno') }}"><i class="bi bi-github"></i></a>
             </div>
             </div>
         </div>
         </div>
 
         <div class="col-lg-4 col-md-12">
-        <div class="member" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pic"><img src="assets/img/team/aurel.jpg" class="img-fluid" alt=""></div>
-            <div class="member-info">
-            <h4>Dika Aurelya Aleandra Taroreh</h4>
-            <span>Mahasiswa Teknik Informatika Angkatan 22</span>
-            <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-github"></i></a>
+            <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                <div class="pic"><img src="{{ url('assets/img/team/aurel.jpg') }}" class="img-fluid" alt=""></div>
+                <div class="member-info">
+                <h4>Dika Aurelya Aleandra Taroreh</h4>
+                <span>Mahasiswa Teknik Informatika Angkatan 22</span>
+                <div class="social">
+                    <a href="{{ url('https://www.instagram.com/orltrh/') }}"><i class="bi bi-instagram"></i></a>
+                    <a href="{{ url('https://github.com/orltrh') }}"><i class="bi bi-github"></i></a>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
 
         <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pic"><img src="assets/img/team/abidzar.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ url('assets/img/team/abidzar.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Abidzar Ulil Abshar</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
             <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-github"></i></a>
+                <a href="{{ url('https://instagram.com/abidzar27_?igshid=OTk0YzhjMDVlZA==') }}"><i class="bi bi-instagram"></i></a>
+                <a href="{{ url('https://github.com/UlilAbshar99') }}"><i class="bi bi-github"></i></a>
             </div>
             </div>
         </div>

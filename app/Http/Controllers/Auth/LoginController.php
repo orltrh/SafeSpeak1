@@ -20,7 +20,7 @@ class LoginController extends Controller
             'username.required' => 'Username is required.',
             'password.required' => 'Password is required.',
         ]);
-    
+
         if (Auth::attempt($credentials)) {
             if (Auth::user()->is_admin == 1) {
                 $request->session()->regenerate();
@@ -29,7 +29,7 @@ class LoginController extends Controller
             } else {
                 return redirect()->route('dashboard');
             }
-        }   
+        }
 
         throw ValidationException::withMessages([
             'eror' => ['Username or password is incorrect.'],

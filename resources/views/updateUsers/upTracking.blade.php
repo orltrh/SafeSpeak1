@@ -14,13 +14,23 @@
     {{-- Template CSS Leaflet Maps --}}
     <style>
         #map { height: 600px; }
+
+        #map-container {
+            height: 610px;
+            width: 100%;
+            position: static;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(13, 80, 174, 0.2); /* Menambahkan bayangan */
+            background-clip: border-box;
+            border-radius: 10px;
+        }
     </style>
 
     {{-- Template Boostrap --}}
-    <link rel="stylesheet" href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
 
     {{-- Template Leaflet CSS JS --}}
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    <script src="{{ url('https://unpkg.com/leaflet@1.9.3/dist/leaflet.js') }}"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
 
@@ -35,12 +45,12 @@
 
 @section('content')
 <section >
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <form class="d-flex" role="search" id="searchForm">
                     @csrf
-                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search Username" name="username">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Cari Username" name="username">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
@@ -50,15 +60,19 @@
                     <input type="hidden" name="username" id="username" placeholder="Username">
                     <input type="hidden" name="latitude" id="latitude" placeholder="Latitude">
                     <input type="hidden" name="longitude" id="longitude" placeholder="Longitude">
-                    <input class="btn btn-outline-info" type="submit" value="Update Posisi" id="submit">
+                    <input class="btn btn-outline-info" type="submit" value="Perbarui Posisi" id="submit">
                 </form>
+            </div>
+            <div>
+                <li>Selalu perbarui posisi Anda</li>
+                <li>Klik dan seret peta untuk melihat seluruh peta</li>
             </div>
         </div>
     </div>
 
 
 
-    <div class="container mt-3">
+    <div class="container mt-3" id="map-container">
         <div id="map"></div>
     </div>
 

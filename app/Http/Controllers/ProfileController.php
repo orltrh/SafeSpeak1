@@ -8,6 +8,10 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 
+use Illuminate\Support\Facades\Storage;
+use PhpParser\Node\Expr\PostDec;
+
+
 
 class ProfileController extends Controller
 {
@@ -20,26 +24,49 @@ class ProfileController extends Controller
             $email = $user->email;
             $number = $user->number;
 
-            return view('updateUsers.profileUser', compact('username', 'email', 'number'));
+            return view('updateUsers.profileUser', compact('username', 'email', 'number', 'user'));
         } else {
             return redirect()->route('login');
         }
     }
 
-    public function save(Request $request)
-{
-    $user = Auth::user();
+    public function store(Request $request)
+    {
+        $user = Auth::user();
 
-    if ($request->hasFile('foto')) {
         $validateData = $request->validate([
-            'foto' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $path = $request->file('foto')->store('uploads');
-        $user->photo = $path;
+        if ($request->file('image')) {
+            $imagePath = $request->file('image')->store('post-images');
+            $validateData['image'] = $imagePath;
+
+            // Delete the previous image if exists
+            if ($user->image) {
+                Storage::delete($user->image);
+            }
+        }
+
+        $user->image = $validateData['image'];
+        $user->save();
+
+        return redirect()->route('profile');
     }
 
-    // Redirect atau melakukan tindakan lain setelah menyimpan gambar ke database
-}
+    public function delete()
+    {
+        $user = Auth::user();
 
+        if ($user->image) {
+            // Delete the image file
+            Storage::delete($user->image);
+
+            // Clear the image path in the user model
+            $user->image = null;
+            $user->save();
+        }
+
+        return redirect()->route('profile');
+    }
 }

@@ -4,6 +4,8 @@ use App\Events\MessageCreated;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
+
 use App\Http\Controllers\TrackingPositionController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EdukasiController;
@@ -68,15 +70,15 @@ Route::post('/admin', [AdminController::class, 'store'])->name('admins.store')->
 
 // route profil
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile')->middleware('auth');
-Route::post('/prosesFoto', [App\Http\Controllers\Auth\ProfileController::class, 'save'])->name('fotoPost');
+Route::post('/prosesFoto', [App\Http\Controllers\ProfileController::class, 'store'])->name('fotoPost');
+Route::delete('/deleteFoto', [App\Http\Controllers\ProfileController::class, 'delete'])->name('fotoDelete');
+
 
 
 
 
 // Route untuk tracking position
 Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition')->middleware('auth');
-Route::get('create-track', [TrackingPositionController::class, 'index']);
-Route::post('create-track', [TrackingPositionController::class, 'store'])->name('create.track');
 
 // // route untuk search
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');

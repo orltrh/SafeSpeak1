@@ -9,5 +9,4 @@ class Edukasi extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
 }

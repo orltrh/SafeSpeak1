@@ -1,15 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-
-
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -18,8 +16,12 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
+        ], [
+            'email.required' => 'Email is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'password.required' => 'Password is required.',
         ]);
-
+    
         if (Auth::attempt($credentials)) {
             if (Auth::user()->is_admin == 1) {
                 $request->session()->regenerate();
@@ -28,10 +30,10 @@ class LoginController extends Controller
             } else {
                 return redirect()->route('dashboard');
             }
-        }
+        }   
 
         throw ValidationException::withMessages([
-            'email' => ['Email atau password salah.'],
+            'eror' => ['Email or password is incorrect.'],
         ])->redirectTo(route('login'));
     }
 

@@ -14,28 +14,35 @@
 
                 <div class="signin-form">
                     <h2 class="form-title">Sign In</h2>
-                    <form method="POST" action="{{ route('loginPost') }}" class="register-form" id="login-form">
+                    <form method="POST" action="{{ route('loginPost') }}">
                         @csrf
                         <div class="form-group">
                             <label for="your_email"><i class="zmdi zmdi-account material-icons-email"></i></label>
-                            <input type="email" name="email" id="email" placeholder="Email Address @error('email') is-invalid @enderror" value="{{ old('email') }}"/>
+                            <input type="email" name="email" id="email" placeholder="Email Address" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"/>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="password"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="password" id="password" placeholder="Password"/>
+                            <input type="password" name="password" id="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror"/>
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
-
+                        
                         <div>
-                            @error('email')
-                            <div class="alert alert-danger">{{ $message }}</div>
+                            @error('eror')
+                            <div class="alert alert-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
-                        </div>
+                        
                         <div class="form-group form-button">
                             <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
                         </div>

@@ -38,7 +38,6 @@ Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name
 Route::get('/edukasi', [App\Http\Controllers\UserController::class, 'edukasi'])->name('edukasi');
 Route::get('/panduan', [App\Http\Controllers\UserController::class, 'panduan'])->name('panduan');
 Route::get('/forum', [App\Http\Controllers\UserController::class, 'forum'])->name('forum')->middleware('auth');
-Route::get('/profile', [App\Http\Controllers\UserController::class, 'profile'])->name('profile')->middleware('auth');
 
 Route::get('/self-awareness', [UserController::class, 'selfawareness'])->name('admins.selfawareness');
 Route::get('/self-regulation', [UserController::class, 'selfregulation'])->name('admins.selfregulation');
@@ -50,8 +49,8 @@ Route::get('/social-skills', [UserController::class, 'socialskills'])->name('adm
 
 // route admin
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('checkMiddleware');
-Route::get('/admin-tracking', [App\Http\Controllers\AdminController::class, 'trackingPosition'])->name('aTrackingPosition')->middleware('checkMiddleware');
-Route::get('/admin-edukasi', [App\Http\Controllers\AdminController::class, 'edukasi'])->name('aEdukasi')->middleware('checkMiddleware');
+Route::get('/admin-tracking', [App\Http\Controllers\TrackingPositionController::class, 'adminShow'])->name('aTrackingPosition')->middleware('checkMiddleware');
+// Route::get('/admin-edukasi', [App\Http\Controllers\AdminController::class, 'edukasi'])->name('aEdukasi')->middleware('checkMiddleware');
 Route::get('/admin-panduan', [App\Http\Controllers\AdminController::class, 'panduan'])->name('aPanduan')->middleware('checkMiddleware');
 Route::get('/admin-forum', [App\Http\Controllers\AdminController::class, 'forum'])->name('aForum')->middleware('checkMiddleware');
 
@@ -69,24 +68,37 @@ Route::patch('/update', [AdminController::class, 'update'])->name('admins.update
 Route::get('/admin-delete', [AdminController::class, 'delete'])->name('admins.del')->middleware('checkMiddleware');
 Route::get('/delete', [AdminController::class, 'destroy'])->name('admins.destroy')->middleware('checkMiddleware');
 
+// route profil
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::post('/prosesFoto', [App\Http\Controllers\Auth\ProfileController::class, 'save'])->name('fotoPost');
+
+
+
 
 // Route untuk tracking position
-Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition');
+Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition')->middleware('auth');
 Route::get('create-track', [TrackingPositionController::class, 'index']);
 Route::post('create-track', [TrackingPositionController::class, 'store'])->name('create.track');
-    
+
 // // route untuk search
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');
 Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition');
+
+Route::get('/adedukasi', [EdukasiController::class, 'index'])->name('home');
+Route::get('/category/{category', [EdukasiController::class, 'showCategory'])->name('admin.edu');
+Route::resource('admin', EdukasiController::class);
+Route::get('/admin/create', [EdukasiController::class, 'create'])->name('admin.create');
+Route::post('/admin/store', [EdukasiController::class, 'store'])->name('admin.store');
+Route::get('/admin', [EdukasiController::class, 'index'])->name('admin.index');
+Route::get('/admin/{id}', [EdukasiController::class, 'show'])->name('admin.show');
+
+
 
 // FC
 
 // route authentikasi
 Auth::routes();
 
-// Route create edukasi
 
-Route::get('/edukasi', [EdukasiController::class, 'index'])->name('dashboard');
-Route::get('/edukasi/create', [EdukasiController::class, 'create'])->name('articles.create');
-Route::post('/edukasi', [EdukasiController::class, 'store'])->name('articles.store');
+Auth::routes();
 

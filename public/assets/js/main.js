@@ -35,7 +35,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -187,7 +187,7 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
@@ -259,10 +259,10 @@ var messageBox = document.querySelector('.js-message');
   var card = document.querySelector('.js-profile-card');
   var closeBtn = document.querySelectorAll('.js-message-close');
 
-  btn.addEventListener('click',function (e) {
-      e.preventDefault();
-      card.classList.add('active');
-  });
+//   btn.addEventListener('click',function (e) {
+//       e.preventDefault();
+//       card.classList.add('active');
+//   });
 
   closeBtn.forEach(function (element, index) {
      console.log(element);

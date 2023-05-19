@@ -7,7 +7,7 @@
     <title>@yield('title', 'SafeSpeak')</title>
     <!-- Favicons -->
     <link href="{{ url('assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ url('assets/img/apple-touch-icon.pn') }}g" rel="apple-touch-icon">
+    <link href="{{ url('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="{{ url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}" rel="stylesheet">
@@ -23,11 +23,42 @@
     <!-- Template Main CSS File -->
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
 
-    {{-- Template Bootstrap --}}
+    {{-- Template Icon --}}
+    {{-- <link rel="stylesheet" href="npm i bootstrap-icons"> --}}
+    {{-- <script src="npm i bootstrap-icons" ></script> --}}
+
+    {{-- Template Routing Machine Leaflet --}}
+    <link rel="stylesheet" href="{{ url('assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.css') }}" />
+
+    {{-- Template Leaflet Maps --}}
+    <link rel="stylesheet" href="{{ url('https://unpkg.com/leaflet@1.9.3/dist/leaflet.css') }}"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+    {{-- Template CSS Leaflet Maps --}}
+    <style>
+        #map { height: 600px; }
+    </style>
+
+    {{-- Template Boostrap --}}
     <link rel="stylesheet" href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css') }}">
 
-    <script src="{{ url('https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js') }}"></script>
+    {{-- Template Leaflet CSS JS --}}
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    {{-- Template Routing Machine Leaflet CSS JS --}}
+    <script src="{{ url('assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.js') }}"></script>
+
+    {{-- Template Geocoder --}}
+    <script src="{{ url('assets/js/leaflet-routing-machine/examples/Control.Geocoder.js') }}"></script>
+
+    {{-- Template Jquery --}}
+    <script src="{{ url('https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js') }}"></script>
+
 </head>
+@section('body')
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -38,7 +69,7 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-      <!-- .navbar -->
+
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto @yield('menuIndex')" href="{{ route('dashboard') }}">Home</a></li>
@@ -46,14 +77,35 @@
           <li><a class="nav-link scrollto @yield('menuEdukasi')" href="{{ route('edukasi') }}">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuPanduan')" href="{{ route('panduan') }}">Panduan</a></li>
           <li><a class="nav-link scrollto @yield('menuForum')" href="{{ route('forum') }}">Forum</a></li>
-          @auth
-          <li><a class="nav-link scrollto @yield('menuProfile')" href="{{ route('profile') }}"><i class="bi bi-person-circle"></i></a></li>
-          @else
-          <li><a class="getstarted scrollto" href="login">Login</a></li>
-          @endauth
+          <div>
+            @auth
+            <div class="dropdown">
+              <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bi bi-person-circle"></i>
+              </a>
+              <ul class="menu" aria-labelledby="profileDropdown">
+                <li>
+                  <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                </li>
+                <li>
+                  <div>
+                    <form action="{{ route('logout') }}" method="POST">
+                      @csrf
+                      <a><button type="submit" role="button" class="dropdown-item" style="border:none">Log Out</button></a>
+                    </form>
+                  </div>
+
+                </li>
+              </ul>
+            </div>
+            @else
+            <li><a class="getstarted scrollto text-decoration-none" href="{{ route('login') }}">Login</a></li>
+            @endauth
+          </div>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
+      </nav><!-- .navbar -->
+
     </div>
   </header><!-- End Header -->
 
@@ -97,7 +149,5 @@
     <!-- Template Main JS File -->
     <script src="{{ url('assets/js/main.js') }}"></script>
 
-    {{-- Template Bootstrap --}}
-    <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

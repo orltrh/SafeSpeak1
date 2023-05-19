@@ -36,19 +36,43 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto @yield('menuadIndex')" href="admin">Home</a></li>
-          <li><a class="nav-link scrollto @yield('menuadTrack')" href="admin-trackingposition">Tracking Position</a></li>
-          <li><a class="nav-link scrollto @yield('menuadindex')" href="admin-edukasi">Edukasi</a></li>
-          <li><a class="nav-link scrollto @yield('menuadPanduan')" href="admin-panduan">Panduan</a></li>
-          <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-forum">Forum</a></li>
-          <li><a class="nav-link scrollto @yield('menuadCreate')" href="admin-create">Create</a></li>
-          <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-update">Update</a></li>
-          <li><a class="nav-link scrollto @yield('menuadForum')" href="admin-delete">Delete</a></li>
-          @auth
-          <li><a class="nav-link scrollto @yield('menuProfile')" href="profile"><i class="bi bi-person-circle"></i></a></li>
-          @else
-          <li><a class="getstarted scrollto" href="login">Login</a></li>
-          @endauth
+          <li><a class="nav-link scrollto @yield('menuadIndex')" href="{{ route('admin') }}">Home</a></li>
+          <li><a class="nav-link scrollto @yield('menuadTrack')" href="{{ route('aTrackingPosition') }}">Tracking Position</a></li>
+          <li><a class="nav-link scrollto @yield('menuadindex')" href="{{ route('aEdukasi') }}">Edukasi</a></li>
+          <li><a class="nav-link scrollto @yield('menuadPanduan')" href="{{ route('aPanduan') }}">Panduan</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="{{ route('aForum') }}">Forum</a></li>
+          <li><a class="nav-link scrollto @yield('menuadCreate')" href="{{ route('admins.create') }}">Create</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="{{ route('admins.edit') }}">Update</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="{{ route('admins.del') }}">Delete</a></li>
+          <div>
+            @auth
+            <div class="dropdown">
+              <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bi bi-person-circle"></i>
+              </a>
+              <ul class="menu" aria-labelledby="profileDropdown">
+                <li>
+                  <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                </li>
+                <li>
+                  <div>
+                    <form action="{{ route('logout') }}" method="POST">
+                      @csrf
+                      <a><button type="submit" role="button" class="dropdown-item" style="border:none">Log Out</button></a>
+                    </form>
+                  </div>
+                  
+                </li>
+              </ul>
+            </div>
+            @else
+            <li><a class="getstarted scrollto" href="{{ route('login') }}">Log In</a></li>
+            @endauth
+          </div>
+          
+          
+          
+          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -69,37 +93,37 @@
     <footer id="footer">
 
 
-        <div class="container">
-            <div class="copyright">
-            &copy; Copyright <strong><span>SafeSpeak</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/ -->
-            Designed by <a href="#">Kelompok 9 Pemograman Web</a>
-            </div>
-        </div>
-        </footer><!-- End Footer -->
+      <div class="container">
+          <div class="copyright">
+          &copy; Copyright <strong><span>SafeSpeak</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/ -->
+          Designed by <a href="#">Kelompok 9 Pemograman Web</a>
+          </div>
+      </div>
+      </footer><!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
-    {{-- Template Pop Up --}}
-    <script>
-        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-    </script>
+  {{-- Template Pop Up --}}
+  <script>
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+  </script>
 </body>
 </html>

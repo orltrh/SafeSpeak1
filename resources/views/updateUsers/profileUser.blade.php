@@ -1,52 +1,120 @@
-@extends('layout.master')
-@section('title', 'Tracking Location')
-@section('menuTrack', 'active')
+@extends('layout.updateUsers')
+@section('title', 'Profile')
+@section('menuProfie', 'active')
+
+<style>
+  .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 4px;
+  height: 32px;
+  width: 81px;
+  border: none;
+  background: #1b1b1cd0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.lable {
+  line-height: 22px;
+  font-size: 17px;
+  color: #467dff;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background: #1b1b1cea;
+}
+
+.button:hover .svg-icon {
+  animation: rotate 1.3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+</style>
 
 @section('content')
 <section >
-    <div class="container">
+    <div class="container pt-5">
         <h1>Profile User</h1>
-        <section class="vh-100" style="background-color: #f4f5f7;">
-            <div class="container py-5 h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col col-lg-6 mb-4 mb-lg-0">
-                  <div class="card mb-3" style="border-radius: .5rem;">
+        <section class="vh-50" style="background-color: #f4f5f7;">
+            <div class="container h-1000">
+              <div class="row d-flex justify-content-center align-items-center h-1">
+                <div class="col col-lg-6 mb-4 mb-lg-0" style="height: 450px; width: 1250px;">
+                  <div class="card mb-3" style="border-radius: .5rem; height:450px; padding-left:100px !important; ">
                     <div class="row g-0">
                       <div class="col-md-4 gradient-custom text-center text-white"
                         style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                          alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-                        <h5>Marie Horwitz</h5>
-                        <p>Web Designer</p>
-                        <i class="far fa-edit mb-5"></i>
+                          alt="Avatar" class="img-fluid my-5" style="width: 200px;" />
+                        <div>
+                          <form action="{{ route('fotoPost') }}" method="POST" enctype="multipart/form-data">
+                            <label for="foto" class="form-label">Edit Foto</label>
+                            <input class="form-control @error('foto') is-invalid @enderror" type="file" id="foto" name="foto" accept="image/*">
+                            @error('foto')
+                            <div class="alert alert-danger"><strong>{{ $message }}</strong></div>
+                            @enderror
+                            <button class="button">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 20 20" height="20" fill="none" class="svg-icon"><g stroke-width="1.5" stroke-linecap="round" stroke="white"><circle r="7.5" cy="10" cx="10"></circle><path d="m9.99998 7.5v5"></path><path d="m7.5 9.99998h5"></path></g></svg>
+                              <span class="lable">Add</span>
+                            </button>
+                          </div>
+                          </form>
+                          <div class="">
+                            
+                        </div>
                       </div>
                       <div class="col-md-8">
-                        <div class="card-body p-4">
-                          <h6>Information</h6>
+                        <div class="card-body" style="padding-left:100px !important; padding-top:75px;">
+                          
+                          <h6>Username</h6>
+                          <p class="text-muted">{{ $username }}</p>
                           <hr class="mt-0 mb-4">
                           <div class="row pt-1">
-                            <div class="col-6 mb-3">
+                            <div class="col">
                               <h6>Email</h6>
-                              <p class="text-muted">info@example.com</p>
+                              <p class="text-muted">{{ $email }}</p>
                             </div>
+                          <hr class="mt-0 mb-4">
+                          <div>
                             <div class="col-6 mb-3">
                               <h6>Phone</h6>
-                              <p class="text-muted">123 456 789</p>
+                              <p class="text-muted">{{ $number }}</p>
                             </div>
                           </div>
-                          <h6>Projects</h6>
+                          </div>
                           <hr class="mt-0 mb-4">
                           <div class="row pt-1">
                             <div class="col-6 mb-3">
-                              <h6>Recent</h6>
-                              <p class="text-muted">Lorem ipsum</p>
+
+                              
                             </div>
                             <div class="col-6 mb-3">
-                              <h6>Most Viewed</h6>
-                              <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit">Logout</button>
-                              </form>
+                             
+                              
                             </div>
                           </div>
                           <div class="d-flex justify-content-start">

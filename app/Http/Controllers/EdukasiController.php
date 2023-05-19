@@ -45,7 +45,7 @@ public function index()
 public function show($id)
 {
     $admin = Admin::findOrFail($id);
-    return view('admin.show', compact('admin'));
+    return view('admin.adShow', compact('admin'));
 }
 
 public function update(Request $request, $id)
@@ -94,8 +94,9 @@ public function destroy($id)
 public function edit($id)
 {
     $admin = Admin::findOrFail($id);
-    return view('admin.update', compact('admin'));
+    return view('admin.edit', compact('admin'));
 }
+
 
 public function delete($id)
 {

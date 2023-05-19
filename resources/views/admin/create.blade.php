@@ -1,8 +1,9 @@
-@extends('layouts.app')
+@extends('layout.admin')
 
 @section('content')
     <h1>Create Artikel</h1>
-
+    <section style="height:100vh; padding-top: 100px">
+    <div class="container d-flex justify-content-center">
     <form action="{{ route('admins.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
@@ -27,4 +28,7 @@
 
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
+        </div>
+    </div>
+    </section>
 @endsection

@@ -25,7 +25,7 @@
 </html>
 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Website Blogger/Berita</title>
@@ -41,8 +41,8 @@
         @yield('content')
     </div>
 </body>
-</html> -->
-<!-- <!DOCTYPE html>
+</html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Website Admin</title>
@@ -59,5 +59,5 @@
     <script>
     </script>
 </body>
-</html> -->
+</html>
 

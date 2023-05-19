@@ -7,30 +7,28 @@
   <div class="container">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <ol class="carousel-indicators">
-        @foreach ($admins->chunk as $index => $chunk)
+        @foreach ($admins as $index => $admin)
           <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}">
             <span><i class="fas fa-circle"></i></span> <!-- Menambahkan ikon pada span -->
           </li>
         @endforeach
       </ol>
       <div class="carousel-inner">
-        @foreach ($admins->chunk as $index => $chunk)
+        @foreach ($admins as $index => $admin)
           <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
             <div class="row">
-              @foreach ($chunk as $admin)
                 <div class="col-md-6">
                   <img src="{{ asset('images/' . $admin->gambar) }}" class="card-img-top" alt="Admin Image">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
                       <p class="card-title">{{ $admin->judul }}</p>
-                      <!-- <p class="card-text">{{ $admin->konten }}</p> -->
+                      <p class="card-text">{{ $admin->konten }}</p>
                       <a href="{{ route('admins.show', $admin->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
                     </div>
                     </div>
                   </div>
                 </div>
-              @endforeach
             </div>
           </div>
         @endforeach

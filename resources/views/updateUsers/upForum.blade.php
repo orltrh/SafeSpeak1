@@ -47,7 +47,7 @@
                   <p class="fw-bolder" style="padding-top: 62px;">Corporate Forum</p>
                   <p class="fw-medium" style="padding-top: 75px; padding-right:50px; padding-left:50px;">Bergabunglah dengan forum industri kami yang peduli terhadap penanganan kasus pelecehan seksual dan bullying. Diskusikan isu-isu yang relevan, berbagi pengalaman, dan temukan solusi bersama untuk menciptakan lingkungan kerja yang aman dan inklusif.</p>
                   <div class="detail pt-3 pb-5">
-                  <div class="pt-3"><a href="https://t.me/+Jy4OXRoin09kNTE1" class="btn btn-outline-primary">Join</a></div>
+                  <div class="pt-3"><a href="https://t.me/+Jy4OXRoin09kNTE1" class="btn btn-outline-warning">Join</a></div>
               </div>
                 </div>
               </div>

@@ -64,8 +64,8 @@
                 </form>
             </div>
             <div>
-                <li>Selalu perbarui posisi Anda.</li>
-                <li>Klik dan seret peta untuk melihat seluruh peta.</li>
+                <li>Selalu perbarui posisi Anda</li>
+                <li>Klik dan seret peta untuk melihat seluruh peta</li>
             </div>
         </div>
     </div>

@@ -14,11 +14,10 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'username' => ['required'],
             'password' => ['required'],
         ], [
-            'email.required' => 'Email is required.',
-            'email.email' => 'Please enter a valid email address.',
+            'username.required' => 'Username is required.',
             'password.required' => 'Password is required.',
         ]);
     
@@ -33,7 +32,7 @@ class LoginController extends Controller
         }   
 
         throw ValidationException::withMessages([
-            'eror' => ['Email or password is incorrect.'],
+            'eror' => ['Username or password is incorrect.'],
         ])->redirectTo(route('login'));
     }
 

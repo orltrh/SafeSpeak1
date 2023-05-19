@@ -54,24 +54,34 @@
     transform: rotate(0deg);
   }
 }
+.rounded-custom {
+  border-radius: 10%;
+}
 </style>
 
 @section('content')
 <section >
     <div class="container vh-90" style="padding-top: 170px;">
         <h1>Profile User</h1>
-       <div class="card">
+       <div class="card" style="width:">
         <div class="row">
           <div class="col col-md-4 d-flex" style="justify-content: center; align-items:center;">
-            <div class="text-center">
+            <div class="text-center pt-4">
               @if($user->image)
-                  <img class="rounded-circle" src="{{ asset('storage/' . $user->image) }}" style="width: 200px; height: 200px; object-fit: cover;" alt="...">
+              <div class="pb-3">
+                  <img class="rounded-circle img-fluid" src="{{ asset('storage/' . $user->image) }}" style="width: 200px; height: 200px; object-fit:initial;" alt="...">
+              </div>
               @else
-                  <img class="rounded-circle" src="/assets/img/clients/defaultFoto.jpg" style="width: 200px; height: 200px; object-fit: cover;" alt="..." alt="...">
+              <div class="pt-3">
+                  <img class="rounded-circle" src="/assets/img/clients/defaultFoto.jpg" style="width: 200px; height: 200px; object-fit: cover;" alt="...">
+              </div>
+                  <div class="pt-2">
+                    <h20>*input a 1:1 sized image for more precision</h20>
+                  </div>
               @endif
-              <form action="{{ route('fotoPost') }}" method="POST" enctype="multipart/form-data">
+              <form action="{{ route('fotoPost') }}" method="POST" enctype="multipart/form-data" >
                   @csrf
-                  <div class="mb-3 pt-3">
+                  <div class="mb-5">
                       <label for="image" class="form-label"></label>
                       <input class="form-control form-control-sm @error('image') is-invalid @enderror" id="image" type="file" name="image">
                       @error('image')
@@ -80,23 +90,31 @@
                       </div>
                       @enderror
                   </div>
-                  <div class="form-group form-button">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group form-button">
+                      </div>
+                      <button type="submit" class="btn btn-outline-primary">Upload</button>
+                    </form>
+                    </div>
+                    <div class="col-md-6">
+                      <form action="{{ route('fotoDelete') }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                       
+                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                
+                    </form>
+                    </div>
                   </div>
-                  <button type="submit" class="btn btn-outline-primary">Upload</button>
-              </form>
-              <form action="{{ route('fotoDelete') }}" method="POST">
-                @csrf
-                @method('DELETE')
-               
-                <button type="submit" class="btn btn-outline-danger">Delete</button>
-        
-            </form>
+              
+              
           </div>
             
           </div>
-          <div class="col col-8">
+       
             <div class="col-md-8">
-              <div class="card-body" style=" padding-top:75px; hei  ">
+              <div class="card-body" style=" padding-top:75px;">
                 <h6>Username</h6>
                 <p class="text-muted">{{ $username }}</p>
                 <hr class="mt-0 mb-4">
@@ -131,8 +149,32 @@
                 </div>
               </div>
             </div>
-          </div>
+        
         </div>
        </div>
     </div>
 </section>
+{{-- <script>
+    function deletePreviousPhoto() {
+        // Mendapatkan URL endpoint untuk menghapus foto
+        var deleteUrl = "{{ route('fotoDelete') }}";
+
+        // Mengirim permintaan AJAX ke endpoint
+        fetch(deleteUrl, {
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Foto sebelumnya dihapus');
+            } else {
+                console.log('Gagal menghapus foto sebelumnya');
+            }
+        })
+        .catch(error => {
+            console.error('Terjadi kesalahan:', error);
+        });
+    }
+</script> --}}

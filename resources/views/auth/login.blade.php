@@ -28,7 +28,11 @@
                     <h2 class="form-title">Masuk</h2>
                     <form method="POST" action="{{ route('loginPost') }}">
                         @csrf
+
                         <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="username" id="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Username"/>
+                            @error('username')
                             <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                             <input type="text" name="username" id="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Username"/>
                             @error('username')

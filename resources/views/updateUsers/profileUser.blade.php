@@ -4,7 +4,7 @@
 
 @section('content')
 <section >
-    <div class="container vh-90" style="padding-top: 170px;">
+    <div class="container vh-90" style="padding-top: 30px;">
         <h1>Profile User</h1>
        <div class="card" style="width:">
         <div class="row">

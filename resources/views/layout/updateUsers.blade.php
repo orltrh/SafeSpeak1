@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title', 'SafeSpeak')</title>
+    <title>@yield('title', 'SafeSpeaks')</title>
     <!-- Favicons -->
     <link href="{{ url('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ url('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -38,7 +38,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="{{ route('dashboard') }}">SafeSpeak</a></h1>
+        <h1><a href="{{ route('dashboard') }}">SafeSpeaks</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -94,7 +94,7 @@
 
         <div class="container">
             <div class="copyright">
-            &copy; Copyright <strong><span>SafeSpeak</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>SafeSpeaks</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
             <!-- All the links in the footer should remain intact. -->

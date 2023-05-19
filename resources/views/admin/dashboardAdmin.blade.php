@@ -10,7 +10,7 @@
         <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
             <div>
-            <h1>SafeSpeak</h1>
+            <h1>SafeSpeaks</h1>
             <h2> Media Edukasi dan Bantuan bagi Korban Pelecehan Seksual dan Bullying</h2>
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
             </div>
@@ -35,7 +35,7 @@
         <div class="content pt-4 pt-lg-0">
             <h3>About Us</h3>
             <p class="fst-italic">
-            SafeSpeak merupakan media edukasi dan bantuan bagi korban pelecehan seksual dan bullying dengan menerapkan emotional intelligence dan tracking position
+            SafeSpeaks merupakan media edukasi dan bantuan bagi korban pelecehan seksual dan bullying dengan menerapkan emotional intelligence dan tracking position
             </p>
             <ul>
             <li><i class="bi bi-check-circle"></i> Tracking Position</li>
@@ -60,7 +60,7 @@
 
     <div class="section-title" data-aos="fade-up">
         <h2>Team</h2>
-        <p>Penyusun Website SafeSpeak</p>
+        <p>Penyusun Website SafeSpeaks</p>
     </div>
 
     <div class="row">

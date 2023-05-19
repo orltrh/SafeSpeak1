@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title', 'SafeSpeak')</title>
+    <title>@yield('title', 'SafeSpeaks')</title>
     <!-- Favicons -->
     <link href="{{ url('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ url('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -30,7 +30,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index">SafeSpeak</a></h1>
+        <h1><a href="index">SafeSpeaks</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -49,7 +49,7 @@
             @auth
             <div class="dropdown">
               <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="bi bi-person-circle"></i>
+                <i class="bi bi-person-circle" style="font-size: 22px;"></i>
               </a>
               <ul class="menu" aria-labelledby="profileDropdown">
                 <li>
@@ -96,7 +96,7 @@
 
       <div class="container">
           <div class="copyright">
-          &copy; Copyright <strong><span>SafeSpeak</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>SafeSpeaks</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
           <!-- All the links in the footer should remain intact. -->

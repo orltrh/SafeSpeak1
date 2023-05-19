@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" >
-            <img src="assets/picture/ei.jpg" class="img-fluid" style="border-radius: 50px" alt="">
+            <img src="{{ url('assets/picture/ei.jpg') }}" class="img-fluid" style="border-radius: 50px" alt="">
         </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-lg-6" data-aos="zoom-in">
-        <img src="assets/picture/sslogo.png" style="height: 350px;" class="img-fluid" alt="">
+        <img src="{{ url('assets/picture/sslogo.png') }}" style="height: 450px;" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
         <div class="content pt-4 pt-lg-0">
@@ -91,7 +91,7 @@
 
         <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in">
-            <div class="pic"><img src="assets/img/team/azarya.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ url('assets/img/team/azarya.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Azarya Aditya Krisna Moeljono</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
@@ -105,7 +105,7 @@
 
         <div class="col-lg-4 col-md-12">
             <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                <div class="pic"><img src="assets/img/team/aurel.jpg" class="img-fluid" alt=""></div>
+                <div class="pic"><img src="{{ url('assets/img/team/aurel.jpg') }}" class="img-fluid" alt=""></div>
                 <div class="member-info">
                 <h4>Dika Aurelya Aleandra Taroreh</h4>
                 <span>Mahasiswa Teknik Informatika Angkatan 22</span>
@@ -119,7 +119,7 @@
 
         <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pic"><img src="assets/img/team/abidzar.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ url('assets/img/team/abidzar.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Abidzar Ulil Abshar</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>

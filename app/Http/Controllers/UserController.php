@@ -28,23 +28,14 @@ class UserController extends Controller
     public function profile(){
         return view('updateUsers.profileUser');
     }
-    
-    public function SelfAwareness(){
-        return view('updateUsers.selfAwareness');
-    }
 
-   
     public function showSubMateri($materi){
         $data = Edukasi::where('materi', $materi)->get();
         return view('updateUsers.upSubMateri', compact('data'));
         }
-    
+
     public function showMateri($judul){
         $data = Edukasi::where('judul', $judul)->first();
         return view('updateUsers.upMateri', compact('data'));
         }
-
-
-
-
 }

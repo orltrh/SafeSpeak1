@@ -71,10 +71,10 @@
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_password" id="re_password"  placeholder="Ulangi Kata Sandi Anda"/>
                                 <i class="fas fa-eye" id="toggle-password-re"></i>
-                                @error('re_password')
-                                    <div class="text-danger"><strong>{{ $message }}</strong></div>
-                                @enderror
                             </div>
+                            @error('re_password')
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
+                            @enderror
                         </div>
 
                         <div>

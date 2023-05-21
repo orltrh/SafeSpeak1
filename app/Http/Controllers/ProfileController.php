@@ -69,4 +69,59 @@ class ProfileController extends Controller
 
         return redirect()->route('profile');
     }
+
+    public function adindex()
+    {
+        $user = Auth::user();
+
+        if ($user) {
+            $username = $user->username;
+            $email = $user->email;
+            $number = $user->number;
+
+            return view('admin.profileAdmin', compact('username', 'email', 'number', 'user'));
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+    public function adstore(Request $request)
+    {
+        $user = Auth::user();
+
+        $validateData = $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        if ($request->file('image')) {
+            $imagePath = $request->file('image')->store('post-images');
+            $validateData['image'] = $imagePath;
+
+            // Delete the previous image if exists
+            if ($user->image) {
+                Storage::delete($user->image);
+            }
+        }
+
+        $user->image = $validateData['image'];
+        $user->save();
+
+        return redirect()->route('adprofile');
+    }
+
+    public function addelete()
+    {
+        $user = Auth::user();
+
+        if ($user->image) {
+            // Delete the image file
+            Storage::delete($user->image);
+
+            // Clear the image path in the user model
+            $user->image = null;
+            $user->save();
+        }
+
+        return redirect()->route('adprofile');
+    }
 }

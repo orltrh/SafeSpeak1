@@ -79,14 +79,14 @@ Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])
 Route::post('/prosesFoto', [App\Http\Controllers\ProfileController::class, 'store'])->name('fotoPost');
 Route::delete('/deleteFoto', [App\Http\Controllers\ProfileController::class, 'delete'])->name('fotoDelete');
 
-
-
+// route profil
+Route::get('/admin-profile', [App\Http\Controllers\ProfileController::class, 'adindex'])->name('adprofile')->middleware('auth');
+Route::post('/admin-prosesFoto', [App\Http\Controllers\ProfileController::class, 'adstore'])->name('adfotoPost');
+Route::delete('/admin-deleteFoto', [App\Http\Controllers\ProfileController::class, 'addelete'])->name('adfotoDelete');
 
 
 // Route untuk tracking position
 Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition')->middleware('auth');
-
-// // route untuk search
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');
 Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition');
 

@@ -84,49 +84,43 @@
 
     <div class="row">
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in">
             <div class="pic"><img src="{{ url('assets/img/team/azarya.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Azarya Aditya Krisna Moeljono</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
             <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href="{{ url('https://www.instagram.com/azarya.aditya/?hl=id') }}"><i class="bi bi-instagram"></i></a>
+                <a href="{{ url('https://github.com/azryadtykrsnmljno') }}"><i class="bi bi-github"></i></a>
             </div>
             </div>
         </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-        <div class="member" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pic"><img src="{{ url('assets/img/team/aurel.jpg') }}" class="img-fluid" alt=""></div>
-            <div class="member-info">
-            <h4>Dika Aurelya Aleandra Taroreh</h4>
-            <span>Mahasiswa Teknik Informatika Angkatan 22</span>
-            <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+        <div class="col-lg-4 col-md-12">
+            <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                <div class="pic"><img src="{{ url('assets/img/team/aurel.jpg') }}" class="img-fluid" alt=""></div>
+                <div class="member-info">
+                <h4>Dika Aurelya Aleandra Taroreh</h4>
+                <span>Mahasiswa Teknik Informatika Angkatan 22</span>
+                <div class="social">
+                    <a href="{{ url('https://www.instagram.com/orltrh/') }}"><i class="bi bi-instagram"></i></a>
+                    <a href="{{ url('https://github.com/orltrh') }}"><i class="bi bi-github"></i></a>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in" data-aos-delay="200">
             <div class="pic"><img src="{{ url('assets/img/team/abidzar.png') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Abidzar Ulil Abshar</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
             <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href="{{ url('https://instagram.com/abidzar27_?igshid=OTk0YzhjMDVlZA==') }}"><i class="bi bi-instagram"></i></a>
+                <a href="{{ url('https://github.com/UlilAbshar99') }}"><i class="bi bi-github"></i></a>
             </div>
             </div>
         </div>

@@ -14,7 +14,7 @@
                 @csrf
                 <div style="max-width: 600px; margin: 0 auto;">
                   <table style="width: 100%;">
-                    
+
                     <tr>
                         <td><label for="materi">Materi:</label></td>
                         <td>
@@ -62,14 +62,14 @@
                 </div>
                 </div>
                 <div class="pt-3 pb-3">
-                    <button type="submit" >Simpan</button>
+                    <button class="btn btn-primary" type="submit">Simpan</button>
                 </div>
               </form>
         </div>
     </div>
     </div>
 </div>
-      
-      
+
+
 </section>
 @endsection

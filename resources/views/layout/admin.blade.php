@@ -47,33 +47,27 @@
           <li><a class="nav-link scrollto @yield('menuadCreate')" href="{{ route('admins.createEdukasi') }}">Create Edukasi</a></li>
           <div>
             @auth
-            <div class="dropdown">
-              <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="bi bi-person-fill" style="font-size: 22px;"></i>
-              </a>
-              <ul class="menu" aria-labelledby="profileDropdown">
-                <li>
-                  <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                <li class="dropdown">
+                    <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-person-fill" style="font-size: 22px;"></i>
+                    </a>
+                    <ul class="menu" aria-labelledby="profileDropdown">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('adprofile') }}">Halo {{ Auth::user()->username }}</a>
+                        </li>
+                        <li>
+                            <div>
+                                <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <a><button type="submit" role="button" class="dropdown-item" style="border:none">Log Out</button></a>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                  <div>
-                    <form action="{{ route('logout') }}" method="POST">
-                      @csrf
-                      <a><button type="submit" role="button" class="dropdown-item" style="border:none">Log Out</button></a>
-                    </form>
-                  </div>
-
-                </li>
-              </ul>
-            </div>
-            @else
-            <li><a class="getstarted scrollto" href="{{ route('login') }}">Log In</a></li>
+                @else
+                <li><a class="getstarted scrollto text-decoration-none" href="{{ route('login') }}">Login</a></li>
             @endauth
-          </div>
-
-
-
-
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

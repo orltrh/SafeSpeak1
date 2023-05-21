@@ -47,7 +47,7 @@
 <section >
     <div class="container mt-3">
         <div class="row">
-            <div class="col-lg-3 col-md-3">
+            <div class="col-lg-3 col-md-5">
                 <form class="d-flex" role="search" id="searchForm">
                     @csrf
                     <input id="searchInput" class="form-control me-2" type="search" placeholder="Cari Username" name="username">

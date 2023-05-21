@@ -1,6 +1,7 @@
 @extends('layout.admin')
 @section('title', 'Tracking Location')
 @section('menuTrack', 'active')
+
 @section('head')
     {{-- Template Routing Machine Leaflet --}}
     <link rel="stylesheet" href="{{ url('assets/js/leaflet-routing-machine/dist/leaflet-routing-machine.css') }}" />
@@ -44,27 +45,34 @@
 
 @section('content')
 <section >
-    <div class="container mt-5 vh-100">
+    <div class="container mt-3">
         <div class="row">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-5">
                 <form class="d-flex" role="search" id="searchForm">
                     @csrf
-                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" name="username">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Cari Username" name="username">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
-            <div class="col-3">
+            <div class="col-lg-3 col-md-3">
                 <form action="updateMarkerPosition" method="POST">
                     @csrf
                     <input type="hidden" name="username" id="username" placeholder="Username">
                     <input type="hidden" name="latitude" id="latitude" placeholder="Latitude">
                     <input type="hidden" name="longitude" id="longitude" placeholder="Longitude">
-                    <input class="btn btn-outline-info" type="submit" value="Update Posisi" id="submit">
+                    <input class="btn btn-outline-info" type="submit" value="Perbarui Posisi" id="submit">
                 </form>
+            </div>
+            <div>
+                <li>Selalu perbarui posisi Anda</li>
+                <li>Klik dan seret peta untuk melihat seluruh peta</li>
+            </div>
         </div>
+    </div>
 
 
-    <div class="container mt-3">
+
+    <div class="container mt-3" id="map-container">
         <div id="map"></div>
     </div>
 

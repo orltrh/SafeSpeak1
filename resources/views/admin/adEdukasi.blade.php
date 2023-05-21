@@ -76,21 +76,6 @@
   transition-delay: .25s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 @section('content')
 <section style="height:100vh; overflow-y: auto; width:100%">
@@ -98,7 +83,7 @@
     <div class="row justify-content-center">
         <article class="card col-lg-4 col-md-9">
           <div class="temporary_text">
-            <img src="assets/images/fixsa.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+            <img src="{{ url('assets/images/fixsa.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
           <div class="card_content">
             <h5 class="card_title">Self Awareness</h5>
@@ -111,7 +96,7 @@
 
         <article class="card col-lg-4 col-md-9">
           <div class="temporary_text">
-            <img src="assets/images/fixsm.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+            <img src="{{ url('assets/images/fixsm.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
           <div class="card_content">
             <h5 class="card_title">Self Motivation</h5>
@@ -124,7 +109,7 @@
 
         <article class="card col-lg-4 col-md-9">
           <div class="temporary_text">
-            <img src="assets/images/fixsr.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+            <img src="{{ url('assets/images/fixsr.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
           <div class="card_content">
             <h5 class="card_title">Self Regulation</h5>
@@ -139,7 +124,7 @@
     <div class="row pt-3 justify-content-center">
       <article class="card col-lg-4 col-md-9 mt-2">
         <div class="temporary_text">
-          <img src="assets/images/fixsc.jpg" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
+          <img src="{{ url('assets/images/fixsc.jpg') }}" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
         </div>
         <div class="card_content">
           <h5 class="card_title">Social Skills</h5>
@@ -152,7 +137,7 @@
 
       <article class="card col-lg-4 col-md-9">
         <div class="temporary_text">
-          <img src="assets/images/fixsad.jpg" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
+          <img src="{{ url('assets/images/fixsad.jpg') }}" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
         </div>
         <div class="card_content">
             <h5 class="card_title">Self Adjustment</h5>
@@ -165,7 +150,7 @@
 
       <article class="card col-lg-4 col-md-9 mt-2">
         <div class="temporary_text">
-          <img src="assets/images/fixe.jpg" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
+          <img src="{{ url('assets/images/fixe.jpg') }}" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
         </div>
         <div class="card_content">
           <h5 class="card_title">Empathy</h5>

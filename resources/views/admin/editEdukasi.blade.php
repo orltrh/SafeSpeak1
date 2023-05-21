@@ -50,8 +50,8 @@
                 <td><textarea id="paragraf5" name="paragraf5" style="width: 100%; height: 100px; margin-bottom: 10px;">{{ isset($data) ? $data->paragraf5 : '' }}</textarea></td>
             </tr>
             <tr>
-                <td><label for="image">Image:</label></td>
-                <td><input type="file" id="image" name="image"></td>
+                <td><label for="image" class="form-label">Image:</label></td>
+                <td><input class="form-control" type="file" id="image" name="image"></td>
             </tr>
           </table>
         </div>

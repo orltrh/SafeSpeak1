@@ -93,7 +93,7 @@
 
 </style>
 @section('content')
-<section style="height:88.5vh; overflow-y: auto; width:100%">
+<section style="height:100vh; overflow-y: auto; width:100%">
   <div class="container" style="padding-top:50px;">
     <div class="row justify-content-center">
         <article class="card col-lg-4 col-md-9">

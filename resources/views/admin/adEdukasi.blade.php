@@ -93,8 +93,8 @@
 
 </style>
 @section('content')
-<section style="height:88.5vh; overflow-y: auto;">
-  <div class="container vh-100" style="padding-top:70px;">
+<section style="height:100vh; overflow-y: auto;">
+  <div class="container" style="padding-top:70px;">
     <div class="row pb-2">
         <article class="card col-md-4">
           <div class="temporary_text">

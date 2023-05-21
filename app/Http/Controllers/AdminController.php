@@ -31,37 +31,6 @@ class AdminController extends Controller
         return view('admin.adForum');
     }
 
-
-    public function adSelfAwareness(){
-        return view('updateUsers.upSelfAwareness');
-    }
-
-    public function adSelfRegulation(){
-        return view('updateUsers.upSelfRegulation');
-    }
-
-    public function adSelfAdjustment(){
-        return view('updateUsers.upSelfAdjustment');
-    }
-
-    public function adSelfMotivation(){
-        return view('updateUsers.upSelfMotivation');
-    }
-
-    public function adSocialAwareness(){
-        return view('updateUsers.upSocialAwareness');
-    }
-
-    public function adSocialSkills(){
-        return view('updateUsers.upSocialSkills');
-    }
-
-    public function adEmpathy(){
-        return view('updateUsers.upEmpathy');
-    }
-
-    
-
     public function crud(){
         return view('admin.crud');
     }
@@ -94,7 +63,7 @@ class AdminController extends Controller
     if ($request->hasFile('image')) {
         $imagePath = $request->file('image')->store('post-images');
         $validatedData['image'] = $imagePath;
-      
+
     }
     $edukasi->image = $validatedData['image'];
 
@@ -119,7 +88,7 @@ class AdminController extends Controller
         $data = Edukasi::where('judul', $judul)->first();
         return view('admin.editEdukasi', compact('data'));
     }
-    
+
     public function prosesUpdateMateri(Request $request, $judul)
     {
     // Temukan data berdasarkan judul
@@ -151,29 +120,29 @@ class AdminController extends Controller
     {
         // Temukan data berdasarkan judul
         $data = Edukasi::where('judul', $judul)->firstOrFail();
-    
+
         // Hapus gambar terkait jika ada
         if ($data->image) {
             Storage::delete($data->image);
         }
-    
+
         // Hapus data dari database
         $data->delete();
-    
+
         return redirect()->route('aEdukasi');
     }
-    
 
 
-    
-
-    
-
-    
-   
 
 
-    
+
+
+
+
+
+
+
+
 
 
     // public function adSelfAwareness() {
@@ -216,5 +185,5 @@ class AdminController extends Controller
 
 
 
-    
+
 }

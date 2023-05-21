@@ -85,8 +85,6 @@ Route::delete('/deleteFoto', [App\Http\Controllers\ProfileController::class, 'de
 
 // Route untuk tracking position
 Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition')->middleware('auth');
-
-// // route untuk search
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');
 Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition');
 

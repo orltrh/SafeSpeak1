@@ -41,8 +41,8 @@ Route::get('/panduan', [App\Http\Controllers\UserController::class, 'panduan'])-
 Route::get('/forum', [App\Http\Controllers\UserController::class, 'forum'])->name('forum')->middleware('auth');
 
 
-Route::get('/SubMateri/{data}', [App\Http\Controllers\UserController::class, 'showSubMateri'])->name('users.SubMateri')->middleware('checkMiddleware');
-Route::get('/Materi/{data}', [App\Http\Controllers\UserController::class, 'showMateri'])->name('users.Materi')->middleware('checkMiddleware');
+Route::get('/SubMateri/{data}', [App\Http\Controllers\UserController::class, 'showSubMateri'])->name('users.SubMateri');
+Route::get('/Materi/{data}', [App\Http\Controllers\UserController::class, 'showMateri'])->name('users.Materi');
 
 
 

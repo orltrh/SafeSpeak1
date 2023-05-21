@@ -3,7 +3,7 @@
 @section('menuProfie', 'active')
 
 @section('content')
-<section >
+<section style="height: 100vh">
     <div class="container vh-90" style="padding-top: 30px;">
         <h1>Profile User</h1>
        <div class="card" style="width:">

@@ -139,7 +139,7 @@
     <div class="row pt-3 justify-content-center">
       <article class="card col-lg-4 col-md-9 mt-2">
         <div class="temporary_text">
-          <img src="assets/images/fixsc.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+          <img src="assets/images/fixsc.jpg" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
         </div>
         <div class="card_content">
           <h5 class="card_title">Social Skills</h5>
@@ -152,7 +152,7 @@
 
       <article class="card col-lg-4 col-md-9">
         <div class="temporary_text">
-          <img src="assets/images/fixsad.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+          <img src="assets/images/fixsad.jpg" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
         </div>
         <div class="card_content">
             <h5 class="card_title">Self Adjustment</h5>
@@ -165,7 +165,7 @@
 
       <article class="card col-lg-4 col-md-9 mt-2">
         <div class="temporary_text">
-          <img src="assets/images/fixe.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+          <img src="assets/images/fixe.jpg" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
         </div>
         <div class="card_content">
           <h5 class="card_title">Empathy</h5>

@@ -79,7 +79,7 @@
                         <a href="{{ route('admins.updateMateri', ['data' => $item->judul]) }}" class="btn btn-outline-success">Update</a>
                       </div>
                       <div style="display: inline-block;">
-                        <form method="POSt" action="{{ route('admins.deleteMateri', ['data' => $item->judul]) }}">
+                        <form method="POST" action="{{ route('admins.deleteMateri', ['data' => $item->judul]) }}">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-outline-danger">Delete</button>

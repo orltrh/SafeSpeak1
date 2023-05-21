@@ -5,6 +5,9 @@
     {{-- Icon --}}
     <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css') }}">
 
+    {{-- Template Bootstrap --}}
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
+    <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
     {{-- CSS --}}
     <style>
         .password-field {
@@ -32,11 +35,9 @@
 
                         <div class="form-group">
                             <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="username" id="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Username"/>
+                            <input type="text" name="username" id="username" @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Username"/>
                             @error('username')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
 
@@ -47,15 +48,13 @@
                                 <i class="fas fa-eye" id="toggle-password"></i>
                             </div>
                             @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                    <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
 
                         <div>
                             @error('error')
-                                <div class="alert alert-danger"><strong>{{ $message }}</strong></div>
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
 

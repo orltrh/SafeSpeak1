@@ -41,8 +41,8 @@ Route::get('/panduan', [App\Http\Controllers\UserController::class, 'panduan'])-
 Route::get('/forum', [App\Http\Controllers\UserController::class, 'forum'])->name('forum')->middleware('auth');
 
 
-Route::get('/SubMateri/{data}', [App\Http\Controllers\UserController::class, 'showSubMateri'])->name('users.SubMateri')->middleware('checkMiddleware');
-Route::get('/Materi/{data}', [App\Http\Controllers\UserController::class, 'showMateri'])->name('users.Materi')->middleware('checkMiddleware');
+Route::get('/SubMateri/{data}', [App\Http\Controllers\UserController::class, 'showSubMateri'])->name('users.SubMateri');
+Route::get('/Materi/{data}', [App\Http\Controllers\UserController::class, 'showMateri'])->name('users.Materi');
 
 
 
@@ -79,8 +79,10 @@ Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])
 Route::post('/prosesFoto', [App\Http\Controllers\ProfileController::class, 'store'])->name('fotoPost');
 Route::delete('/deleteFoto', [App\Http\Controllers\ProfileController::class, 'delete'])->name('fotoDelete');
 
-
-
+// route profil
+Route::get('/admin-profile', [App\Http\Controllers\ProfileController::class, 'adindex'])->name('adprofile')->middleware('auth');
+Route::post('/admin-prosesFoto', [App\Http\Controllers\ProfileController::class, 'adstore'])->name('adfotoPost');
+Route::delete('/admin-deleteFoto', [App\Http\Controllers\ProfileController::class, 'addelete'])->name('adfotoDelete');
 
 
 // Route untuk tracking position

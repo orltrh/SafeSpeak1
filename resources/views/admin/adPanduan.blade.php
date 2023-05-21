@@ -1,4 +1,4 @@
-@extends('layout.updateUsers')
+@extends('layout.admin')
 @section('title', 'Panduan')
 @section('menuPanduan', 'active')
 

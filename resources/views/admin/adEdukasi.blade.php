@@ -93,83 +93,84 @@
 
 </style>
 @section('content')
-<section style="height:88.5vh; overflow-y: auto;">
-  <div class="container vh-100" style="padding-top:70px;">
-    <div class="row pb-2">
-        <article class="card col-md-4">
+<section style="height:88.5vh; overflow-y: auto; width:100%">
+  <div class="container" style="padding-top:50px;">
+    <div class="row justify-content-center">
+        <article class="card col-lg-4 col-md-9">
           <div class="temporary_text">
             <img src="assets/images/fixsa.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
           <div class="card_content">
-            <span class="card_title">Self Awareness</span>
-            <p class="card_description">Self Awareness adalah kemampuan seseorang untuk memahami 
-              dan mengenali emosinya sendiri, kelebihan dan kekurangan yang dimilikinya, serta bagaimana 
+            <h5 class="card_title">Self Awareness</h5>
+            <p class="card_description">Self Awareness adalah kemampuan seseorang untuk memahami
+              dan mengenali emosinya sendiri, kelebihan dan kekurangan yang dimilikinya, serta bagaimana
               perilakunya dapat mempengaruhi orang lain.</p>
               <a href="{{ route('admins.adSubMateri', $data = "Self Awareness") }}" class="btn btn-primary">Let's learn</a>
-
           </div>
         </article>
-        <article class="card col-md-4">
+
+        <article class="card col-lg-4 col-md-9">
           <div class="temporary_text">
             <img src="assets/images/fixsm.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
           <div class="card_content">
-            <span class="card_title">Self Motivation</span>
+            <h5 class="card_title">Self Motivation</h5>
             <p class="card_description">Self Motivation adalah kemampuan untuk memotivasi dirinya sendiri.
-               Orang yang memiliki kemampuan memotivasi diri cenderung memiliki tujuan hidup yang jelas dan 
+               Orang yang memiliki kemampuan memotivasi diri cenderung memiliki tujuan hidup yang jelas dan
                berorientasi pada pencapaian tujuan tersebut.</p>
                <a href="{{ route('admins.adSubMateri', $data = "Self Motivation") }}" class="btn btn-primary">Let's learn</a>
-
           </div>
         </article>
-        <article class="card col-md-4">
+
+        <article class="card col-lg-4 col-md-9">
           <div class="temporary_text">
             <img src="assets/images/fixsr.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
           <div class="card_content">
-            <span class="card_title">Self Regulation</span>
-            <p class="card_description">Self Regulation adalah kemampuan untuk mengendalikan dan mengatur emosi 
-              sehingga dapat menyesuaikan diri. Hal ini sangat penting karena dapat membantu seseorang untuk 
+            <h5 class="card_title">Self Regulation</h5>
+            <p class="card_description">Self Regulation adalah kemampuan untuk mengendalikan dan mengatur emosi
+              sehingga dapat menyesuaikan diri. Hal ini sangat penting karena dapat membantu seseorang untuk
               menghindari reaksi emosional yang tidak tepat.</p>
               <a href="{{ route('admins.adSubMateri', $data = "Self Regulation") }}" class="btn btn-primary">Let's learn</a>
-
           </div>
         </article>
     </div>
 
-    <div class="row pt-2">
-      <article class="card col-md-4" style="padding-right:50px">
+    <div class="row pt-3 justify-content-center">
+      <article class="card col-lg-4 col-md-9 mt-2">
         <div class="temporary_text">
           <img src="assets/images/fixsc.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>
         <div class="card_content">
-          <span class="card_title">Social Skills</span>
-          <p class="card_description">Social Skills adalah kemampuan untuk berinteraksi dan berkomunikasi dengan 
+          <h5 class="card_title">Social Skills</h5>
+          <p class="card_description">Social Skills adalah kemampuan untuk berinteraksi dan berkomunikasi dengan
             orang lain secara efektif, untuk membangun hubungan yang baik,  memecahkan masalah secara kolektif,
             juga membantu orang yang membutuhkan.</p>
             <a href="{{ route('admins.adSubMateri', $data = "Social Skills") }}" class="btn btn-primary">Let's learn</a>
           </div>
       </article>
-      <article class="card col-md-4">
+
+      <article class="card col-lg-4 col-md-9">
         <div class="temporary_text">
           <img src="assets/images/fixsad.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>
         <div class="card_content">
-          <span class="card_title">Self Adjustment</span>
+            <h5 class="card_title">Self Adjustment</h5>
           <p class="card_description">Self Adjustment adalah kemampuan untuk beradaptasi dengan perubahan situasi
-             dan lingkungan yang ada sehingga lebih fleksibel dalam menghadapi perubahan dan dapat beradaptasi 
+             dan lingkungan yang ada sehingga lebih fleksibel dalam menghadapi perubahan dan dapat beradaptasi
              dengan situasi yang baru.</p>
              <a href="{{ route('admins.adSubMateri', $data = "Self Adjustment") }}" class="btn btn-primary">Let's learn</a>
             </div>
       </article>
-      <article class="card col-md-4">
+
+      <article class="card col-lg-4 col-md-9 mt-2">
         <div class="temporary_text">
           <img src="assets/images/fixe.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>
         <div class="card_content">
-          <span class="card_title">Empathy</span>
-          <p class="card_description">Empathy adalah kemampuan seseorang untuk memahami dan merasakan emosi orang lain. 
-            Seseorang dapat lebih memahami kebutuhan dan perspektif orang lain, serta  membangun 
+          <h5 class="card_title">Empathy</h5>
+          <p class="card_description">Empathy adalah kemampuan seseorang untuk memahami dan merasakan emosi orang lain.
+            Seseorang dapat lebih memahami kebutuhan dan perspektif orang lain, serta  membangun
             hubungan yang lebih baik dengan orang lain.</p>
             <a href="{{ route('admins.adSubMateri', $data = "Empathy") }}" class="btn btn-primary">Let's learn</a>
           </div>
@@ -177,6 +178,6 @@
     </div>
   </div>
 </section>
-  
+
 
 @endsection

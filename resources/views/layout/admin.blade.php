@@ -22,6 +22,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
+    @section('head')
 
 </head>
 <body>
@@ -42,9 +43,7 @@
           <li><a class="nav-link scrollto @yield('menuadindex')" href="/admin-edukasi">Edukasi</a></li>
           <li><a class="nav-link scrollto @yield('menuadPanduan')" href="/admin-panduan">Panduan</a></li>
           <li><a class="nav-link scrollto @yield('menuadForum')" href="/admin-forum">Forum</a></li>
-          <li><a class="nav-link scrollto @yield('menuadCreate')" href="/admin/create">Create</a></li>
-          <li><a class="nav-link scrollto @yield('menuadForum')" href="{{ route('admins.edit') }}">Update</a></li>
-          <li><a class="nav-link scrollto @yield('menuadForum')" href="{{ route('admins.delete') }}">Delete</a></li>
+          <li><a class="nav-link scrollto @yield('menuadCreate')" href="{{ route('admins.createEdukasi') }}">Create Edukasi</a></li>
           <div>
             @auth
             <div class="dropdown">
@@ -84,7 +83,7 @@
   {{-- Content --}}
   @section('content')
   <div class="main">
-    <div class="container p-5 text-center" >
+    <div class="container-fluid text-center" >
         @show
     </div>
   </div>

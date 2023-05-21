@@ -2,59 +2,181 @@
 @section('title', 'Edukasi')
 @section('menuIndex', 'active')
 
+<style>
+  .card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  color: #2e2d31;
+  background: #131313;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.temporary_text {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 6px 12px;
+  color: #f8f8f8;
+}
+
+.card_title {
+  font-weight: bold;
+}
+
+.card_content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+    /* edit the width to fit card */
+  width: 100%;
+  padding: 20px;
+  background: #f2f2f2;
+  border-top-left-radius: 20px;
+    /* edit here to change the height of the content box */
+  transform: translateY(150px);
+  transition: transform .25s;
+}
+
+.card_content::before {
+  content: '';
+  position: absolute;
+  top: -47px;
+  right: -45px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(-175deg);
+  border-radius: 50%;
+  box-shadow: inset 48px 48px #f2f2f2;
+}
+
+.card_title {
+  color: #131313;
+  line-height: 15px;
+}
+
+.card_subtitle {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.card_description {
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.card:hover .card_content {
+  transform: translateY(0);
+}
+
+.card:hover .card_description {
+  opacity: 1;
+  transition-delay: .25s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
 @section('content')
-<section>
-  <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <ol class="carousel-indicators">
-        @foreach ($admins as $index => $admin)
-          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}">
-            <span><i class="fas fa-circle"></i></span> <!-- Menambahkan ikon pada span -->
-          </li>
-        @endforeach
-      </ol>
-      <div class="carousel-inner">
-        @foreach ($admins as $index => $admin)
-          <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-            <div class="row">
-                <div class="col-md-6">
-                  <img src="{{ asset('images/' . $admin->gambar) }}" class="card-img-top" alt="Admin Image">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                      <p class="card-title">{{ $admin->judul }}</p>
-                      <p class="card-text">{{ $admin->konten }}</p>
-                      <a href="{{ route('admins.show', $admin->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
+<section style="height:88.5vh;">
+  <div class="container vh-100" style="padding-top:70px;">
+    <div class="row pb-2">
+        <article class="card col-md-4">
+          <div class="temporary_text">
+            <img src="assets/images/fixsa.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
-        @endforeach
-      </div>
+          <div class="card_content">
+            <span class="card_title">Self Awareness</span>
+            <p class="card_description">Self Awareness adalah kemampuan seseorang untuk memahami 
+              dan mengenali emosinya sendiri, kelebihan dan kekurangan yang dimilikinya, serta bagaimana 
+              perilakunya dapat mempengaruhi orang lain.</p>
+              <a href="{{ route('admins.adSubMateri', $data = "Self Awareness") }}" class="btn btn-primary">Let's learn</a>
 
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-  <span class="visually-hidden">Previous</span>
-</a>
-<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-  <span class="visually-hidden">Next</span>
-</a>
+          </div>
+        </article>
+        <article class="card col-md-4">
+          <div class="temporary_text">
+            <img src="assets/images/fixsm.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+          </div>
+          <div class="card_content">
+            <span class="card_title">Self Motivation</span>
+            <p class="card_description">Self Motivation adalah kemampuan untuk memotivasi dirinya sendiri.
+               Orang yang memiliki kemampuan memotivasi diri cenderung memiliki tujuan hidup yang jelas dan 
+               berorientasi pada pencapaian tujuan tersebut.</p>
+               <a href="{{ route('admins.adSubMateri', $data = "Self Motivation") }}" class="btn btn-primary">Let's learn</a>
 
-      </a>
+          </div>
+        </article>
+        <article class="card col-md-4">
+          <div class="temporary_text">
+            <img src="assets/images/fixsr.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+          </div>
+          <div class="card_content">
+            <span class="card_title">Self Regulation</span>
+            <p class="card_description">Self Regulation adalah kemampuan untuk mengendalikan dan mengatur emosi 
+              sehingga dapat menyesuaikan diri. Hal ini sangat penting karena dapat membantu seseorang untuk 
+              menghindari reaksi emosional yang tidak tepat.</p>
+              <a href="{{ route('admins.adSubMateri', $data = "Self Regulation") }}" class="btn btn-primary">Let's learn</a>
+
+          </div>
+        </article>
+    </div>
+
+    <div class="row pt-2">
+      <article class="card col-md-4" style="padding-right:50px">
+        <div class="temporary_text">
+          <img src="assets/images/fixsc.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+        </div>
+        <div class="card_content">
+          <span class="card_title">Social Skills</span>
+          <p class="card_description">Social Skills adalah kemampuan untuk berinteraksi dan berkomunikasi dengan 
+            orang lain secara efektif, untuk membangun hubungan yang baik,  memecahkan masalah secara kolektif,
+            juga membantu orang yang membutuhkan.</p>
+            <a href="{{ route('admins.adSubMateri', $data = "Social Skills") }}" class="btn btn-primary">Let's learn</a>
+          </div>
+      </article>
+      <article class="card col-md-4">
+        <div class="temporary_text">
+          <img src="assets/images/fixsad.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+        </div>
+        <div class="card_content">
+          <span class="card_title">Self Adjustment</span>
+          <p class="card_description">Self Adjustment adalah kemampuan untuk beradaptasi dengan perubahan situasi
+             dan lingkungan yang ada sehingga lebih fleksibel dalam menghadapi perubahan dan dapat beradaptasi 
+             dengan situasi yang baru.</p>
+             <a href="{{ route('admins.adSubMateri', $data = "Self Adjustment") }}" class="btn btn-primary">Let's learn</a>
+            </div>
+      </article>
+      <article class="card col-md-4">
+        <div class="temporary_text">
+          <img src="assets/images/fixe.jpg" class="card-img-top" style="height:250px; width:500px;" alt="...">
+        </div>
+        <div class="card_content">
+          <span class="card_title">Empathy</span>
+          <p class="card_description">Empathy adalah kemampuan seseorang untuk memahami dan merasakan emosi orang lain. 
+            Seseorang dapat lebih memahami kebutuhan dan perspektif orang lain, serta  membangun 
+            hubungan yang lebih baik dengan orang lain.</p>
+            <a href="{{ route('admins.adSubMateri', $data = "Empathy") }}" class="btn btn-primary">Let's learn</a>
+          </div>
+      </article>
     </div>
   </div>
 </section>
+  
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Inisialisasi carousel
-    var carousel = new bootstrap.Carousel(document.querySelector("#carouselExampleIndicators"), {
-      interval: 5000, // Waktu interval slide (dalam milidetik). Ubah sesuai kebutuhan.
-      wrap: true // Mengaktifkan looping carousel
-    });
-  });
-</script>
 @endsection

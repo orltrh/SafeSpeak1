@@ -1,65 +1,71 @@
-<!DOCTYPE html>
-<!-- <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <title>EI</title>
-</head>
-<body>
+@extends('layout.admin')
+@section('title', 'createEdukasi')
 
-<div class="container pt-4 bg-white">
-  <div class="row">
-    <div class="col-md-8 col-xl-6">
-      <h1>Emotional Intelligence</h1>
-      <hr>
 
-      <form action="{{ route('admins.store') }}" method="POST">
-        @csrf
-
-        <div class="form-group">
-          <label for="selfawareness">Self Awareness</label>
-          <textarea class="form-control" id="selfawareness" rows="3" style="width: 1250px"
-          name="selfawareness">{{ old('selfawareness') }}</textarea>
+@section('content')
+@parent
+<section style="padding-top: 100px;">
+      <div class="container">
+        <div class="row">
+            <div class="card ">
+                <form method="POST" action="{{ route('admins.prosesCreate') }}" enctype="multipart/form-data" >
+                    <div style="padding-top: 10px;">
+                    @csrf
+                    <div style="max-width: 600px; margin: 0 auto;">
+                      <table class="pt-5" style="width: 100%;">
+                        
+                        <tr>
+                            <td><label for="materi">Materi:</label></td>
+                            <td>
+                              <select id="materi" name="materi" required style="margin-bottom: 10px; width: 200px; height:35px;">
+                                <option value="">Pilih Materi</option>
+                                <option value="Self Awareness">Self Awareness</option>
+                                <option value="Self Regulation">Self Regulation</option>
+                                <option value="Self Adjustment">Self Adjustment</option>
+                                <option value="Self Motivation">Self Motivation</option>
+                                <option value="Empathy">Empathy</option>
+                                <option value="Social Skills">Social Skill</option>
+                                <!-- tambahkan opsi lainnya sesuai kebutuhan -->
+                              </select>
+                            </td>
+                          </tr>
+                        <tr>
+                          <td><label for="judul">Judul:</label></td>
+                          <td><input type="text" id="judul" name="judul" required style="margin-bottom: 10px;" ></td>
+                        </tr>
+                        <tr>
+                          <td><label for="paragraf1">Paragraf 1:</label></td>
+                          <td><textarea id="paragraf1" name="paragraf1" required style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td><label for="paragraf2">Paragraf 2:</label></td>
+                          <td><textarea id="paragraf2" name="paragraf2" style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td><label for="paragraf3">Paragraf 3:</label></td>
+                          <td><textarea id="paragraf3" name="paragraf3" style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td><label for="paragraf4">Paragraf 4:</label></td>
+                          <td><textarea id="paragraf4" name="paragraf4" style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td><label for="paragraf5">Paragraf 5:</label></td>
+                          <td><textarea id="paragraf5" name="paragraf5" style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td><label for="image">Image:</label></td>
+                          <td><input type="file" id="image" name="image"></td>
+                        </tr>
+                      </table>
+                    </div>
+                    </div>
+                    <div class="pt-3 pb-3">
+                        <button type="submit">Simpan</button>
+                    </div>
+                  </form>
+            </div>
         </div>
-
-        <div class="form-group">
-            <label for="selfregulation">Self Regulation</label>
-            <textarea class="form-control" id="selfregulation" rows="3" style="width: 1250px"
-            name="selfregulation">{{ old('selfregulation') }}</textarea>
-          </div>
-        
-        <div class="form-group">
-          <label for="selfmotivation">Self Motivation</label>
-          <textarea class="form-control" id="selfmotivation" rows="3" style="width: 1250px"
-          name="selfmotivation">{{ old('selfmotivation') }}</textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="empathy">Empathy</label>
-            <textarea class="form-control" id="empathy" rows="3" style="width: 1250px"
-            name="empathy">{{ old('empathy') }}</textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="socialskills">Social Skills</label>
-          <textarea class="form-control" id="socialskills" rows="3" style="width: 1250px"
-          name="socialskills">{{ old('socialskills') }}</textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="selfadjustment">Self Adjustment</label>
-            <textarea class="form-control" id="selfadjustment" rows="3" style="width: 1250px"
-            name="selfadjustment">{{ old('selfadjustment') }}</textarea>
-          </div>
-
-        <button type="submit" class="btn btn-primary mb-2 mt-3">Upload</button>
-      </form>
-
-    </div>
-  </div>
-</div>
-
-</body>
-</html> -->
+      </div>
+</section>
+@endsection

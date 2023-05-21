@@ -1,15 +1,14 @@
 <?php
 
-use App\Events\MessageCreated;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-
 use App\Http\Controllers\TrackingPositionController;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\EdukasiController;
-use App\Http\Controllers\TesController;
+
+
 
 use App\Events\HelloEvent;
 use Illuminate\Http\Request;
@@ -34,38 +33,45 @@ Route::post('/prosesLogin', [App\Http\Controllers\Auth\LoginController::class, '
 Route::post('/logout', [App\Http\Controllers\Auth\loginController::class, 'logout'])->name('logout');
 
 
-// route user
+//  user controller
 Route::get('/', [App\Http\Controllers\UserController::class, 'index'])->name('dashboard');
 Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('dashboard');
-// Route::get('/upTracking-position', [App\Http\Controllers\UserController::class, 'trackingPosition'])->name('trackingPosition')->middleware('auth');
 Route::get('/edukasi', [App\Http\Controllers\UserController::class, 'edukasi'])->name('edukasi');
 Route::get('/panduan', [App\Http\Controllers\UserController::class, 'panduan'])->name('panduan');
 Route::get('/forum', [App\Http\Controllers\UserController::class, 'forum'])->name('forum')->middleware('auth');
 
-Route::get('/self-awareness', [UserController::class, 'selfawareness'])->name('admins.selfawareness');
-Route::get('/self-regulation', [UserController::class, 'selfregulation'])->name('admins.selfregulation');
-Route::get('/self-adjustment', [UserController::class, 'selfadjustment'])->name('admins.selfadjustment');
-Route::get('/self-motivation', [UserController::class, 'selfmotivation'])->name('admins.selfmotivation');
-Route::get('/empathy', [UserController::class, 'empathy'])->name('admins.empathy');
-Route::get('/social-skills', [UserController::class, 'socialskills'])->name('admins.socialskills');
+
+Route::get('/SubMateri/{data}', [App\Http\Controllers\UserController::class, 'showSubMateri'])->name('users.SubMateri')->middleware('checkMiddleware');
+Route::get('/Materi/{data}', [App\Http\Controllers\UserController::class, 'showMateri'])->name('users.Materi')->middleware('checkMiddleware');
 
 
-// route admin
+
+//  admin controller
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('checkMiddleware');
-Route::get('/admin-tracking', [App\Http\Controllers\AdminController::class, 'trackingPosition'])->name('aTrackingPosition')->middleware('checkMiddleware');
-Route::get('/admin-edukasi', [EdukasiController::class, 'index'])->name('aEdukasi')->middleware('checkMiddleware');
+Route::get('/admin-tracking', [App\Http\Controllers\TrackingPositionController::class, 'adminShow'])->name('aTrackingPosition')->middleware('checkMiddleware');
+Route::get('/admin-edukasi', [App\Http\Controllers\AdminController::class, 'edukasi'])->name('aEdukasi')->middleware('checkMiddleware');
 Route::get('/admin-panduan', [App\Http\Controllers\AdminController::class, 'panduan'])->name('aPanduan')->middleware('checkMiddleware');
 Route::get('/admin-forum', [App\Http\Controllers\AdminController::class, 'forum'])->name('aForum')->middleware('checkMiddleware');
 
-Route::get('/admin-adSelfAwareness', [AdminController::class, 'adSelfAwareness'])->name('admins.adselfawareness')->middleware('checkMiddleware');
-Route::get('/admin-adselfregulation', [AdminController::class, 'adselfregulation'])->name('admins.adselfregulation')->middleware('checkMiddleware');
-Route::get('/admin-adselfadjustment', [AdminController::class, 'adselfadjustment'])->name('admins.adselfadjustment')->middleware('checkMiddleware');
-Route::get('/admin-adselfmotivation', [AdminController::class, 'adselfmotivation'])->name('admins.adselfmotivation')->middleware('checkMiddleware');
-Route::get('/admin-adempathy', [AdminController::class, 'adempathy'])->name('admins.adempathy')->middleware('checkMiddleware');
-Route::get('/admin-adsocialskills', [AdminController::class, 'adsocialskills'])->name('admins.adsocialskills')->middleware('checkMiddleware');
+Route::get('/adSelf-Awareness', [App\Http\Controllers\AdminController::class, 'adSelfAwareness'])->name('admins.adselfawareness')->middleware('checkMiddleware');
+Route::get('/Self-Regulation', [App\Http\Controllers\AdminController::class, 'adSelfRegulation'])->name('admins.adselfregulation')->middleware('checkMiddleware');
+Route::get('/Self-Adjustment', [App\Http\Controllers\AdminController::class, 'adSelfAdjustment'])->name('admins.adselfadjustment')->middleware('checkMiddleware');
+Route::get('/Social-Skills', [App\Http\Controllers\AdminController::class, 'adSocialSkills'])->name('admins.adselfadjustment')->middleware('checkMiddleware');
+Route::get('/Self-Motivation', [App\Http\Controllers\AdminController::class, 'adSelfMotivation'])->name('admins.adselfmotivation')->middleware('checkMiddleware');
+Route::get('/Empathy', [App\Http\Controllers\AdminController::class, 'adEmpathy'])->name('admins.adempathy')->middleware('checkMiddleware');
 
-Route::get('/admin-create', [AdminController::class, 'create'])->name('admins.create')->middleware('checkMiddleware');
-Route::post('/admin', [AdminController::class, 'store'])->name('admins.store')->middleware('checkMiddleware');
+
+Route::get('/admin-crud', [App\Http\Controllers\AdminController::class, 'crud'])->name('admins.crud');
+Route::get('/admin-createEdukasi', [App\Http\Controllers\AdminController::class, 'createEdukasi'])->name('admins.createEdukasi')->middleware('checkMiddleware');
+route::post('/admin-prosesCreate', [App\Http\Controllers\AdminController::class, 'prosesCreate'])->name('admins.prosesCreate')->middleware('checkMiddleware');
+
+Route::get('/adSubMateri/{data}', [App\Http\Controllers\AdminController::class, 'showSubMateri'])->name('admins.adSubMateri')->middleware('checkMiddleware');
+Route::get('/adMateri/{data}', [App\Http\Controllers\AdminController::class, 'showMateri'])->name('admins.adMateri')->middleware('checkMiddleware');
+
+Route::get('/updateMateri/{data}', [App\Http\Controllers\AdminController::class, 'updateMateri'])->name('admins.updateMateri')->middleware('checkMiddleware');
+route::post('/prosesUpdateMateri/{data}', [App\Http\Controllers\AdminController::class, 'prosesUpdateMateri'])->name('admins.prosesUpdateMateri')->middleware('checkMiddleware');
+
+Route::delete('/deleteMateri{data}', [App\Http\Controllers\AdminController::class, 'deleteMateri'])->name('admins.deleteMateri');
 
 
 // route profil
@@ -83,16 +89,6 @@ Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->
 // // route untuk search
 Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');
 Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition');
-
-Route::get('/admin/create', [EdukasiController::class, 'create'])->name('admins.create');
-Route::post('/admin/store', [EdukasiController::class, 'store'])->name('admins.store');
-// Route::get('/admin/show', [EdukasiController::class, 'index'])->name('admin.index');
-Route::get('/admin/show/{id}', [EdukasiController::class, 'show'])->name('admins.show');
-Route::put('/admin/{id}', [EdukasiController::class, 'update'])->name('admins.update');
-Route::delete('/admin/{id}', [EdukasiController::class, 'destroy'])->name('admins.destroy');
-Route::get('edit', [EdukasiController::class, 'edit'])->name('admins.edit');
-Route::get('hapus', [EdukasiController::class, 'delete'])->name('admins.delete');
-Route::get('/admins/tabel', [EdukasiController::class, ''])->name('admins.tabel');
 
 
 

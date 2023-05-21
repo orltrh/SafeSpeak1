@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
       //seeder RegisterLoginSeeder
         $this->call(RegisterLoginSeeder::class);
+        $this->call(TrackingPositionSeeder::class);
 
     }
 }

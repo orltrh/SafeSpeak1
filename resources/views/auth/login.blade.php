@@ -4,7 +4,7 @@
 @section('head')
     {{-- Icon --}}
     <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css') }}">
-    
+
     {{-- CSS --}}
     <style>
         .password-field {
@@ -21,7 +21,7 @@
         <div class="container">
             <div class="signin-content">
                 <div class="signin-image">
-                    <figure><img src="{{ url('assets/images/signin-image.jpg') }}" alt="sign up image"></figure>
+                    <figure><img src="{{ url('assets/images/signin-image.jpg') }}" style="border-radius: 15px;" alt="sign up image"></figure>
                     <a href="register" class="signup-image-link">Tidak memiliki akun?</a>
                 </div>
 

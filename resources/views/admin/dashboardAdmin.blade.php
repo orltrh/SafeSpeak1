@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" >
-            <img src="assets/picture/ei.jpg" class="img-fluid" style="border-radius: 50px" alt="">
+            <img src="{{ url('assets/picture/ei.png') }}" class="img-fluid" style="border-radius: 50px" alt="">
         </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-lg-6" data-aos="zoom-in">
-        <img src="assets/picture/sslogo.png" style="height: 350px;" class="img-fluid" alt="">
+        <img src="{{ url('assets/picture/sslogo.jpg') }}" style="height: 450px; border-radius: 15px;" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
         <div class="content pt-4 pt-lg-0">
@@ -54,8 +54,27 @@
     </div>
 </section><!-- End About Section -->
 
+<!-- ======= Cta Section ======= -->
+<section id="cta" class="cta mt-5">
+    <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+        <div class="col-lg-9 text-center text-lg-start">
+            <h3>SafeSpeaks</h3>
+            <p>
+                SafeSpeaks, tempat tersembunyi bagi jiwa yang terluka. Kami hadir sebagai pelindung bagi mereka yang menjadi korban bullying dan pelecehan seksual. Seperti pelangi setelah hujan, kami ingin mempersembahkan cahaya dan kehangatan bagi mereka yang merasa terjebak dalam kegelapan. Bersama SafeSpeaks, mari kita bangkit, saling mendukung, dan membentuk dunia di mana suara mereka dihormati dan diperdengarkan. Kita tidak pernah sendiri, karena di sini, kita adalah satu komunitas yang kuat.
+            </p>
+        </div>
+        <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="{{ route('register') }}">Registrasi Sekarang</a>
+        </div>
+        </div>
+
+    </div>
+</section><!-- End Cta Section -->
+
 <!-- ======= Team Section ======= -->
-<section id="team" class="team">
+<section id="team" class="team mt-5">
     <div class="container">
 
     <div class="section-title" data-aos="fade-up">
@@ -67,7 +86,7 @@
 
         <div class="col-lg-4 col-md-6">
         <div class="member" data-aos="zoom-in">
-            <div class="pic"><img src="assets/img/team/azarya.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ url('assets/img/team/azarya.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Azarya Aditya Krisna Moeljono</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
@@ -83,7 +102,7 @@
 
         <div class="col-lg-4 col-md-6">
         <div class="member" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pic"><img src="assets/img/team/aurel.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ url('assets/img/team/aurel.jpg') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Dika Aurelya Aleandra Taroreh</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>
@@ -99,7 +118,7 @@
 
         <div class="col-lg-4 col-md-6">
         <div class="member" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pic"><img src="assets/img/team/abidzar.jpg" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ url('assets/img/team/abidzar.png') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Abidzar Ulil Abshar</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>

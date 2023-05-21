@@ -19,6 +19,7 @@
     <link href="{{ url('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
 
     <!-- Template Main CSS File -->
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
@@ -48,7 +49,7 @@
             @auth
             <div class="dropdown">
               <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="bi bi-person-circle" style="font-size: 22px;"></i>
+                <i class="bi bi-person-fill" style="font-size: 22px;"></i>
               </a>
               <ul class="menu" aria-labelledby="profileDropdown">
                 <li>

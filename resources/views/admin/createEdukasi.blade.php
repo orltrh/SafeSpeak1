@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('title', 'createEdukasi')
+@section('menuadCreate', 'active')
 
 
 @section('content')
@@ -13,7 +14,7 @@
                     @csrf
                     <div style="max-width: 600px; margin: 0 auto;">
                       <table class="pt-5" style="width: 100%;">
-                        
+
                         <tr>
                             <td><label for="materi">Materi:</label></td>
                             <td>
@@ -56,7 +57,7 @@
                         <tr>
                           <td><label for="image" class="form-label">Image:</label></td>
                           <td><input class="form-control" type="file" id="image" name="image"></td>
-                            
+
                           </div>
 
                         </tr>
@@ -64,7 +65,7 @@
                     </div>
                     </div>
                     <div class="pt-3 pb-3">
-                        <button type="submit">Simpan</button>
+                        <button class="btn btn-primary" type="submit">Simpan</button>
                     </div>
                   </form>
             </div>

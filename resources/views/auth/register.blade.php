@@ -125,7 +125,7 @@
                     </form>
                 </div>
                 <div class="signup-image">
-                    <figure><img src="assets/images/signup-image.jpg" alt="sing up image"></figure>
+                    <figure><img src="{{ url('assets/images/signup-image.jpg') }}" style="border-radius: 10px;" alt="sing up image"></figure>
                     <a href="login" class="signup-image-link">Sudah punya akun?</a>
                 </div>
             </div>

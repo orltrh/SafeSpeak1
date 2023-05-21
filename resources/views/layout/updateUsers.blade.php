@@ -11,7 +11,7 @@
 
     <!-- Google Fonts -->
     <link href="{{ url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}" rel="stylesheet">
-    
+
 
     <!-- Vendor CSS Files -->
     <link href="{{ url('assets/vendor/aos/aos.css') }}" rel="stylesheet">
@@ -24,9 +24,6 @@
     <!-- Template Main CSS File -->
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
 
-    {{-- Template Icon --}}
-    {{-- <link rel="stylesheet" href="npm i bootstrap-icons"> --}}
-    {{-- <script src="npm i bootstrap-icons" ></script> --}}
 
     @section('head')
 
@@ -53,7 +50,7 @@
             @auth
                 <li class="dropdown">
                     <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bi bi-person-circle" style="font-size: 22px;"></i>
+                        <i class="bi bi-person-fill" style="font-size: 22px;"></i>
                     </a>
                     <ul class="menu" aria-labelledby="profileDropdown">
                         <li>

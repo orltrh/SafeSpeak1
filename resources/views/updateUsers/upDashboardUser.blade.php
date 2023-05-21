@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-lg-6" data-aos="zoom-in">
-        <img src="{{ url('assets/picture/sslogo.png') }}" style="height: 450px;" class="img-fluid" alt="">
+        <img src="{{ url('assets/picture/sslogo.jpg') }}" style="height: 450px; border-radius: 15px;" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
         <div class="content pt-4 pt-lg-0">
@@ -105,7 +105,7 @@
 
         <div class="col-lg-4 col-md-12">
             <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                <div class="pic"><img src="{{ url('assets/img/team/aurel.jpg') }}" class="img-fluid" alt=""></div>
+                <div class="pic"><img src="{{ url('assets/img/team/aurel.jpg') }}" style="width: 600px;" class="img-fluid" alt=""></div>
                 <div class="member-info">
                 <h4>Dika Aurelya Aleandra Taroreh</h4>
                 <span>Mahasiswa Teknik Informatika Angkatan 22</span>
@@ -119,7 +119,7 @@
 
         <div class="col-lg-4 col-md-12">
         <div class="member" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pic"><img src="{{ url('assets/img/team/abidzar.jpg') }}" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ url('assets/img/team/abidzar.png') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
             <h4>Abidzar Ulil Abshar</h4>
             <span>Mahasiswa Teknik Informatika Angkatan 22</span>

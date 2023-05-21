@@ -59,7 +59,7 @@
 </style>
 @section('content')
 @parent
-<section style="height:80vh; overflow-y: auto;">
+<section style="height:100vh; overflow-y: auto;">
     <div class="container">
         <div class="row row-cols-3 " style="padding-left: 50px;">
             @foreach ($data as $item)
@@ -73,7 +73,7 @@
                     <div>
                       <a href="{{ route('admins.adMateri', ['data' => $item->judul]) }}" class="btn btn-outline-primary">{{ $item->materi }}</a>
                     </div>
-                    
+
                     <div class="pt-3">
                       <div style="display: inline-block; margin-right: 10px;">
                         <a href="{{ route('admins.updateMateri', ['data' => $item->judul]) }}" class="btn btn-outline-success">Update</a>
@@ -84,12 +84,12 @@
                           @method('DELETE')
                           <button type="submit" class="btn btn-outline-danger">Delete</button>
                       </form>
-                      
-                      
+
+
                       </div>
                   </div>
                   </div>
-                </div> 
+                </div>
               </div>
             @endforeach
         </div>

@@ -69,7 +69,7 @@ Route::get('/adSubMateri/{data}', [App\Http\Controllers\AdminController::class, 
 Route::get('/adMateri/{data}', [App\Http\Controllers\AdminController::class, 'showMateri'])->name('admins.adMateri')->middleware('checkMiddleware');
 
 Route::get('/updateMateri/{data}', [App\Http\Controllers\AdminController::class, 'updateMateri'])->name('admins.updateMateri')->middleware('checkMiddleware');
-route::post('/prosesUpdateMateri/{data}', [App\Http\Controllers\AdminController::class, 'prosesUpdateMateri'])->name('admins.prosesUpdateMateri')->middleware('checkMiddleware');
+route::post('/prosesUpdateMateri/{judul}', [App\Http\Controllers\AdminController::class, 'prosesUpdateMateri'])->name('admins.prosesUpdateMateri')->middleware('checkMiddleware');
 
 Route::delete('/deleteMateri{data}', [App\Http\Controllers\AdminController::class, 'deleteMateri'])->name('admins.deleteMateri');
 

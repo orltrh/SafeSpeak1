@@ -5,7 +5,7 @@
 
 @section('content')
 @parent
-<section style="padding-top: 100px;">
+<section style="padding-top: 100px;" id="hero">
       <div class="container">
         <div class="row">
             <div class="card " data-aos="zoom-in">

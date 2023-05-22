@@ -44,7 +44,7 @@
     <script src="{{ url('https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js') }}"></script>
 
 @section('content')
-<section >
+<section id="hero">
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-3 col-md-5">

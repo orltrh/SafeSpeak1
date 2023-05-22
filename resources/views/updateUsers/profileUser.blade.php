@@ -3,7 +3,7 @@
 @section('menuProfile', 'active')
 
 @section('content')
-<section>
+<section id="hero">
     <div class="container" style=" height:100vh; padding-top: 100px;" data-aos="zoom-out">
         <h1>Profile Admin</h1>
        <div class="card" style="width:">

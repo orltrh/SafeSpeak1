@@ -79,9 +79,9 @@
 
 </style>
 @section('content')
-<section style="height:100vh; overflow-y: auto; width:100%; padding-top:50px;" id="hero">
+<section style="height:100vh overflow-y: auto; width:100%; padding-top:50px;" id="hero">
   <div class="container" style="padding-top:50px;">
-    <div class="row pb-2 justify-content-center">
+    <div class="row justify-content-center">
         <article class="card col-lg-4 col-md-9" data-aos="fade-down-right">
           <div class="temporary_text">
             <img src="{{ url('assets/images/fixsa.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
@@ -122,8 +122,12 @@
           </div>
         </article>
     </div>
+  </div>
+</section>
 
-    <div class="row pt-3 justify-content-center">
+<section style="height:100vh overflow-y: auto; margin-top:-70px;  padding-top:-60px; padding-bottom:150px;" id="hero" >
+  <div class="container">
+    <div class="row justify-content-center">
       <article class="card col-lg-4 col-md-9 " data-aos="fade-up-right">
         <div class="temporary_text">
           <img src="{{ url('assets/images/fixsc.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">

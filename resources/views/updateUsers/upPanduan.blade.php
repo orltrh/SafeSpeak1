@@ -3,13 +3,13 @@
 @section('menuPanduan', 'active')
 
 @section('content')
-<section style="height:100vh; overflow-y: auto; padding-top: 100px;" id="hero">
+<section style="height:100vh; overflow-y: auto; padding-top: 100px;">
   <div class="container">
     <div class="row">
 
-      <div class="col-lg-4 col-md-4 " data-aos="fade-up">
+      <div class="col-lg-4 col-md-4 d-flex" style="justify-content: center">
         <div class="card" style="width: 18rem;">
-          <div class="card-header text-center"style="color:dodgerblue">
+          <div class="card-header text-center">
             Panduan SafeSpeaks
           </div>
           <div class="card-body">
@@ -53,9 +53,9 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4" data-aos="zoom-out">
+      <div class="col-lg-4 col-md-4 d-flex" style="justify-content: center">
         <div class="card" style="width: 18rem;">
-          <div class="card-header text-center " style="color:dodgerblue">
+          <div class="card-header text-center">
             Pengaduan Satgas
           </div>
 
@@ -160,9 +160,9 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4" data-aos="fade-down">
+      <div class="col-lg-4 col-md-4 d-flex" style="justify-content: center">
         <div class="card" style="width: 18rem;">
-          <div class="card-header text-center"style="color:dodgerblue">
+          <div class="card-header text-center">
             Pengaduan Polisi
           </div>
 

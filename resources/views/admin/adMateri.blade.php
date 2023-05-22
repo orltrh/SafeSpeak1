@@ -1,5 +1,5 @@
 @extends('layout.admin')
-@section('title', 'Self Awareness')
+@section('title', 'Materi Edukasi')
 <style>
   body {
     margin: 0;

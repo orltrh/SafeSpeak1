@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Edukasi')
-@section('menuadEdukasi', 'active')
+@section('menuEdukasi', 'active')
 
 <style>
   .card {
@@ -76,9 +76,10 @@
   transition-delay: .25s;
 }
 
+
 </style>
 @section('content')
-<section style="height:100vh; overflow-y: auto; width:100%; padding-top:50px;" id="hero">
+<section style="height:100vh overflow-y: auto; width:100%; padding-top:50px;" id="hero">
   <div class="container" style="padding-top:50px;">
     <div class="row justify-content-center">
         <article class="card col-lg-4 col-md-9" data-aos="fade-down-right">
@@ -91,9 +92,9 @@
               dan mengenali emosinya sendiri, kelebihan dan kekurangan yang dimilikinya, serta bagaimana
               perilakunya dapat mempengaruhi orang lain.</p>
               <a href="{{ route('admins.adSubMateri', $data = "Self Awareness") }}" class="btn btn-primary">Yuk Belajar</a>
+
           </div>
         </article>
-
         <article class="card col-lg-4 col-md-9" data-aos="fade-down">
           <div class="temporary_text">
             <img src="{{ url('assets/images/fixsm.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
@@ -104,9 +105,9 @@
                Orang yang memiliki kemampuan memotivasi diri cenderung memiliki tujuan hidup yang jelas dan
                berorientasi pada pencapaian tujuan tersebut.</p>
                <a href="{{ route('admins.adSubMateri', $data = "Self Motivation") }}" class="btn btn-primary">Yuk Belajar</a>
+
           </div>
         </article>
-
         <article class="card col-lg-4 col-md-9" data-aos="fade-down-left">
           <div class="temporary_text">
             <img src="{{ url('assets/images/fixsr.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
@@ -117,14 +118,19 @@
               sehingga dapat menyesuaikan diri. Hal ini sangat penting karena dapat membantu seseorang untuk
               menghindari reaksi emosional yang tidak tepat.</p>
               <a href="{{ route('admins.adSubMateri', $data = "Self Regulation") }}" class="btn btn-primary">Yuk Belajar</a>
+
           </div>
         </article>
     </div>
+  </div>
+</section>
 
-    <div class="row pt-3 justify-content-center">
-      <article class="card col-lg-4 col-md-9" data-aos="fade-up-right">
+<section style="height:100vh overflow-y: auto; margin-top:-70px;  padding-top:-60px; padding-bottom:150px;" id="hero" >
+  <div class="container">
+    <div class="row justify-content-center">
+      <article class="card col-lg-4 col-md-9 " data-aos="fade-up-right">
         <div class="temporary_text">
-          <img src="{{ url('assets/images/fixsc.jpg') }}" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
+          <img src="{{ url('assets/images/fixsc.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>
         <div class="card_content">
           <h5 class="card_title">Social Skills</h5>
@@ -134,23 +140,21 @@
             <a href="{{ route('admins.adSubMateri', $data = "Social Skills") }}" class="btn btn-primary">Yuk Belajar</a>
           </div>
       </article>
-
       <article class="card col-lg-4 col-md-9" data-aos="fade-up">
         <div class="temporary_text">
-          <img src="{{ url('assets/images/fixsad.jpg') }}" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
+          <img src="{{ url('assets/images/fixsad.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>
         <div class="card_content">
-            <h5 class="card_title">Self Adjustment</h5>
+          <h5 class="card_title">Self Adjustment</h5>
           <p class="card_description">Self Adjustment adalah kemampuan untuk beradaptasi dengan perubahan situasi
              dan lingkungan yang ada sehingga lebih fleksibel dalam menghadapi perubahan dan dapat beradaptasi
              dengan situasi yang baru.</p>
              <a href="{{ route('admins.adSubMateri', $data = "Self Adjustment") }}" class="btn btn-primary">Yuk Belajar</a>
             </div>
       </article>
-
-      <article class="card col-lg-4 col-md-9 " data-aos="fade-up-left">
+      <article class="card col-lg-4 col-md-9" data-aos="fade-up-left">
         <div class="temporary_text">
-          <img src="{{ url('assets/images/fixe.jpg') }}" class="card-img-top" style="height: 250px; width: 500px;" alt="...">
+          <img src="{{ url('assets/images/fixe.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>
         <div class="card_content">
           <h5 class="card_title">Empathy</h5>

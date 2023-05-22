@@ -3,7 +3,7 @@
 @section('menuadPanduan', 'active')
 
 @section('content')
-<section style="height:100vh; overflow-y: auto; padding-top: 150px;">
+<section style="height:100vh; overflow-y: auto; padding-top: 100px;">
   <div class="container">
     <div class="row">
 

@@ -3,7 +3,7 @@
 @section('menuProfile', 'active')
 
 @section('content')
-<section style="height: 100vh">
+<section>
     <div class="container vh-90" style="padding-top: 30px;">
         <h1>Profile User</h1>
        <div class="card" style="width:">
@@ -37,14 +37,14 @@
                     <div class="col-md-6">
                       <div class="form-group form-button">
                       </div>
-                      <button type="submit" class="btn btn-outline-primary">Upload</button>
+                      <button type="submit" class="btn btn-primary">Upload</button>
                     </form>
                     </div>
                     <div class="col-md-6">
                       <form action="{{ route('fotoDelete') }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                     </div>
                   </div>

@@ -90,7 +90,7 @@
             <p class="card_description">Self Awareness adalah kemampuan seseorang untuk memahami
               dan mengenali emosinya sendiri, kelebihan dan kekurangan yang dimilikinya, serta bagaimana
               perilakunya dapat mempengaruhi orang lain.</p>
-              <a href="{{ route('admins.adSubMateri', $data = "Self Awareness") }}" class="btn btn-primary">Let's learn</a>
+              <a href="{{ route('admins.adSubMateri', $data = "Self Awareness") }}" class="btn btn-primary">Yuk Belajar</a>
           </div>
         </article>
 
@@ -103,7 +103,7 @@
             <p class="card_description">Self Motivation adalah kemampuan untuk memotivasi dirinya sendiri.
                Orang yang memiliki kemampuan memotivasi diri cenderung memiliki tujuan hidup yang jelas dan
                berorientasi pada pencapaian tujuan tersebut.</p>
-               <a href="{{ route('admins.adSubMateri', $data = "Self Motivation") }}" class="btn btn-primary">Let's learn</a>
+               <a href="{{ route('admins.adSubMateri', $data = "Self Motivation") }}" class="btn btn-primary">Yuk Belajar</a>
           </div>
         </article>
 
@@ -116,7 +116,7 @@
             <p class="card_description">Self Regulation adalah kemampuan untuk mengendalikan dan mengatur emosi
               sehingga dapat menyesuaikan diri. Hal ini sangat penting karena dapat membantu seseorang untuk
               menghindari reaksi emosional yang tidak tepat.</p>
-              <a href="{{ route('admins.adSubMateri', $data = "Self Regulation") }}" class="btn btn-primary">Let's learn</a>
+              <a href="{{ route('admins.adSubMateri', $data = "Self Regulation") }}" class="btn btn-primary">Yuk Belajar</a>
           </div>
         </article>
     </div>
@@ -131,7 +131,7 @@
           <p class="card_description">Social Skills adalah kemampuan untuk berinteraksi dan berkomunikasi dengan
             orang lain secara efektif, untuk membangun hubungan yang baik,  memecahkan masalah secara kolektif,
             juga membantu orang yang membutuhkan.</p>
-            <a href="{{ route('admins.adSubMateri', $data = "Social Skills") }}" class="btn btn-primary">Let's learn</a>
+            <a href="{{ route('admins.adSubMateri', $data = "Social Skills") }}" class="btn btn-primary">Yuk Belajar</a>
           </div>
       </article>
 
@@ -144,7 +144,7 @@
           <p class="card_description">Self Adjustment adalah kemampuan untuk beradaptasi dengan perubahan situasi
              dan lingkungan yang ada sehingga lebih fleksibel dalam menghadapi perubahan dan dapat beradaptasi
              dengan situasi yang baru.</p>
-             <a href="{{ route('admins.adSubMateri', $data = "Self Adjustment") }}" class="btn btn-primary">Let's learn</a>
+             <a href="{{ route('admins.adSubMateri', $data = "Self Adjustment") }}" class="btn btn-primary">Yuk Belajar</a>
             </div>
       </article>
 
@@ -157,7 +157,7 @@
           <p class="card_description">Empathy adalah kemampuan seseorang untuk memahami dan merasakan emosi orang lain.
             Seseorang dapat lebih memahami kebutuhan dan perspektif orang lain, serta  membangun
             hubungan yang lebih baik dengan orang lain.</p>
-            <a href="{{ route('admins.adSubMateri', $data = "Empathy") }}" class="btn btn-primary">Let's learn</a>
+            <a href="{{ route('admins.adSubMateri', $data = "Empathy") }}" class="btn btn-primary">Yuk Belajar</a>
           </div>
       </article>
     </div>

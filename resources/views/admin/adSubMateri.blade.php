@@ -129,7 +129,7 @@
       <div class="" style="padding-top: 200px;">
         <div class="card" style="width: 300px; height: 400px;">
           <div class="card-image"></div>
-          <img src="{{ asset('storage/' . $item->image) }}" class="card-img-top rounded" alt="..." style="width: 300px; height: 200px;">
+          <img src="{{ asset('storage/' . $item->image) }}" class="card-img-top rounded" alt="..." style="width: 285px; height: 200px;">
           <div class="category">Illustration</div>
           <div class="heading">
             {{ $item->judul }}

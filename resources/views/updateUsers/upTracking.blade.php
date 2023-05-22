@@ -79,9 +79,10 @@
                         <div class="modal-body">
                             1. Sebelum Menggunakan, pastikan Anda sudah memperbarui posisi Anda dengan cara klik tombol "Perbarui Posisi".<br>
                             2. Untuk melihat keseluruhan peta, klik dan seret peta.<br>
-                            3. Untuk mencari lokasi pengguna lain, masukkan username pengguna yang ingin dicari pada kolom pencarian.<br>
-                            4. Untuk melihat rute perjalanan, klik tombol "Pergi Ke Sini" pada popup marker pengguna yang ingin dituju.<br>
-                            5. Untuk menghubungi pengguna, klik tombol "Hubungi Saya" pada popup marker pengguna yang ingin dihubungi.<br>
+                            3. Untuk memperbesar dan memperkecil peta, gunakan tombol + dan - pada pojok kiri atas peta.<br>
+                            4. Untuk mencari lokasi pengguna lain, masukkan username pengguna yang ingin dicari pada kolom pencarian.<br>
+                            5. Untuk melihat rute perjalanan, klik tombol "Pergi Ke Sini" pada popup marker pengguna yang ingin dituju.<br>
+                            6. Untuk menghubungi pengguna, klik tombol "Hubungi Saya" pada popup marker pengguna yang ingin dihubungi.<br>
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Saya Mengerti</button>

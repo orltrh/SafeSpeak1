@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Edukasi')
-@section('menuIndex', 'active')
+@section('menuadEdukasi', 'active')
 
 <style>
   .card {

@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Panduan')
-@section('menuPanduan', 'active')
+@section('menuadPanduan', 'active')
 
 @section('content')
 <section style="height:100vh; overflow-y: auto; padding-top: 150px;">

@@ -39,16 +39,16 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto @yield('menuadIndex')" href="/admin">Home</a></li>
-          <li><a class="nav-link scrollto @yield('menuadTrack')" href="/admin-tracking">Tracking Position</a></li>
-          <li><a class="nav-link scrollto @yield('menuadindex')" href="/admin-edukasi">Edukasi</a></li>
-          <li><a class="nav-link scrollto @yield('menuadPanduan')" href="/admin-panduan">Panduan</a></li>
-          <li><a class="nav-link scrollto @yield('menuadForum')" href="/admin-forum">Forum</a></li>
+          <li><a class="nav-link scrollto @yield('menuadIndex')" href="{{ url('/admin') }}">Home</a></li>
+          <li><a class="nav-link scrollto @yield('menuadTrack')" href="{{ url('/admin-tracking') }}">Tracking Position</a></li>
+          <li><a class="nav-link scrollto @yield('menuadEdukasi')" href="{{ url('/admin-edukasi') }}">Edukasi</a></li>
+          <li><a class="nav-link scrollto @yield('menuadPanduan')" href="{{ url('/admin-panduan') }}">Panduan</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="{{ url('/admin-forum') }}">Forum</a></li>
           <li><a class="nav-link scrollto @yield('menuadCreate')" href="{{ route('admins.createEdukasi') }}">Create Edukasi</a></li>
           <div>
             @auth
                 <li class="dropdown">
-                    <a class="nav-link scrollto @yield('menuProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link scrollto @yield('menuadProfile') dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person-fill" style="font-size: 22px;"></i>
                     </a>
                     <ul class="menu" aria-labelledby="profileDropdown">

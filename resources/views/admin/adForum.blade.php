@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Forum')
-@section('menuForum', 'active')
+@section('menuadForum', 'active')
 
 @section('content')
 @parent

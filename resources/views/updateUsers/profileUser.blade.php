@@ -1,6 +1,6 @@
 @extends('layout.updateUsers')
 @section('title', 'Profile')
-@section('menuProfie', 'active')
+@section('menuProfile', 'active')
 
 @section('content')
 <section style="height: 100vh">
@@ -81,27 +81,4 @@
        </div>
     </div>
 </section>
-{{-- <script>
-    function deletePreviousPhoto() {
-        // Mendapatkan URL endpoint untuk menghapus foto
-        var deleteUrl = "{{ route('fotoDelete') }}";
 
-        // Mengirim permintaan AJAX ke endpoint
-        fetch(deleteUrl, {
-            method: 'DELETE',
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Foto sebelumnya dihapus');
-            } else {
-                console.log('Gagal menghapus foto sebelumnya');
-            }
-        })
-        .catch(error => {
-            console.error('Terjadi kesalahan:', error);
-        });
-    }
-</script> --}}

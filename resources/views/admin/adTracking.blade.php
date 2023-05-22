@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Tracking Location')
-@section('menuTrack', 'active')
+@section('menuadTrack', 'active')
 
 @section('head')
     {{-- Template Routing Machine Leaflet --}}

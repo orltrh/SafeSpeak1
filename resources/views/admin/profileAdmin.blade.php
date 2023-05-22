@@ -4,8 +4,8 @@
 
 @section('content')
 <section>
-    <div class="container" style="padding-top: 30px;">
-        <h1>Profile User</h1>
+  <div class="container" style=" height:100vh; padding-top: 100px;" data-aos="zoom-out">
+    <h1>Profile User</h1>
        <div class="card" style="width:">
         <div class="row">
           <div class="col col-md-4 d-flex" style="justify-content: center; align-items:center;">

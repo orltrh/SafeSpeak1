@@ -79,10 +79,10 @@
 
 </style>
 @section('content')
-<section style="height:100vh; overflow-y: auto; width:100%; padding-top:150px;">
+<section style="height:100vh; overflow-y: auto; width:100%; padding-top:100px;" id="hero">
   <div class="container" style="padding-top:70px;">
     <div class="row pb-2 justify-content-center">
-        <article class="card col-lg-4 col-md-9">
+        <article class="card col-lg-4 col-md-9" data-aos="fade-down-right">
           <div class="temporary_text">
             <img src="{{ url('assets/images/fixsa.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
@@ -95,7 +95,7 @@
 
           </div>
         </article>
-        <article class="card col-lg-4 col-md-9">
+        <article class="card col-lg-4 col-md-9" data-aos="fade-down">
           <div class="temporary_text">
             <img src="{{ url('assets/images/fixsm.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
@@ -108,7 +108,7 @@
 
           </div>
         </article>
-        <article class="card col-lg-4 col-md-9">
+        <article class="card col-lg-4 col-md-9" data-aos="fade-down-left">
           <div class="temporary_text">
             <img src="{{ url('assets/images/fixsr.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
           </div>
@@ -123,8 +123,8 @@
         </article>
     </div>
 
-    <div class="row pt-2 justify-content-center">
-      <article class="card col-lg-4 col-md-9 ">
+    <div class="row pt-3 justify-content-center">
+      <article class="card col-lg-4 col-md-9 " data-aos="fade-up-right">
         <div class="temporary_text">
           <img src="{{ url('assets/images/fixsc.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>
@@ -136,7 +136,7 @@
             <a href="{{ route('users.SubMateri', $data = "Social Skills") }}" class="btn btn-primary">Yuk Belajar</a>
           </div>
       </article>
-      <article class="card col-lg-4 col-md-9">
+      <article class="card col-lg-4 col-md-9" data-aos="fade-up">
         <div class="temporary_text">
           <img src="{{ url('assets/images/fixsad.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>
@@ -148,7 +148,7 @@
              <a href="{{ route('users.SubMateri', $data = "Self Adjustment") }}" class="btn btn-primary">Yuk Belajar</a>
             </div>
       </article>
-      <article class="card col-lg-4 col-md-9">
+      <article class="card col-lg-4 col-md-9" data-aos="fade-up-left">
         <div class="temporary_text">
           <img src="{{ url('assets/images/fixe.jpg') }}" class="card-img-top" style="height:250px; width:500px;" alt="...">
         </div>

@@ -7,9 +7,9 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-lg-4 col-md-4">
+      <div class="col-lg-4 col-md-4" data-aos="fade-up">
         <div class="card" style="width: 18rem;">
-          <div class="card-header text-center">
+          <div class="card-header text-center" style="color:dodgerblue">
             Panduan SafeSpeaks
           </div>
           <div class="card-body">
@@ -41,7 +41,7 @@
             <ul class="list-group list-group-flush">
               <div class="btn-group">
                 <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Forum
+                  Forum 
                 </button>
                 <ul class="dropdown-menu">
                 <div style="height:65px; width:300px; text-align:center">Fitur ini merupakan wadah interaksi, diskusi, dan sharing antar pengguna.</div>
@@ -53,9 +53,9 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4">
+      <div class="col-lg-4 col-md-4" data-aos="zoom-out">
         <div class="card" style="width: 18rem;">
-          <div class="card-header text-center">
+          <div class="card-header text-center" style="color:dodgerblue">
             Pengaduan Satgas
           </div>
 
@@ -160,9 +160,9 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4">
+      <div class="col-lg-4 col-md-4" data-aos="fade-down">
         <div class="card" style="width: 18rem;">
-          <div class="card-header text-center">
+          <div class="card-header text-center" style="color:dodgerblue">
             Pengaduan Polisi
           </div>
 

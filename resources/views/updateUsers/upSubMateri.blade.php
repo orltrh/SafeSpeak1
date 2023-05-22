@@ -121,7 +121,7 @@
 </style>
 @section('content')
 @parent
-<section style="height:100vh; overflow-y: auto;">
+<section style="height:100vh; overflow-y: auto;" id="hero">
     <div class="container">
         <div class="row row-cols-3" style="padding-left: 50px;">
             @foreach ($data as $item)

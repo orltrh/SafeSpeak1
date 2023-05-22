@@ -8,7 +8,7 @@
 <section style="padding-top: 100px;">
       <div class="container">
         <div class="row">
-            <div class="card ">
+            <div class="card " data-aos="zoom-in">
                 <form method="POST" action="{{ route('admins.prosesCreate') }}" enctype="multipart/form-data" >
                     <div style="padding-top: 10px;">
                     @csrf

@@ -23,9 +23,9 @@
 <div class="main">
     <!-- Sign up form -->
     <section class="signup">
-        <div class="container">
+        <div class="container" >
             <div class="signup-content">
-                <div class="signup-form">
+                <div class="signup-form" >
                     <h2 class="form-title">Daftar Akun</h2>
                     <form method="POST" action="{{ route('registerPost') }}">
                         @csrf
@@ -102,7 +102,7 @@
                                         b. Membuat atau menyebarkan virus komputer, worm, atau kode berbahaya lainnya yang dapat merusak, mengganggu, atau merusak sistem kami atau pengguna lain. <br>
                                         c. Mencoba mengakses informasi pribadi pengguna lain, menggunakan metode yang melanggar privasi atau melanggar peraturan yang berlaku. <br><br>
                                         2. Privasi dan Pengumpulan Data <br>
-                                        Kami menghargai privasi Anda dan berkomitmen untuk melindungi data pribadi Anda. Dalam penggunaan SafeSpeaks, kami akan mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda sesuai dengan Kebijakan Privasi kami yang berlaku. Dengan menggunakan situs web kami, Anda menyetujui pengumpulan, penggunaan, dan penyimpanan data pribadi Anda termasuk data lokasi Anda sebagaimana dijelaskan dalam Kebijakan Privasi kami. <br>
+                                        Kami menghargai privasi Anda dan berkomitmen untuk melindungi data pribadi Anda. Dalam penggunaan SafeSpeaks, kami akan mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda sesuai dengan Kebijakan Privasi kami yang berlaku. Dengan menggunakan situs web kami, Anda menyetujui pengumpulan, penggunaan, dan penyimpanan data pribadi Anda termasuk data lokasi Anda sebagaimana dijelaskan dalam Kebijakan Privasi kami. <br><br>
                                         3. Keamanan Akun <br>
                                         Anda bertanggung jawab untuk menjaga kerahasiaan informasi akun Anda, termasuk kata sandi Anda. Anda setuju untuk memberi tahu kami segera jika Anda mengetahui atau mencurigai adanya penggunaan yang tidak sah atau akses tidak sah ke akun Anda. Kami tidak bertanggung jawab atas kerugian atau kerusakan yang disebabkan oleh penggunaan yang tidak sah terhadap akun Anda. <br><br>
                                         4. Penolakan Tanggung Jawab <br>

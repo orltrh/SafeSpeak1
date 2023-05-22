@@ -10,7 +10,7 @@
 <section style="height:100vh; overflow-y: auto; " id="hero">
   <div class="container ">
     <div class="row">
-      <div id="carouselExampleIndicators" class="carousel slide">
+      <div id="carouselExampleIndicators" class="carousel slide" data-aos="fade-up">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -20,10 +20,10 @@
 
           <div class="carousel-item active">
             <div class="row p-3">
-              <div class="col-lg-6 col-md-12" style="">
+              <div class="col-lg-6 col-md-12" data-aos="fade-down-right">
                 <img src="{{ url('assets/picture/3.jpg') }}" class="card-img-top rounded object-fit:inherit" alt="...">
               </div>
-                <div class="card-body col-md-6 d-flex" style="background-color:antiquewhite; border-radius:10px !important;">
+                <div class="card-body col-md-6 d-flex" style="background-color:antiquewhite; border-radius:10px !important;" data-aos="fade-up-left">
                   <div class="card-body">
                     <p class="fw-bolder"style="padding-top: 62px;">University Forum</p>
                     <p class="fw-medium" style="padding-top: 75px; padding-right:50px; padding-left:50px;">Bergabunglah dengan forum universitas kami yang peduli terhadap penanganan kasus pelecehan seksual dan bullying. Diskusikan isu-isu yang relevan, berbagi pengalaman, dan temukan solusi bersama untuk menciptakan lingkungan kampus yang aman dan inklusif.</p>
@@ -39,10 +39,10 @@
 
           <div class="carousel-item">
             <div class="row p-3">
-              <div class="col-lg-6 col-md-12" style="">
+              <div class="col-lg-6 col-md-12" data-aos="fade-down-right">
                 <img src="{{ url('assets/picture/2.jpg') }}" class="card-img-top rounded object-fit:inherit" alt="...">
               </div>
-              <div class="card-body col-md-6 d-flex" style="background-color:rgb(90, 165, 223); border-radius:10px !important;">
+              <div class="card-body col-md-6 d-flex" style="background-color:rgb(90, 165, 223); border-radius:10px !important;" data-aos="fade-up-left">
                 <div class="card-body" >
                   <p class="fw-bolder" style="padding-top: 62px;">Corporate Forum</p>
                   <p class="fw-medium" style="padding-top: 75px; padding-right:50px; padding-left:50px;">Bergabunglah dengan forum industri kami yang peduli terhadap penanganan kasus pelecehan seksual dan bullying. Diskusikan isu-isu yang relevan, berbagi pengalaman, dan temukan solusi bersama untuk menciptakan lingkungan kerja yang aman dan inklusif.</p>
@@ -57,10 +57,10 @@
 
           <div class="carousel-item">
             <div class="row p-3">
-              <div class="col-lg-6 col-md-12" style="">
+              <div class="col-lg-6 col-md-12" data-aos="fade-down-right">
                 <img src="{{ url('assets/picture/1.jpg') }}" class="card-img-top rounded object-fit:inherit" alt="...">
               </div>
-              <div class="card-body col-md-6 d-flex" style="background-color:rgb(221, 116, 67); border-radius:10px !important;">
+              <div class="card-body col-md-6 d-flex" style="background-color:rgb(221, 116, 67); border-radius:10px !important;" data-aos="fade-up-left">
                 <div class="card-body">
                 <p class="fw-bolder" style="padding-top: 62px;">Public Forum</p>
                 <p class="fw-medium" style="padding-top: 75px; padding-right:50px; padding-left:50px;">Bergabunglah dengan forum publik kami yang peduli terhadap penanganan kasus pelecehan seksual dan bullying. Diskusikan isu-isu yang relevan, berbagi pengalaman, dan temukan solusi bersama untuk menciptakan lingkungan yang aman dan inklusif.</p>

@@ -78,7 +78,7 @@
                         </div>
                         <div class="modal-body">
                             1. Izinkan safespeaks.site untuk mengambil data lokasi Anda.<br>
-                            2. Sebelum Menggunakan, pastikan Anda sudah memperbarui posisi dengan cara klik tombol "Perbarui Posisi".<br>
+                            2. Sebelum menggunakan, pastikan Anda sudah memperbarui posisi dengan cara klik tombol "Perbarui Posisi". Jika gagal, maka ulangi cara pertama.<br>
                             3. Untuk melihat keseluruhan peta, klik dan seret peta.<br>
                             4. Untuk memperbesar dan memperkecil peta, gunakan tombol + dan - pada pojok kiri atas peta.<br>
                             5. Untuk mencari lokasi pengguna lain, masukkan username pengguna yang ingin dicari pada kolom pencarian.<br>

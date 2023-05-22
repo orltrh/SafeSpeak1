@@ -63,11 +63,32 @@
                     <input class="btn btn-outline-info" type="submit" value="Perbarui Posisi" id="submit">
                 </form>
             </div>
-            <div>
-                <li>Selalu perbarui posisi Anda</li>
-                <li>Klik dan seret peta untuk melihat seluruh peta</li>
-            </div>
         </div>
+            <div>
+                <!-- Trigger modal -->
+                <label for="panduanTracking" class="label-agree-term"><span><span></span></span>Sebelum Menggunakan Tracking Position Lihat <a type="button" class="term-service" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Panduan Tracking Posititon</a></label>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Panduan Menggunakan Tracking Position</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            1. Sebelum Menggunakan, pastikan Anda sudah memperbarui posisi Anda dengan cara klik tombol "Perbarui Posisi".<br>
+                            2. Untuk melihat keseluruhan peta, klik dan seret peta.<br>
+                            3. Untuk mencari lokasi pengguna lain, masukkan username pengguna yang ingin dicari pada kolom pencarian.<br>
+                            4. Untuk melihat rute perjalanan, klik tombol "Pergi Ke Sini" pada popup marker pengguna yang ingin dituju.<br>
+                            5. Untuk menghubungi pengguna, klik tombol "Hubungi Saya" pada popup marker pengguna yang ingin dihubungi.<br>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Saya Mengerti</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 
 

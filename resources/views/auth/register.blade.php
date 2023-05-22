@@ -113,7 +113,7 @@
                                         Persyaratan layanan ini tunduk pada hukum yang berlaku di negara kami. Jika terjadi sengketa antara Anda dan SafeSpeaks, kami akan berupaya menyelesaikan sengketa tersebut melalui negosiasi dan mediasi yang baik dan jujur. <br><br>
                                 </div>
                                 <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Saya Mengerti</button>
                                 </div>
                             </div>
                             </div>

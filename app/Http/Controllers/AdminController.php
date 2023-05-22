@@ -61,7 +61,7 @@ class AdminController extends Controller
 
     // Upload gambar jika ada
     if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('post-images');
+        $imagePath = $request->file('image')->store('post-images', 'public');
         $validatedData['image'] = $imagePath;
 
     }

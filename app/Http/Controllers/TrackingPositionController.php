@@ -31,7 +31,7 @@ class TrackingPositionController extends Controller
 
         // Check if the tracking position exists.
         if (!$tracking) {
-            dd('Tracking position not found');
+            return('Your Location not found');
         }
 
         $tracking->latitude = $request->latitude;

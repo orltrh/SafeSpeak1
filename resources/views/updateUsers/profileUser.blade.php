@@ -19,7 +19,7 @@
                   <img class="rounded-circle" src="{{ url('/assets/img/clients/defaultFoto.jpg') }}" style="width: 200px; height: 200px; object-fit: cover;" alt="...">
               </div>
                   <div class="pt-2">
-                    <div>Silakan masukkan gambar dengan ukuran 1:1</div>
+                    <div>Silahkan masukkan gambar dengan ukuran 1:1</div>
                   </div>
               @endif
               <form action="{{ route('fotoPost') }}" method="POST" enctype="multipart/form-data" >

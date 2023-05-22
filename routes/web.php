@@ -40,7 +40,6 @@ Route::get('/edukasi', [App\Http\Controllers\UserController::class, 'edukasi'])-
 Route::get('/panduan', [App\Http\Controllers\UserController::class, 'panduan'])->name('panduan');
 Route::get('/forum', [App\Http\Controllers\UserController::class, 'forum'])->name('forum')->middleware('auth');
 
-
 Route::get('/SubMateri/{data}', [App\Http\Controllers\UserController::class, 'showSubMateri'])->name('users.SubMateri');
 Route::get('/Materi/{data}', [App\Http\Controllers\UserController::class, 'showMateri'])->name('users.Materi');
 
@@ -53,15 +52,7 @@ Route::get('/admin-edukasi', [App\Http\Controllers\AdminController::class, 'eduk
 Route::get('/admin-panduan', [App\Http\Controllers\AdminController::class, 'panduan'])->name('aPanduan')->middleware('checkMiddleware');
 Route::get('/admin-forum', [App\Http\Controllers\AdminController::class, 'forum'])->name('aForum')->middleware('checkMiddleware');
 
-Route::get('/adSelf-Awareness', [App\Http\Controllers\AdminController::class, 'adSelfAwareness'])->name('admins.adselfawareness')->middleware('checkMiddleware');
-Route::get('/Self-Regulation', [App\Http\Controllers\AdminController::class, 'adSelfRegulation'])->name('admins.adselfregulation')->middleware('checkMiddleware');
-Route::get('/Self-Adjustment', [App\Http\Controllers\AdminController::class, 'adSelfAdjustment'])->name('admins.adselfadjustment')->middleware('checkMiddleware');
-Route::get('/Social-Skills', [App\Http\Controllers\AdminController::class, 'adSocialSkills'])->name('admins.adselfadjustment')->middleware('checkMiddleware');
-Route::get('/Self-Motivation', [App\Http\Controllers\AdminController::class, 'adSelfMotivation'])->name('admins.adselfmotivation')->middleware('checkMiddleware');
-Route::get('/Empathy', [App\Http\Controllers\AdminController::class, 'adEmpathy'])->name('admins.adempathy')->middleware('checkMiddleware');
-
-
-Route::get('/admin-crud', [App\Http\Controllers\AdminController::class, 'crud'])->name('admins.crud');
+Route::get('/admin-crud', [App\Http\Controllers\AdminController::class, 'crud'])->name('admins.crud')->middleware('checkMiddleware');
 Route::get('/admin-createEdukasi', [App\Http\Controllers\AdminController::class, 'createEdukasi'])->name('admins.createEdukasi')->middleware('checkMiddleware');
 route::post('/admin-prosesCreate', [App\Http\Controllers\AdminController::class, 'prosesCreate'])->name('admins.prosesCreate')->middleware('checkMiddleware');
 
@@ -71,35 +62,30 @@ Route::get('/adMateri/{data}', [App\Http\Controllers\AdminController::class, 'sh
 Route::get('/updateMateri/{data}', [App\Http\Controllers\AdminController::class, 'updateMateri'])->name('admins.updateMateri')->middleware('checkMiddleware');
 route::post('/prosesUpdateMateri/{judul}', [App\Http\Controllers\AdminController::class, 'prosesUpdateMateri'])->name('admins.prosesUpdateMateri')->middleware('checkMiddleware');
 
-Route::delete('/deleteMateri{data}', [App\Http\Controllers\AdminController::class, 'deleteMateri'])->name('admins.deleteMateri');
+Route::delete('/deleteMateri{data}', [App\Http\Controllers\AdminController::class, 'deleteMateri'])->name('admins.deleteMateri')->middleware('checkMiddleware');
 
 
 // route profil
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile')->middleware('auth');
-Route::post('/prosesFoto', [App\Http\Controllers\ProfileController::class, 'store'])->name('fotoPost');
-Route::delete('/deleteFoto', [App\Http\Controllers\ProfileController::class, 'delete'])->name('fotoDelete');
+Route::post('/prosesFoto', [App\Http\Controllers\ProfileController::class, 'store'])->name('fotoPost')->middleware('auth');
+Route::delete('/deleteFoto', [App\Http\Controllers\ProfileController::class, 'delete'])->name('fotoDelete')->middleware('auth');
 
-// route profil
-Route::get('/admin-profile', [App\Http\Controllers\ProfileController::class, 'adindex'])->name('adprofile')->middleware('auth');
-Route::post('/admin-prosesFoto', [App\Http\Controllers\ProfileController::class, 'adstore'])->name('adfotoPost');
-Route::delete('/admin-deleteFoto', [App\Http\Controllers\ProfileController::class, 'addelete'])->name('adfotoDelete');
+// route profil admin
+Route::get('/admin-profile', [App\Http\Controllers\ProfileController::class, 'adindex'])->name('adprofile')->middleware('checkMiddleware');
+Route::post('/admin-prosesFoto', [App\Http\Controllers\ProfileController::class, 'adstore'])->name('adfotoPost')->middleware('checkMiddleware');
+Route::delete('/admin-deleteFoto', [App\Http\Controllers\ProfileController::class, 'addelete'])->name('adfotoDelete')->middleware('checkMiddleware');
 
 
 // Route untuk tracking position
 Route::get('/uptrackingposition', [TrackingPositionController::class, 'show'])->name('uptrackingposition')->middleware('auth');
-Route::get('searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track');
-Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition');
+Route::get('/searchTrackingPosition', [TrackingPositionController::class, 'search'])->name('search.track')->middleware('auth');
+Route::post('/updateMarkerPosition', 'App\Http\Controllers\TrackingPositionController@update')->name('updateMarkerPosition')->middleware('auth');
 
 
-
-
-
-
-// FC
 
 // route authentikasi
 Auth::routes();
 
 
-Auth::routes();
+
 

@@ -125,7 +125,7 @@
     <div class="container">
         <div class="row row-cols-3" style="padding-left: 50px;">
             @foreach ($data as $item)
-            <div class="" style="padding-top: 200px;">
+            <div class="" style="padding-top: 50px;">
                 <div class="card" style="width: 300px; height: 370px;">
                   <div class="card-image"></div>
                   <img src="{{ asset('storage/' . $item->image) }}" class="card-img-top rounded" alt="..." style="width: 285px; height: 200px;">

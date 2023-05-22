@@ -3,7 +3,7 @@
 @section('menuadPanduan', 'active')
 
 @section('content')
-<section style="height:100vh; overflow-y: auto; padding-top: 200px;" id="hero">
+<section style="height:100vh; overflow-y: auto; padding-top: 70px;" id="hero">
   <div class="container">
     <div class="row">
 
@@ -41,7 +41,7 @@
             <ul class="list-group list-group-flush">
               <div class="btn-group">
                 <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Forum 
+                  Forum
                 </button>
                 <ul class="dropdown-menu">
                 <div style="height:65px; width:300px; text-align:center">Fitur ini merupakan wadah interaksi, diskusi, dan sharing antar pengguna.</div>

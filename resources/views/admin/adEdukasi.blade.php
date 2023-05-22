@@ -78,7 +78,7 @@
 
 </style>
 @section('content')
-<section style="height:100vh; overflow-y: auto; width:100%; padding-top:100px;" id="hero">
+<section style="height:100vh; overflow-y: auto; width:100%; padding-top:50px;" id="hero">
   <div class="container" style="padding-top:50px;">
     <div class="row justify-content-center">
         <article class="card col-lg-4 col-md-9" data-aos="fade-down-right">

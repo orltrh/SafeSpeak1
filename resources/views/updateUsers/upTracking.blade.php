@@ -45,7 +45,7 @@
 
 @section('content')
 <section id="hero">
-    <div class="container mt-5">
+    <div class="container mt-2">
         <div class="row">
             <div class="col-lg-3 col-md-5">
                 <form class="d-flex" role="search" id="searchForm">

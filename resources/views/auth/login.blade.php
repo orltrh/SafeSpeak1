@@ -33,6 +33,12 @@
                     <form method="POST" action="{{ route('loginPost') }}">
                         @csrf
 
+                        <div>
+                            @error('error')
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
+                            @enderror
+                        </div>
+                        
                         <div class="form-group">
                             <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
                             <input type="text" name="username" id="username" @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Username"/>
@@ -40,7 +46,7 @@
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
-
+                        
                         <div class="form-group">
                             <div class="password-field">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
@@ -48,13 +54,7 @@
                                 <i class="fas fa-eye" id="toggle-password"></i>
                             </div>
                             @error('password')
-                                    <div class="text-danger"><strong>{{ $message }}</strong></div>
-                            @enderror
-                        </div>
-
-                        <div>
-                            @error('error')
-                                <div class="alert alert danger"><strong>{{ $message }}</strong></div>
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
 

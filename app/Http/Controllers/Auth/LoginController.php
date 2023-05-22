@@ -12,29 +12,30 @@ use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
     public function authenticate(Request $request)
-    {
-        $credentials = $request->validate([
-            'username' => ['required'],
-            'password' => ['required'],
-        ], [
-            'username.required' => 'Username is required.',
-            'password.required' => 'Password is required.',
-        ]);
+{
+    $credentials = $request->validate([
+        'username' => ['required'],
+        'password' => ['required'],
+    ], [
+        'username.required' => 'Username is required.',
+        'password.required' => 'Password is required.',
+    ]);
 
-        if (Auth::attempt($credentials)) {
-            if (Auth::user()->is_admin == 1) {
-                $request->session()->regenerate();
-                $request->session()->put('verified', true);
-                return redirect()->route('admin');
-            } else {
-                return redirect()->route('dashboard');
-            }
+    if (Auth::attempt($credentials)) {
+        if (Auth::user()->is_admin == 1) {
+            $request->session()->regenerate();
+            $request->session()->put('verified', true);
+            return redirect()->route('admin');
+        } else {
+            return redirect()->route('dashboard');
         }
-
-        throw ValidationException::withMessages([
-            'eror' => ['Username or password is incorrect.'],
-        ])->redirectTo(route('login'));
     }
+
+    return redirect()->route('login')->withErrors([
+        'error' => 'Username or password is incorrect.',
+    ]);
+}
+
 
     public function logout(Request $request)
     {

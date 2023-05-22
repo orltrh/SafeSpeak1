@@ -64,66 +64,72 @@ a {
 @parent
 
 <section id="hero">
-    <table class="entire-page">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <table class="entire-page">
   
-        <tr>
-          
-          <td>
-            
-            <table class="email-body rounded-5">
-              <tr> 
-                <td class="email-header">
-                    <div class="text-center pt-2">
-                        <h1 style="color:#eee; word-spacing: 20px; ">EMOTIONAL INTELLIGENCE</h1>
-                    </div>
-                </td>
-              </tr>
+            <tr>
               
-              <tr>
+              <td>
                 
-                <td class="news-section">
-                    <div class="text-center" style="padding-top: 10px;">
-                       <h1>{{ $data->judul }}</h1>
-                    </div>
-                    <div style="display: flex; justify-content: center; padding-bottom:100px;">
-                        <img style="height:500px; width:1000px" src="{{ asset('storage/' . $data->image) }}">
-                      </div>
-                </td>
-              </tr>
+                <table class="email-body rounded-5">
+                  <tr> 
+                    <td class="email-header">
+                        <div class="text-center pt-2">
+                            <h1 style="color:#eee; word-spacing: 20px; ">EMOTIONAL INTELLIGENCE</h1>
+                        </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    
+                    <td class="news-section">
+                        <div class="text-center" style="padding-top: 10px;">
+                           <h1>{{ $data->judul }}</h1>
+                        </div>
+                        <div style="display: flex; justify-content: center; padding-bottom:100px;">
+                            <img style="height:500px; width:1000px" src="{{ asset('storage/' . $data->image) }}">
+                          </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="news-section">                  
+                        <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf1 }}.</p>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="news-section">                  
+                        <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf2 }}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="news-section">                  
+                        <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf3 }}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="news-section">                  
+                        <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf4 }}</p>
+                    </td>
+                </tr>  
+                  <tr>
+                    <td class="news-section">                  
+                        <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf5 }}</p>
+                    </td>
+                </tr>  
+                </table>
+                
+              </td>
               
-              <tr>
-                <td class="news-section">                  
-                    <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf1 }}.</p>
-                </td>
-              </tr>
-              
-              <tr>
-                <td class="news-section">                  
-                    <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf2 }}</p>
-                </td>
-              </tr>
-              <tr>
-                <td class="news-section">                  
-                    <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf3 }}</p>
-                </td>
-              </tr>
-              <tr>
-                <td class="news-section">                  
-                    <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf4 }}</p>
-                </td>
-            </tr>  
-              <tr>
-                <td class="news-section">                  
-                    <p style="text-indent: 50px; text-align:justify;">{{ $data->paragraf5 }}</p>
-                </td>
-            </tr>  
-            </table>
+            </tr>
             
-          </td>
-          
-        </tr>
-        
-      </table>
+          </table>
+        </div>
+      </div>
+    </div>
 
 </section>
 @endsection

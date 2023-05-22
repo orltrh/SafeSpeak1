@@ -103,9 +103,15 @@ class AdminController extends Controller
     $data->paragraf4 = $request->input('paragraf4');
     $data->paragraf5 = $request->input('paragraf5');
 
-    // Perbarui gambar baru jika tersedia
+    // Periksa apakah ada gambar baru yang diunggah
     if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('post-images');
+        // Hapus gambar sebelumnya jika ada
+        if ($data->image) {
+            Storage::disk('public')->delete($data->image);
+        }
+
+        // Simpan gambar baru
+        $imagePath = $request->file('image')->store('post-images', 'public');
         $data->image = $imagePath;
     }
 
@@ -114,7 +120,6 @@ class AdminController extends Controller
 
     return redirect()->route('aEdukasi');
     }
-
 
     public function deleteMateri($judul)
     {

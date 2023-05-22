@@ -20,12 +20,12 @@
                         <td>
                             <select id="materi" name="materi" required style="margin-bottom: 10px; width: 200px; height:35px;">
                                 <option value="">Pilih Materi</option>
-                                <option value="Self Awareness">Self Awareness</option>
-                                <option value="Self Regulation">Self Regulation</option>
-                                <option value="Self Adjustment">Self Adjustment</option>
-                                <option value="Self Motivation">Self Motivation</option>
-                                <option value="Empathy">Empathy</option>
-                                <option value="Social Skills">Social Skill</option>
+                                <option value="Self Awareness" {{ isset($data) && $data->materi == 'Self Awareness' ? 'selected' : '' }}>Self Awareness</option>
+                                <option value="Self Regulation" {{ isset($data) && $data->materi == 'Self Regulation' ? 'selected' : '' }}>Self Regulation</option>
+                                <option value="Self Adjustment" {{ isset($data) && $data->materi == 'Self Adjustment' ? 'selected' : '' }}>Self Adjustment</option>
+                                <option value="Self Motivation" {{ isset($data) && $data->materi == 'Self Motivation' ? 'selected' : '' }}>Self Motivation</option>
+                                <option value="Empathy" {{ isset($data) && $data->materi == 'Empathy' ? 'selected' : '' }}>Empathy</option>
+                                <option value="Social Skills" {{ isset($data) && $data->materi == 'Social Skills' ? 'selected' : '' }}>Social Skills</option>
                                 <!-- tambahkan opsi lainnya sesuai kebutuhan -->
                             </select>
                         </td>
@@ -56,7 +56,12 @@
                     </tr>
                     <tr>
                         <td><label for="image" class="form-label">Image:</label></td>
-                        <td><input class="form-control" type="file" id="image" name="image"></td>
+                        <td>
+                            <input class="form-control" type="file" id="image" name="image">
+                            @if(isset($data) && $data->image)
+                                <img src="{{ asset('storage/'.$data->image) }}" alt="Image" style="max-width: 200px; margin-top: 10px;">
+                            @endif
+                        </td>
                     </tr>
                   </table>
                 </div>

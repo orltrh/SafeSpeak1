@@ -39,11 +39,11 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto @yield('menuadIndex')" href="{{ url('/admin') }}">Home</a></li>
-          <li><a class="nav-link scrollto @yield('menuadTrack')" href="{{ url('/admin-tracking') }}">Tracking Position</a></li>
-          <li><a class="nav-link scrollto @yield('menuadEdukasi')" href="{{ url('/admin-edukasi') }}">Edukasi</a></li>
-          <li><a class="nav-link scrollto @yield('menuadPanduan')" href="{{ url('/admin-panduan') }}">Panduan</a></li>
-          <li><a class="nav-link scrollto @yield('menuadForum')" href="{{ url('/admin-forum') }}">Forum</a></li>
+          <li><a class="nav-link scrollto @yield('menuadIndex')" href="{{ route('admin') }}">Home</a></li>
+          <li><a class="nav-link scrollto @yield('menuadTrack')" href="{{ route('aTrackingPosition') }}">Tracking Position</a></li>
+          <li><a class="nav-link scrollto @yield('menuadEdukasi')" href="{{ route('aEdukasi') }}">Edukasi</a></li>
+          <li><a class="nav-link scrollto @yield('menuadPanduan')" href="{{ route('aPanduan') }}">Panduan</a></li>
+          <li><a class="nav-link scrollto @yield('menuadForum')" href="{{ route('aForum') }}">Forum</a></li>
           <li><a class="nav-link scrollto @yield('menuadCreate')" href="{{ route('admins.createEdukasi') }}">Create Edukasi</a></li>
           <div>
             @auth

@@ -83,7 +83,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #fff;
+  background: #edf2f7;
 }
 
 #header.header-scrolled {
@@ -1500,7 +1500,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #f7f8f9;
+  background: #edf2f7;
   padding: 0 0 30px 0;
   color: #364146;
   font-size: 14px;

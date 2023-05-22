@@ -45,7 +45,7 @@
 
 @section('content')
 <section >
-    <div class="container mt-3">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-3 col-md-5">
                 <form class="d-flex" role="search" id="searchForm">
@@ -94,7 +94,7 @@
 
 
 
-    <div class="container mt-3" id="map-container">
+    <div class="container mt-4" id="map-container">
         <div id="map"></div>
     </div>
 

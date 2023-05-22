@@ -28,6 +28,7 @@
                     <a href="selfmotivation" class="btn btn-primary">Let's Learn</a>
                     <div class="cover">
                         <p>Self-Motivation</p>
+                        {{-- <a href="https://www.freepik.com/free-vector/young-woman-standing-front-mirror-motivate-confident-you-can-it-vector-illustration_10108732.htm#query=an%20illustration%20self%20motivation&position=1&from_view=search&track=ais">Image by syarifahbrit</a> on Freepik --}}
                     </div>
                 </div>
             </div>

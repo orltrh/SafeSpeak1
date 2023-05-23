@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-lg-4 col-md-4 d-flex" style="justify-content: center">
+      <div class="col-lg-4 col-md-4 " style="justify-content: center">
         <div class="card" style="width: 18rem;">
           <div class="card-header text-center">
             Panduan SafeSpeaks
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 d-flex" style="justify-content: center">
+      <div class="col-lg-4 col-md-4" style="justify-content: center">
         <div class="card" style="width: 18rem;">
           <div class="card-header text-center">
             Pengaduan Satgas
@@ -160,7 +160,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 d-flex" style="justify-content: center">
+      <div class="col-lg-4 col-md-4 " style="justify-content: center">
         <div class="card" style="width: 18rem;">
           <div class="card-header text-center">
             Pengaduan Polisi
